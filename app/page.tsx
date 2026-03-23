@@ -150,7 +150,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 lg:py-40">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl" data-aos="fade-up">
 
 
             <h1
@@ -192,7 +192,7 @@ export default function Home() {
             </div>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="100">
               {[
                 { num: "500+", label: "Projects" },
                 { num: "10+", label: "States" },
@@ -213,11 +213,13 @@ export default function Home() {
       {/* ─── TRUST FEATURES ──────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" data-aos="fade-up">
             {trustFeatures.map((f) => (
               <div
                 key={f.title}
                 className="group relative p-8 rounded-3xl bg-soft-beige/50 border border-transparent hover:border-deep-green/10 hover:bg-white hover:shadow-[0_20px_60px_rgba(31,93,59,0.08)] transition-all duration-500 cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={`${trustFeatures.indexOf(f) * 60}`}
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-deep-green/20">
                   {f.icon}
@@ -249,7 +251,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70 z-[1]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center text-white">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center text-white" data-aos="fade-up">
             {[
               { icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "500+", label: "Completed Projects" },
               { icon: <Smile className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "100%", label: "Happy Clients" },
@@ -282,7 +284,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image side */}
-            <div className="relative">
+            <div className="relative" data-aos="fade-up">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10">
                 <Image
                   src="/project-residential.png"
@@ -306,7 +308,7 @@ export default function Home() {
             </div>
 
             {/* Text side */}
-            <div>
+            <div data-aos="fade-up" data-aos-delay="100">
               <div className="section-decorator">
                 <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Who We Are</span>
               </div>
@@ -360,7 +362,7 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Services We Provide</span>
             </div>
@@ -377,6 +379,8 @@ export default function Home() {
               <div
                 key={service.title}
                 className="premium-card group relative p-7 rounded-3xl bg-white border border-gray-100 hover:border-deep-green/10 cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={`${services.indexOf(service) * 50}`}
               >
                 <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-deep-green group-hover:to-fresh-green group-hover:text-white group-hover:scale-110 group-hover:-rotate-3">
                   {service.icon}
@@ -402,7 +406,7 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <span className="text-sm font-semibold text-accent-gold uppercase tracking-widest">Why Choose Us</span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 mb-5">
               Why Clients Trust Green Ganga
@@ -417,6 +421,8 @@ export default function Home() {
               <div
                 key={item.title}
                 className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-fresh-green/20 hover:shadow-2xl hover:shadow-deep-green/5 transition-all duration-500 cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={`${whyChooseUs.indexOf(item) * 60}`}
               >
                 <div className="w-12 h-12 rounded-2xl bg-deep-green/5 flex items-center justify-center mb-4 text-accent-gold group-hover:bg-accent-gold/10 transition-colors duration-300">
                   {item.icon}
@@ -434,7 +440,7 @@ export default function Home() {
       {/* ─── PROJECTS GALLERY ────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Our Portfolio</span>
             </div>
@@ -451,6 +457,8 @@ export default function Home() {
               <div
                 key={project.title}
                 className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer img-hover-zoom"
+                data-aos="fade-up"
+                data-aos-delay={`${projects.indexOf(project) * 60}`}
               >
                 <div className="aspect-[4/3]">
                   <Image src={project.image} alt={project.title} fill className="object-cover" />
@@ -484,7 +492,7 @@ export default function Home() {
       {/* ─── TEAM ────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Our Team</span>
             </div>
@@ -498,7 +506,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {team.map((member) => (
-              <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center">
+              <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center" data-aos="fade-up" data-aos-delay={`${team.indexOf(member) * 60}`}>
                 <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-5 transition-all duration-500 group-hover:scale-110 shadow-xl shadow-deep-green/5 ring-4 ring-white group-hover:ring-fresh-green/20">
                   <Image
                     src={member.image}
@@ -523,7 +531,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-deep-green/3 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Testimonials</span>
             </div>
@@ -534,7 +542,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
-              <div key={t.name} className="premium-card p-8 rounded-3xl bg-white border border-gray-100">
+              <div key={t.name} className="premium-card p-8 rounded-3xl bg-white border border-gray-100" data-aos="fade-up" data-aos-delay={`${testimonials.indexOf(t) * 80}`}>
                 <div className="flex gap-1 mb-5">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-accent-gold fill-accent-gold" />
@@ -563,7 +571,7 @@ export default function Home() {
 
       {/* ─── CTA BANNER ──────────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
-        <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
+        <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 px-5 py-2 mb-8 border border-deep-green/10">
             <Sparkles className="w-4 h-4 text-fresh-green animate-pulse" />
             <span className="text-deep-green text-xs sm:text-sm font-semibold uppercase tracking-widest">Transform Your Space Today</span>

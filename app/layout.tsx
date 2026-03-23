@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AOSProvider from "@/components/AOSProvider";
+import NatureEffects from "@/components/NatureEffects";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -35,6 +37,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className="min-h-full flex flex-col font-outfit">
+        <AOSProvider />
+        <NatureEffects />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
