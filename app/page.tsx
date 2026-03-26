@@ -63,7 +63,7 @@ const trustFeatures = [
 ];
 
 const services = [
-  { title: "Design & Development", icon: <Palette className="w-8 h-8" />, desc: "Customized landscape layouts for homes, hotels, parks, farmhouses, offices, and institutions." },
+  { title: "Design & Development", icon: <Palette className="w-8 h-8" />, desc: "Customized landscape layouts for homes, hotels, parks, cafe farmhouses, offices, and institutions." },
   { title: "Maintenance & Care", icon: <Wrench className="w-8 h-8" />, desc: "Regular watering, pruning, seasonal planting, pest control, and plant health monitoring." },
   { title: "Water Management", icon: <Droplets className="w-8 h-8" />, desc: "Smart irrigation systems — sprinklers, drip irrigation, and eco-friendly water solutions." },
   { title: "Vertical & Terrace Gardens", icon: <TreePine className="w-8 h-8" />, desc: "Modern vertical garden designs and terrace garden development for urban environments." },
@@ -74,21 +74,21 @@ const services = [
 ];
 
 const projects = [
-  { image: "/project-residential.png", title: "Shalimar Imperial Gardens", category: "Residential", location: "Lucknow" },
-  { image: "/project-commercial.png", title: "Corporate Tech Campus", category: "Commercial", location: "Noida" },
-  { image: "/project-farmhouse.png", title: "Resort & Farm Landscape", category: "Farmhouse", location: "Lucknow" },
-  { image: "/project-terrace.png", title: "Terrace Garden Project", category: "Terrace", location: "Delhi" },
-  { image: "/project-industrial.png", title: "Rail Coach Factory Landscape", category: "Government", location: "Rae Bareli" },
-  { image: "/hero.png", title: "Heritage Garden Design", category: "Resort", location: "Lucknow" },
+  { image: "/indian-institutional.png", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
+  { image: "/indian-resort.png", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
+  { image: "/indian-farmhouse.png", title: "Minister Nandi Gopal Nandi Farm", category: "Farmhouse & Resorts", location: "Prayagraj" },
+  { image: "/indian-township.png", title: "Ansal API Hitech Township", category: "Consultancy", location: "Lucknow" },
+  { image: "/indian-institutional.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
+  { image: "/indian-hotel.png", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
 ];
 
 const team = [
-  { name: "Mrs. Seema Sharma", role: "Director", image: "/team-seema.png", qualification: "P.G. Economics" },
-  { name: "Dr. Ajay Sharma", role: "Consultant", image: "/team-ajay.png", qualification: "Ph.D. Horticulture & Landscaping" },
-  { name: "Aditya Sharma", role: "Team Manager (Commercial)", image: "/team-aditya.png", qualification: "B.Sc. Agriculture, SHUATS Prayagraj" },
-  { name: "Nisha Kumari", role: "Team Manager (House)", image: "/team-nisha.png", qualification: "B.Sc. Agriculture, SHUATS" },
-  { name: "Aditi", role: "Field Associate", image: "/team-aditi.png", qualification: "B.Sc. Agriculture, CCSU Meerut" },
-  { name: "Aryan Sharma", role: "Field Associate", image: "/team-aryan.png", qualification: "B.Sc. Ag. (Horticulture), NDAU Kumarganj" },
+  { name: "Mrs. Seema Sharma", role: "Director", image: "/images/female-avatar.png", qualification: "P.G. Economics", experience: "10+ Years" },
+  { name: "Dr. Ajay Sharma", role: "Consultant", image: "/images/ajaysharma.jpeg", qualification: "Ph.D. Horticulture & Landscaping", experience: "25+ Years" },
+  { name: "Aditya Sharma", role: "Team Manager (Commercial)", image: "/images/adityasharma.jpeg", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", },
+  { name: "Nisha Kumari", role: "Team Manager (House)", image: "/images/nishakumari.jpeg", qualification: "B.Sc. Agriculture, SHUATS", },
+  { name: "Aditi", role: "Field Associate", image: "/images/female-avatar.png", qualification: "B.Sc. Agriculture, CCSU Meerut", },
+  { name: "Aryan Sharma", role: "Field Associate", image: "/images/male-avatar.png", qualification: "B.Sc. Ag. (Horticulture), NDAU Kumarganj", },
 ];
 
 const testimonials = [
@@ -133,7 +133,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/hero.png"
-            alt="Beautiful landscape by Green Ganga Associates"
+            alt="Best landscaping and gardening services in Lucknow by Green Ganga Associates"
             fill
             className="object-cover"
             priority
@@ -156,12 +156,7 @@ export default function Home() {
             <h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
             >
-              Your Green Vision,{" "}
-              <span className="relative">
-                <span className="text-gradient-gold bg-gradient-to-r from-accent-gold to-[#E8D47A] bg-clip-text text-transparent">
-                  Our Expertise
-                </span>
-              </span>
+              Your Green Vision, <span className="text-fresh-green">Our Expertise</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-10 max-w-lg">
@@ -194,9 +189,9 @@ export default function Home() {
             {/* Stats row */}
             <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="100">
               {[
-                { num: "500+", label: "Projects" },
-                { num: "10+", label: "States" },
-                { num: "50+", label: "Team" },
+                { num: "25+", label: "Projects" },
+                { num: "15+", label: "cities" },
+                { num: "10+", label: "Team" },
                 { num: "4.9", label: "Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -253,10 +248,10 @@ export default function Home() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center text-white" data-aos="fade-up">
             {[
-              { icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "500+", label: "Completed Projects" },
+              { icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "25+", label: "Completed Projects" },
               { icon: <Smile className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "100%", label: "Happy Clients" },
-              { icon: <History className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "15+", label: "Years Experience" },
-              { icon: <MapPin className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "20+", label: "Cities Served" },
+              { icon: <History className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "25+", label: "Years Experience" },
+              { icon: <MapPin className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "15+", label: "Cities Served" },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -518,7 +513,12 @@ export default function Home() {
                 <h3 className="text-base sm:text-lg font-bold text-deep-green mb-0.5 group-hover:text-fresh-green transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-fresh-green text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2">{member.role}</p>
+                <p className="text-fresh-green text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">{member.role}</p>
+                {member.experience && (
+                  <div className="bg-fresh-green/10 text-fresh-green text-[9px] font-bold px-2 py-0.5 rounded-full mb-2">
+                    {member.experience} Experties
+                  </div>
+                )}
                 <p className="text-muted-foreground text-[10px] sm:text-[11px] font-medium max-w-[160px] leading-tight flex-grow">{member.qualification}</p>
               </div>
             ))}
@@ -582,7 +582,7 @@ export default function Home() {
             <span className="text-fresh-green">Landscape</span>
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-            Join 500+ satisfied clients who have turned their vision into a lush reality with Green Ganga Associates.
+            Join 30+ satisfied clients who have turned their vision into a lush reality with Green Ganga Associates.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

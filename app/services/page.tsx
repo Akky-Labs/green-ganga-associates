@@ -23,16 +23,16 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | Green Ganga Associates – Landscaping & Gardening Experts",
+  title: "Our Landscaping & Gardening Services Across India",
   description:
-    "End-to-end landscaping and gardening solutions — from creative design to long-term maintenance — ensuring every space remains green, functional, and inspiring.",
+    "Landscaping and gardening services in Lucknow and all of India — garden design, vertical gardens, terrace gardens, organic farming, and industrial projects by Green Ganga Associates.",
 };
 
 const services = [
   {
     icon: <Palette className="w-8 h-8" />,
     title: "Design & Development",
-    desc: "Customized landscape layouts for homes, hotels, parks, farmhouses, offices, and institutions. Plant selection based on climate, soil, and visual appeal. Integration of lawns, flower beds, pathways, and decorative features.",
+    desc: "Customized landscape layouts for homes, hotels, parks, cafes, farmhouses, offices, and institutions. Plant selection based on climate, soil, and visual appeal. Integration of lawns, flower beds, pathways, and decorative features.",
     features: ["Custom Layouts", "Plant Selection", "Lawns & Flower Beds", "Pathways & Decor"],
     image: "/project-residential.png",
   },
@@ -112,7 +112,7 @@ export default function ServicesPage() {
               <span className="text-fresh-green text-sm font-medium">Services We Provide</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              End-to-End{" "}
+              End-to-End <br />
               <span className="text-accent-gold">Green Solutions</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-lg">

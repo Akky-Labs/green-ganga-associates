@@ -24,9 +24,9 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Green Ganga Associates – Landscaping & Gardening Experts",
+  title: "About Our Expertise",
   description:
-    "Green Ganga Associates is a professional landscaping and gardening firm based in Lucknow, UP. We specialize in designing, developing, and maintaining outdoor spaces.",
+    "About Green Ganga Associates — a premier professional landscaping and gardening group serving Lucknow, Noida, and cities across India with 25+ years expertise.",
 };
 
 const values = [
@@ -57,23 +57,25 @@ const team = [
     name: "Mrs. Seema Sharma",
     role: "Director",
     initials: "SS",
-    image: "/team-seema.png",
+    image: "/images/female-avatar.png",
     qualification: "P.G. Economics",
+    experience: "10+ Years",
     bio: "As the Director of Green Ganga Associates, Mrs. Seema Sharma leads the company with a strong business acumen and a deep passion for creating sustainable green environments.",
   },
   {
     name: "Dr. Ajay Sharma",
     role: "Consultant",
     initials: "AS",
-    image: "/team-ajay.png",
+    image: "/images/ajaysharma.jpeg",
     qualification: "Ph.D. Horticulture & Landscaping",
+    experience: "25+ Years",
     bio: "With a doctorate in Horticulture & Landscaping, Dr. Ajay Sharma is the driving force behind our innovative landscape designs and consultancy based on new technology and research.",
   },
   {
     name: "Aditya Sharma",
     role: "Team Manager (Commercial)",
     initials: "AS",
-    image: "/team-aditya.png",
+    image: "/images/adityasharma.jpeg",
     qualification: "B.Sc. Agriculture, SHUATS Prayagraj",
     bio: "Aditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
   },
@@ -81,7 +83,7 @@ const team = [
     name: "Nisha Kumari",
     role: "Team Manager (House)",
     initials: "NK",
-    image: "/team-nisha.png",
+    image: "/images/nishakumari.jpeg",
     qualification: "B.Sc. Agriculture, SHUATS",
     bio: "Nisha leads our residential projects team, specializing in home gardens, terrace gardens, and personalized green spaces that bring joy to everyday living.",
   },
@@ -89,25 +91,27 @@ const team = [
     name: "Aditi",
     role: "Field Associate",
     initials: "AD",
-    image: "/team-aditi.png",
+    image: "/images/female-avatar.png",
     qualification: "B.Sc. Agriculture, CCSU Meerut",
+
     bio: "Aditi works on-ground to ensure every installation meets our quality standards, handling planting, soil management, and on-site execution with precision.",
   },
   {
     name: "Aryan Sharma",
     role: "Field Associate",
     initials: "AR",
-    image: "/team-aryan.png",
+    image: "/images/male-avatar.png",
     qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj Ayodhya",
+
     bio: "Aryan brings specialized horticulture knowledge to the field, ensuring optimal plant health, correct species selection, and beautiful garden execution.",
   },
 ];
 
 const trustReasons = [
-  { num: "500+", label: "Projects Completed" },
-  { num: "10+", label: "States Served" },
-  { num: "50+", label: "Team Members" },
-  { num: "98%", label: "Client Satisfaction" },
+  { num: "25+", label: "Projects Completed" },
+  { num: "15+", label: "Cities Served" },
+  { num: "6+", label: "Team Members" },
+  { num: "100%", label: "Client Satisfaction" },
 ];
 
 export default function AboutPage() {
@@ -127,7 +131,7 @@ export default function AboutPage() {
               <span className="text-fresh-green text-sm font-medium">About Our Company</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Landscaping &{" "}
+              Landscaping & <br />
               <span className="text-accent-gold">Gardening Experts</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-lg">
@@ -220,6 +224,41 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Consultancy & Experience Section */}
+          <div className="mb-24">
+            <div className="text-center mb-16">
+              <div className="section-decorator-center">
+                <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Our Experience</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-deep-green mt-4 mb-5">
+                Consultancy & Industry Expertise
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+                With decades of collective experience, we have provided technical consultancy to some of India&apos;s leading infrastructure and corporate groups.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { title: "DS Group", duration: "6 Years", location: "Noida" },
+                { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
+                { title: "Ansal API", duration: "5 Years", site: "4,500 Acre Hitech Township" },
+                { title: "BBD Group", duration: "9 Years", site: "350 Acre Township" },
+                { title: "Orris Infrastructure", duration: "1 Year", location: "Gurugram" },
+                { title: "Jindal Steel & Power", duration: "1 Year", location: "Raigarh (C.G)" },
+              ].map((exp, idx) => (
+                <div key={idx} className="p-6 rounded-2xl bg-white border border-fresh-green/10 hover:border-fresh-green/30 transition-all group shadow-sm hover:shadow-md">
+                  <div className="flex justify-between items-start mb-4">
+                    <Building2 className="w-8 h-8 text-fresh-green" />
+                    <span className="text-xs font-bold text-accent-gold bg-accent-gold/5 px-2 py-1 rounded-md">{exp.duration}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-deep-green mb-1">{exp.title}</h4>
+                  <p className="text-sm text-muted-foreground">{exp.location || exp.site}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Why Choose Us */}
           <div className="text-center mb-16">
             <div className="section-decorator-center">
@@ -296,7 +335,12 @@ export default function AboutPage() {
                 <h3 className="text-base sm:text-lg font-bold text-deep-green mb-0.5 group-hover:text-fresh-green transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-fresh-green text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2">{member.role}</p>
+                <p className="text-fresh-green text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">{member.role}</p>
+                {member.experience && (
+                  <div className="bg-fresh-green/10 text-fresh-green text-[9px] font-bold px-2 py-0.5 rounded-full mb-2">
+                    {member.experience} Experties
+                  </div>
+                )}
                 <div className="flex items-center gap-1.5 justify-center mb-2">
                   <GraduationCap className="w-3 h-3 text-accent-gold flex-shrink-0" />
                   <span className="text-[10px] sm:text-[11px] text-muted-foreground font-medium">{member.qualification}</span>

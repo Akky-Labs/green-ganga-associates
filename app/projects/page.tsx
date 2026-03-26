@@ -6,104 +6,177 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, Leaf, Filter } from "lucide-react";
 
-const categories = ["All", "Residential", "Commercial", "Industrial", "Farmhouse", "Terrace", "Government"];
+const categories = ["All", "Garden Development", "Farmhouse & Resorts", "Hotels", "Consultancy", "Others"];
 
 const projects = [
+  // Garden Development & Maintenance
   {
-    image: "/project-residential.png",
-    title: "Shalimar Imperial Gardens",
-    category: "Residential",
+    image: "/indian-institutional.png",
+    title: "GS infra - Client UPRNN PGI Hospital",
+    category: "Garden Development",
     location: "Lucknow, UP",
-    desc: "Premium residential landscape with ornamental gardens, stone pathways, and water features for luxury apartments.",
-    area: "2 Acres",
+    desc: "Comprehensive garden development and maintenance services for UPRNN at PGI Hospital campus.",
+    area: "Campus Wide",
   },
   {
-    image: "/project-commercial.png",
-    title: "Corporate Tech Park Campus",
-    category: "Commercial",
+    image: "/indian-institutional.png",
+    title: "UPRNN - Abdul Kalam UPAKTU University",
+    category: "Garden Development",
+    location: "New Campus, Lucknow",
+    desc: "Professional landscaping and green belt development for the new university campus.",
+    area: "Campus Wide",
+  },
+  {
+    image: "/indian-institutional.png",
+    title: "Durable Polymers Unit",
+    category: "Garden Development",
+    location: "Kanpur Road, Lucknow",
+    desc: "Industrial landscaping and environmental maintenance for the manufacturing unit.",
+    area: "Unit Site",
+  },
+
+  // Marriage Home & Farm Houses
+  {
+    image: "/indian-resort.png",
+    title: "GuruKirpa Utsav",
+    category: "Farmhouse & Resorts",
+    location: "Raebareli Road, Lalganj",
+    desc: "Elegant marriage home cum farmhouse with lush gardens and event spaces.",
+    area: "Marriage Resort",
+  },
+  {
+    image: "/indian-resort.png",
+    title: "Farm House Cum Resort",
+    category: "Farmhouse & Resorts",
+    location: "Satrik Road, Barabanki",
+    desc: "Luxury farmhouse cum resort development with native landscape and modern amenities.",
+    area: "Resort Complex",
+  },
+  {
+    image: "/indian-farmhouse.png",
+    title: "Farm House - Mr. Nandi Gopal Nandi",
+    category: "Farmhouse & Resorts",
+    location: "Prayagraj, UP",
+    desc: "High-profile farmhouse landscape design for Cabinet Minister Mr. Nandi Gopal Nandi.",
+    area: "Private Estate",
+  },
+  {
+    image: "/indian-farmhouse.png",
+    title: "Garden Development - Mr. Dinesh Sharma",
+    category: "Farmhouse & Resorts",
+    location: "Lucknow, UP",
+    desc: "Exclusive garden development project for Rajya Sabha Member and former Deputy CM.",
+    area: "Estate Garden",
+  },
+  {
+    image: "/indian-farmhouse.png",
+    title: "Farm House Vrindavan Yojna",
+    category: "Farmhouse & Resorts",
+    location: "Sec-B Road, Lucknow",
+    desc: "Contemporary farmhouse landscape design with minimalist planting and open lawns.",
+    area: "Farm House",
+  },
+
+  // Hotels
+  {
+    image: "/indian-hotel.png",
+    title: "The Grand Hotel & Resort",
+    category: "Hotels",
+    location: "RBL Road, Mohanlalganj, Lko",
+    desc: "Complete landscape design and development for the premium hotel and resort property.",
+    area: "Hotel Grounds",
+  },
+  {
+    image: "/indian-hotel.png",
+    title: "Shubh Villas Hotel & Resort",
+    category: "Hotels",
+    location: "Naini, Prayagraj",
+    desc: "Elegant garden and pool-side landscaping for the luxury resort suites.",
+    area: "Resort Grounds",
+  },
+
+  // Consultancy
+  {
+    image: "/indian-township.png",
+    title: "DS Group",
+    category: "Consultancy",
     location: "Noida, UP",
-    desc: "Vertical gardens, landscaped walkways, and open green spaces for 500+ employees in a modern office campus.",
-    area: "5 Acres",
+    desc: "Technical consultancy and service management for over 6 years.",
+    area: "6 Years Experience",
   },
   {
-    image: "/project-farmhouse.png",
-    title: "Singh Paradise Resort & Farms",
-    category: "Farmhouse",
+    image: "/indian-township.png",
+    title: "Orris Infrastructure Pvt Ltd",
+    category: "Consultancy",
+    location: "Gurugram, HR",
+    desc: "Landscaping consultancy and project planning for urban infrastructure development.",
+    area: "1 Year Experience",
+  },
+  {
+    image: "/indian-township.png",
+    title: "Jaypee Group (JIIT)",
+    category: "Consultancy",
+    location: "Noida, UP",
+    desc: "Extensive service period of 7 years managing landscapes for Jaypee institutions.",
+    area: "7 Years Experience",
+  },
+  {
+    image: "/indian-township.png",
+    title: "Ansal API Hitech Township",
+    category: "Consultancy",
     location: "Lucknow, UP",
-    desc: "Complete resort landscaping with native planting, pond, orchard, pergola, and outdoor entertainment areas.",
-    area: "10 Acres",
+    desc: "Managed landscaping for the 4,500-acre Hitech Township developmental project.",
+    area: "4,500 Acres",
+  },
+  {
+    image: "/indian-township.png",
+    title: "BBD Group - Viraj Constructions",
+    category: "Consultancy",
+    location: "Lucknow, UP",
+    desc: "Consultancy for a 350-acre integrated township project over a period of 9 years.",
+    area: "350 Acres",
+  },
+  {
+    image: "/indian-township.png",
+    title: "Jindal Steel & Power Ltd",
+    category: "Consultancy",
+    location: "Raigarh, CG",
+    desc: "Specialized consultancy for industrial green belts and site landscaping.",
+    area: "1 Year Experience",
+  },
+
+  // Others
+  {
+    image: "/indian-township.png",
+    title: "Rishita Developers - Mulberry Heights",
+    category: "Others",
+    location: "Lucknow, UP",
+    desc: "Modern landscaping for Manhattan-style luxury apartments and community spaces.",
+    area: "Residential Society",
+  },
+  {
+    image: "/indian-institutional.png",
+    title: "Gyan Dairy & Gyan Heritage School",
+    category: "Others",
+    location: "Aashiyana, Lucknow",
+    desc: "Greenery development for industrial dairy unit and school campus.",
+    area: "Campus Garden",
+  },
+  {
+    image: "/indian-resort.png",
+    title: "Rajender Nursery",
+    category: "Others",
+    location: "Faizabad Road, Barabanki",
+    desc: "Establishment and management of large-scale nursery units for ornamental plants.",
+    area: "Nursery Site",
   },
   {
     image: "/project-terrace.png",
-    title: "Sapphire Apartments Terrace Garden",
-    category: "Terrace",
-    location: "Delhi NCR",
-    desc: "Luxurious 3,000 sq ft rooftop terrace with container gardens, seating areas, and vertical greenery wall.",
-    area: "3,000 sqft",
-  },
-  {
-    image: "/project-industrial.png",
-    title: "Rail Coach Factory Landscape",
-    category: "Government",
-    location: "Rae Bareli, UP",
-    desc: "Complete campus landscaping for RCF with green buffers, recreation areas, and water management systems.",
-    area: "15 Acres",
-  },
-  {
-    image: "/hero.png",
-    title: "Kaps Resort Garden Design",
-    category: "Farmhouse",
+    title: "Penthouse at Jopling Road",
+    category: "Others",
     location: "Lucknow, UP",
-    desc: "Traditional garden design with fountains, flowering trees, and manicured lawns for a premium resort.",
-    area: "4 Acres",
-  },
-  {
-    image: "/project-commercial.png",
-    title: "Shalimar Commercial Complex",
-    category: "Commercial",
-    location: "Rana Pratap Marg, Lucknow",
-    desc: "Modern commercial complex with integrated green spaces, lobby gardens, and elegant parking landscapes.",
-    area: "3 Acres",
-  },
-  {
-    image: "/project-industrial.png",
-    title: "Command HQ Landscape",
-    category: "Government",
-    location: "Lucknow, UP",
-    desc: "Formal landscape design for Command Head Quarter with lawns, parade grounds, and ornamental gardens.",
-    area: "12 Acres",
-  },
-  {
-    image: "/project-farmhouse.png",
-    title: "Ritz Resort & Farms",
-    category: "Farmhouse",
-    location: "Lucknow, UP",
-    desc: "A sustainable farmhouse with organic kitchen garden, fruit orchards, and meditation garden spaces.",
-    area: "6 Acres",
-  },
-  {
-    image: "/project-terrace.png",
-    title: "Surya Auditorium Garden",
-    category: "Commercial",
-    location: "Lucknow, UP",
-    desc: "Elegant landscape design around auditorium premises with ornamental plants and ambient lighting.",
-    area: "1,800 sqft",
-  },
-  {
-    image: "/project-residential.png",
-    title: "Shalimar Royal Residence",
-    category: "Residential",
-    location: "Lucknow, UP",
-    desc: "Contemporary courtyard design with minimalist planting, water feature, and geometric hardscaping.",
-    area: "4,000 sqft",
-  },
-  {
-    image: "/project-industrial.png",
-    title: "STF Head Quarter Landscape",
-    category: "Government",
-    location: "Lucknow, UP",
-    desc: "Professional landscape design for STF headquarters with formal gardens and shade tree avenues.",
-    area: "8 Acres",
+    desc: "Exclusive terrace garden and landscape design for a premium penthouse unit.",
+    area: "Penthouse Terrace",
   },
 ];
 
@@ -128,8 +201,7 @@ export default function ProjectsPage() {
               <span className="text-fresh-green text-sm font-medium">Our Portfolio</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Projects That{" "}
-              <span className="text-accent-gold">Inspire</span>
+              Our <span className="text-accent-gold">Landscaping Portfolio</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-lg">
               Explore our diverse portfolio of landscaping projects across
@@ -148,11 +220,10 @@ export default function ProjectsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
-                  activeFilter === cat
-                    ? "bg-deep-green text-white shadow-lg shadow-deep-green/20"
-                    : "bg-white text-foreground/70 hover:bg-deep-green/10 hover:text-deep-green border border-gray-200"
-                }`}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${activeFilter === cat
+                  ? "bg-deep-green text-white shadow-lg shadow-deep-green/20"
+                  : "bg-white text-foreground/70 hover:bg-deep-green/10 hover:text-deep-green border border-gray-200"
+                  }`}
               >
                 {cat}
               </button>
@@ -217,10 +288,10 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { num: "500+", label: "Projects Completed" },
-              { num: "10+", label: "States Served" },
-              { num: "98%", label: "Client Satisfaction" },
-              { num: "15+", label: "Years Experience" },
+              { num: "25+", label: "Projects Completed" },
+              { num: "15+", label: "Cities Served" },
+              { num: "100%", label: "Client Satisfaction" },
+              { num: "25+", label: "Years Experience" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="text-4xl sm:text-5xl font-bold text-accent-gold mb-2">{s.num}</div>

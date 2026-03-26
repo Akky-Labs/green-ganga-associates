@@ -38,22 +38,22 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <Link href="/" className="flex items-center group mb-6">
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 shadow-2xl transition-all duration-300 group-hover:bg-white/10 group-hover:scale-105">
-                  <Image 
-                    src="/logo.png" 
-                    alt="Green Ganga Associates Logo" 
-                    width={220} 
-                    height={80} 
+                  <Image
+                    src="/logo.png"
+                    alt="Green Ganga Associates Logo"
+                    width={220}
+                    height={80}
                     className="h-12 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100"
                   />
                 </div>
               </Link>
               <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-                Professional landscaping and gardening firm based in Lucknow. 
-                We deliver more than just plants — we deliver reliability and 
+                Professional landscaping and gardening firm based in Lucknow.
+                We deliver more than just plants — we deliver reliability and
                 long-term value across residential and commercial projects.
               </p>
               <div className="flex items-center gap-3">
-                 <span className="text-accent-gold text-xs font-bold uppercase tracking-widest">Your Green Vision, Our Expertise</span>
+                <span className="text-accent-gold text-xs font-bold uppercase tracking-widest">Your Green Vision, Our Expertise</span>
               </div>
             </div>
 
@@ -108,9 +108,9 @@ export default function Footer() {
                     <MapPin className="w-4 h-4 text-fresh-green" />
                   </div>
                   <span className="text-white/50 text-sm leading-relaxed">
-                    Lucknow, Uttar Pradesh,
+                    Adds-Vrindavan yojna,
                     <br />
-                    India
+                    Lucknow, Uttar Pradesh
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
@@ -147,10 +147,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Green Ganga Associates. All rights
               reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <Link href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors duration-300">Privacy Policy</Link>
-              <Link href="#" className="text-white/30 hover:text-white/60 text-xs transition-colors duration-300">Terms of Service</Link>
-            </div>
+
           </div>
         </div>
       </div>

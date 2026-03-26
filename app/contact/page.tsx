@@ -24,7 +24,7 @@ const contactInfo = [
   {
     icon: <MapPin className="w-5 h-5" />,
     title: "Office Address",
-    lines: ["Green Ganga Associates", "Lucknow, Uttar Pradesh", "India"],
+    lines: ["Green Ganga Associates", "Adds-Vrindavan yojna", "Lucknow, Uttar Pradesh"],
   },
   {
     icon: <Mail className="w-5 h-5" />,
@@ -38,6 +38,11 @@ const contactInfo = [
     lines: ["9999177119"],
     href: "tel:+919999177119",
   },
+  {
+    icon: <Leaf className="w-5 h-5" />,
+    title: "GSTIN",
+    lines: ["09DCYPS9697J2ZV"],
+  },
 ];
 
 const businessHours = [
@@ -45,12 +50,12 @@ const businessHours = [
 ];
 
 const teamMembers = [
-  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G. Economics", image: "/team-seema.png" },
-  { name: "Dr. Ajay Sharma", role: "Consultant", qualification: "Ph.D. Horticulture & Landscaping", image: "/team-ajay.png" },
-  { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/team-aditya.png" },
-  { name: "Nisha Kumari", role: "Team Manager (House)", qualification: "B.Sc. Agriculture, SHUATS", image: "/team-nisha.png" },
-  { name: "Aditi", role: "Field Associate", qualification: "B.Sc. Agriculture, CCSU Meerut", image: "/team-aditi.png" },
-  { name: "Aryan Sharma", role: "Field Associate", qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj", image: "/team-aryan.png" },
+  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G. Economics", image: "/images/female-avatar.png" },
+  { name: "Dr. Ajay Sharma", role: "Consultant", qualification: "Ph.D. Horticulture & Landscaping", image: "/images/ajaysharma.jpeg" },
+  { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/images/adityasharma.jpeg" },
+  { name: "Nisha Kumari", role: "Team Manager (House)", qualification: "B.Sc. Agriculture, SHUATS", image: "/images/nishakumari.jpeg" },
+  { name: "Aditi", role: "Field Associate", qualification: "B.Sc. Agriculture, CCSU Meerut", image: "/images/female-avatar.png" },
+  { name: "Aryan Sharma", role: "Field Associate", qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj", image: "/images/male-avatar.png" },
 ];
 
 export default function ContactPage() {
@@ -68,7 +73,7 @@ export default function ContactPage() {
     e.preventDefault();
 
     // Format the WhatsApp message
-    const message = `*New Inquiry from Website*%0A%0A` +
+    const message = `*I am comming from your website Green Ganga*%0A%0A` +
       `*Name:* ${formData.name}%0A` +
       `*Email:* ${formData.email}%0A` +
       `*Phone:* ${formData.phone}%0A` +
@@ -102,8 +107,7 @@ export default function ContactPage() {
               <span className="text-fresh-green text-sm font-medium">Contact Us</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Let&apos;s Create Something{" "}
-              <span className="text-accent-gold">Beautiful</span>
+              Let's Create Something <span className="text-accent-gold">Beautiful</span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed max-w-lg">
               We would love to hear from you and discuss how Green Ganga Associates
