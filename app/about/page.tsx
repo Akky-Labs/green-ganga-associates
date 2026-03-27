@@ -243,7 +243,6 @@ export default function AboutPage() {
                 { title: "DS Group", duration: "6 Years", location: "Noida" },
                 { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
                 { title: "Ansal API", duration: "5 Years", site: "4,500 Acre Hitech Township" },
-                { title: "BBD Group", duration: "9 Years", site: "350 Acre Township" },
                 { title: "Orris Infrastructure", duration: "1 Year", location: "Gurugram" },
                 { title: "Jindal Steel & Power", duration: "1 Year", location: "Raigarh (C.G)" },
               ].map((exp, idx) => (

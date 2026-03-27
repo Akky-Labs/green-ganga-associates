@@ -128,14 +128,7 @@ const projects = [
     desc: "Managed landscaping for the 4,500-acre Hitech Township developmental project.",
     area: "4,500 Acres",
   },
-  {
-    image: "/indian-township.png",
-    title: "BBD Group - Viraj Constructions",
-    category: "Consultancy",
-    location: "Lucknow, UP",
-    desc: "Consultancy for a 350-acre integrated township project over a period of 9 years.",
-    area: "350 Acres",
-  },
+
   {
     image: "/indian-township.png",
     title: "Jindal Steel & Power Ltd",
