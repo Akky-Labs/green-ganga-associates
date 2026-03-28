@@ -83,11 +83,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} h-full antialiased`}>
+    <html lang="en" className={`${outfit.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className="min-h-full flex flex-col font-outfit">
+      <body className="min-h-full flex flex-col font-outfit" suppressHydrationWarning>
         <GoogleLocalBusinessSchema />
         <AOSProvider />
         <NatureEffects />

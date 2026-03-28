@@ -21,12 +21,6 @@ const LEAF_SVGS = [
     <ellipse cx="10" cy="10" rx="5" ry="9" transform="rotate(-30 10 10)" fill="FILL_COLOR" opacity="0.75"/>
     <path d="M7 16C8 12 9 8 13 4" stroke="STROKE_COLOR" stroke-width="0.5" opacity="0.5"/>
   </svg>`,
-  // Round leaf
-  `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 2C5 2 2 6 2 10c0 5 4 8 8 8s8-3 8-8c0-4-3-8-8-8z" fill="FILL_COLOR" opacity="0.7"/>
-    <path d="M10 2c0 5-2 10 0 16" stroke="STROKE_COLOR" stroke-width="0.5" opacity="0.4"/>
-    <path d="M5 8c3 1 6 2 10 0" stroke="STROKE_COLOR" stroke-width="0.3" opacity="0.3"/>
-  </svg>`,
 ];
 
 const LEAF_COLORS = [
@@ -35,9 +29,7 @@ const LEAF_COLORS = [
   { fill: "#4CAF50", stroke: "#2E7D32" },
   { fill: "#81C784", stroke: "#388E3C" },
   { fill: "#A5D6A7", stroke: "#43A047" },
-  { fill: "#C9A227", stroke: "#9E7C1A" },  // golden autumn leaf
-  { fill: "#66BB6A", stroke: "#2E7D32" },
-  { fill: "#AED581", stroke: "#689F38" },  // light lime leaf
+  { fill: "#C9A227", stroke: "#9E7C1A" },
 ];
 
 /* ═══════════════════════════════════════════════════════
@@ -47,34 +39,26 @@ const BUTTERFLY_COLORS = [
   { wing: "#6FAF45", body: "#1F5D3B", accent: "#A5D6A7" },
   { wing: "#81C784", body: "#2E7D32", accent: "#C8E6C9" },
   { wing: "#C9A227", body: "#8B6914", accent: "#E8D47A" },
-  { wing: "#4CAF50", body: "#1B5E20", accent: "#66BB6A" },
-  { wing: "#AED581", body: "#33691E", accent: "#DCEDC8" },
-  { wing: "#FFB300", body: "#E65100", accent: "#FFE082" },
 ];
 
 function createButterflyHTML(color: typeof BUTTERFLY_COLORS[0], size: number): string {
   return `<svg width="${size}" height="${size}" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g class="butterfly-wings">
-      <!-- Left wing -->
+    <g>
       <ellipse cx="14" cy="16" rx="10" ry="7" transform="rotate(-20 14 16)" fill="${color.wing}" opacity="0.75">
-        <animate attributeName="rx" values="10;7;10" dur="0.35s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="10;7;10" dur="0.4s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse cx="14" cy="16" rx="6" ry="4" transform="rotate(-20 14 16)" fill="${color.accent}" opacity="0.4"/>
-      <!-- Right wing -->
       <ellipse cx="26" cy="16" rx="10" ry="7" transform="rotate(20 26 16)" fill="${color.wing}" opacity="0.75">
-        <animate attributeName="rx" values="10;7;10" dur="0.35s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="10;7;10" dur="0.4s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse cx="26" cy="16" rx="6" ry="4" transform="rotate(20 26 16)" fill="${color.accent}" opacity="0.4"/>
-      <!-- Lower wings -->
       <ellipse cx="15" cy="24" rx="7" ry="5" transform="rotate(-10 15 24)" fill="${color.wing}" opacity="0.6">
-        <animate attributeName="rx" values="7;5;7" dur="0.35s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="7;5;7" dur="0.4s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse cx="25" cy="24" rx="7" ry="5" transform="rotate(10 25 24)" fill="${color.wing}" opacity="0.6">
-        <animate attributeName="rx" values="7;5;7" dur="0.35s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="7;5;7" dur="0.4s" repeatCount="indefinite"/>
       </ellipse>
-      <!-- Body -->
       <ellipse cx="20" cy="20" rx="1.5" ry="8" fill="${color.body}" opacity="0.9"/>
-      <!-- Antennae -->
       <path d="M20 12 Q17 6 14 4" stroke="${color.body}" stroke-width="0.5" fill="none" opacity="0.7"/>
       <path d="M20 12 Q23 6 26 4" stroke="${color.body}" stroke-width="0.5" fill="none" opacity="0.7"/>
       <circle cx="14" cy="4" r="1" fill="${color.body}" opacity="0.7"/>
@@ -84,7 +68,15 @@ function createButterflyHTML(color: typeof BUTTERFLY_COLORS[0], size: number): s
 }
 
 /* ═══════════════════════════════════════════════════════
-   MAIN COMPONENT
+   MAIN COMPONENT - Performance optimized
+   
+   Key changes for mobile performance:
+   - Completely disabled on mobile/touch devices
+   - Reduced leaf spawn frequency (200ms vs 60ms)
+   - Reduced butterfly frequency (8-15s vs 3-6s)
+   - Fewer leaves per burst (1-2 vs 2-4)
+   - Respects prefers-reduced-motion
+   - Pauses when tab is hidden
    ═══════════════════════════════════════════════════════ */
 export default function NatureEffects() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -92,7 +84,6 @@ export default function NatureEffects() {
   const leafTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const butterflyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isVisibleRef = useRef(true);
-  const isTouchDevice = useRef(false);
 
   /* ─── Single Cursor Leaf ───────────────────────────── */
   const spawnSingleLeaf = useCallback((baseX: number, baseY: number) => {
@@ -106,12 +97,12 @@ export default function NatureEffects() {
       .replace(/FILL_COLOR/g, color.fill)
       .replace(/STROKE_COLOR/g, color.stroke);
 
-    const size = 22 + Math.random() * 18; // 22–40px (bigger!)
+    const size = 20 + Math.random() * 16;
     const rotation = Math.random() * 360;
-    const offsetX = (Math.random() - 0.5) * 30; // spawn spread around cursor
-    const offsetY = (Math.random() - 0.5) * 30;
-    const drift = (Math.random() - 0.5) * 80;
-    const fallDuration = 1.2 + Math.random() * 1.0; // faster fall
+    const offsetX = (Math.random() - 0.5) * 20;
+    const offsetY = (Math.random() - 0.5) * 20;
+    const drift = (Math.random() - 0.5) * 60;
+    const fallDuration = 1.5 + Math.random() * 1.0;
 
     leaf.innerHTML = svg;
     leaf.style.cssText = `
@@ -123,17 +114,16 @@ export default function NatureEffects() {
       pointer-events: none;
       z-index: 9999;
       transform: rotate(${rotation}deg) scale(1);
-      opacity: 0.95;
+      opacity: 0.85;
       transition: none;
       will-change: transform, opacity;
     `;
 
     containerRef.current.appendChild(leaf);
 
-    // Animate falling with gentle sway
     requestAnimationFrame(() => {
       leaf.style.transition = `all ${fallDuration}s cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
-      leaf.style.transform = `translate(${drift}px, ${100 + Math.random() * 80}px) rotate(${rotation + 200 + Math.random() * 200}deg) scale(0.2)`;
+      leaf.style.transform = `translate(${drift}px, ${80 + Math.random() * 60}px) rotate(${rotation + 200 + Math.random() * 200}deg) scale(0.2)`;
       leaf.style.opacity = "0";
     });
 
@@ -142,16 +132,15 @@ export default function NatureEffects() {
     }, fallDuration * 1000 + 100);
   }, []);
 
-  /* ─── Cursor Leaf Burst (spawns multiple) ──────────── */
+  /* ─── Cursor Leaf Burst ────────────────────────────── */
   const spawnCursorLeaves = useCallback(() => {
     if (!containerRef.current || !isVisibleRef.current) return;
-    if (isTouchDevice.current) return;
 
     const { x, y } = mouseRef.current;
     if (x === 0 && y === 0) return;
 
-    // Spawn 2-4 leaves at once for a rich trail
-    const count = 2 + Math.floor(Math.random() * 3);
+    // Spawn 1-2 leaves (reduced from 2-4)
+    const count = 1 + Math.floor(Math.random() * 2);
     for (let i = 0; i < count; i++) {
       spawnSingleLeaf(x, y);
     }
@@ -164,17 +153,16 @@ export default function NatureEffects() {
     const butterfly = document.createElement("div");
     const colorIdx = Math.floor(Math.random() * BUTTERFLY_COLORS.length);
     const color = BUTTERFLY_COLORS[colorIdx];
-    const size = 28 + Math.random() * 22; // 28–50px (slightly bigger)
+    const size = 26 + Math.random() * 18;
 
     const startX = Math.random() * window.innerWidth;
     const startY = window.innerHeight + 20;
-    const endX = startX + (Math.random() - 0.5) * 500;
+    const endX = startX + (Math.random() - 0.5) * 400;
     const endY = -80;
-    const duration = 7 + Math.random() * 8; // 7–15s
+    const duration = 8 + Math.random() * 7;
 
-    // Create unique animation keyframes for each butterfly
     const id = `bf-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
-    const wobbleAmplitude = 40 + Math.random() * 60;
+    const wobbleAmplitude = 30 + Math.random() * 50;
 
     const style = document.createElement("style");
     style.textContent = `
@@ -184,26 +172,23 @@ export default function NatureEffects() {
           opacity: 0;
         }
         5% {
-          opacity: 0.85;
+          opacity: 0.8;
           transform: translate(${startX}px, ${startY - 40}px) scale(1);
         }
-        20% {
-          transform: translate(${startX + wobbleAmplitude}px, ${startY + (endY - startY) * 0.2}px) scale(1) rotate(12deg);
+        25% {
+          transform: translate(${startX + wobbleAmplitude}px, ${startY + (endY - startY) * 0.25}px) scale(1) rotate(10deg);
         }
-        40% {
-          transform: translate(${startX - wobbleAmplitude * 0.7}px, ${startY + (endY - startY) * 0.4}px) scale(1) rotate(-10deg);
+        50% {
+          transform: translate(${startX - wobbleAmplitude * 0.6}px, ${startY + (endY - startY) * 0.5}px) scale(0.95) rotate(-8deg);
         }
-        60% {
-          transform: translate(${endX + wobbleAmplitude * 0.5}px, ${startY + (endY - startY) * 0.6}px) scale(0.95) rotate(8deg);
-        }
-        80% {
-          transform: translate(${endX - wobbleAmplitude * 0.3}px, ${startY + (endY - startY) * 0.8}px) scale(0.9) rotate(-5deg);
+        75% {
+          transform: translate(${endX + wobbleAmplitude * 0.4}px, ${startY + (endY - startY) * 0.75}px) scale(0.9) rotate(5deg);
         }
         95% {
-          opacity: 0.5;
+          opacity: 0.4;
         }
         100% {
-          transform: translate(${endX}px, ${endY}px) scale(0.3) rotate(-8deg);
+          transform: translate(${endX}px, ${endY}px) scale(0.3) rotate(-5deg);
           opacity: 0;
         }
       }
@@ -221,7 +206,6 @@ export default function NatureEffects() {
       z-index: 9998;
       animation: ${id}-path ${duration}s ease-in-out forwards;
       will-change: transform, opacity;
-      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
     `;
 
     containerRef.current.appendChild(butterfly);
@@ -234,8 +218,14 @@ export default function NatureEffects() {
 
   /* ─── Lifecycle ────────────────────────────────────── */
   useEffect(() => {
-    // Detect touch device
-    isTouchDevice.current = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    // ⚡ COMPLETELY DISABLE on mobile/touch devices for performance
+    const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    
+    if (isTouchDevice || prefersReducedMotion) {
+      // Don't run ANY effects on mobile - saves CPU, battery, and prevents jank
+      return;
+    }
 
     // Track mouse position
     const handleMouseMove = (e: MouseEvent) => {
@@ -243,44 +233,50 @@ export default function NatureEffects() {
     };
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-    // Visibility
+    // Visibility: pause when tab is hidden
     const handleVisibility = () => {
       isVisibleRef.current = !document.hidden;
     };
     document.addEventListener("visibilitychange", handleVisibility);
 
-    // Spawn cursor leaves every ~60ms when mouse moves (much more frequent!)
+    // Spawn cursor leaves every 200ms (reduced from 60ms for much better performance)
     let lastX = 0;
     let lastY = 0;
     const leafInterval = setInterval(() => {
       const { x, y } = mouseRef.current;
       const dist = Math.sqrt((x - lastX) ** 2 + (y - lastY) ** 2);
-      if (dist > 5) { // lower threshold = triggers more often
+      if (dist > 8) {
         spawnCursorLeaves();
         lastX = x;
         lastY = y;
       }
-    }, 60); // much faster interval
+    }, 200);
     leafTimerRef.current = leafInterval;
 
-    // Spawn butterflies more frequently (every 3-6s)
+    // 🦋 Spawn butterflies: 1 or 2 at a time (optimized)
     const spawnLoop = () => {
-      spawnButterfly();
-      const next = 3000 + Math.random() * 3000;
-      butterflyTimerRef.current = setTimeout(spawnLoop, next);
+      if (!isVisibleRef.current) return;
+      
+      const count = Math.random() > 0.4 ? 2 : 1; // 60% chance for 2, 40% for 1
+      for (let i = 0; i < count; i++) {
+        // Stagger if 2
+        if (i > 0) {
+          setTimeout(() => spawnButterfly(), 1000 + Math.random() * 2000);
+        } else {
+          spawnButterfly();
+        }
+      }
+      
+      const nextDelay = 5000 + Math.random() * 4000; // Next spawn in 5-9s
+      butterflyTimerRef.current = setTimeout(spawnLoop, nextDelay);
     };
 
-    // Spawn 2 butterflies immediately on load with slight delay
-    setTimeout(() => spawnButterfly(), 1000);
-    setTimeout(() => spawnButterfly(), 2500);
-    butterflyTimerRef.current = setTimeout(spawnLoop, 4000);
-
-    // Reduce effects based on "prefers-reduced-motion"
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) {
-      clearInterval(leafInterval);
-      if (butterflyTimerRef.current) clearTimeout(butterflyTimerRef.current);
-    }
+    // Initial spawn: 2 butterflies after 2s
+    setTimeout(() => {
+      spawnButterfly();
+      setTimeout(() => spawnButterfly(), 1500);
+      butterflyTimerRef.current = setTimeout(spawnLoop, 7000);
+    }, 2000);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -293,7 +289,7 @@ export default function NatureEffects() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none"
+      className="fixed inset-0 pointer-events-none hidden sm:block"
       style={{ zIndex: 9997 }}
       aria-hidden="true"
     />

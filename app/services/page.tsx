@@ -101,7 +101,7 @@ export default function ServicesPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/project-commercial.png" alt="Green Ganga services" fill className="object-cover" />
+          <Image src="/project-commercial.png" alt="Green Ganga services" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
               >
                 <div className={`relative ${i % 2 !== 0 ? "lg:[direction:ltr]" : ""}`}>
                   <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10 img-hover-zoom">
-                    <Image src={service.image} alt={service.title} width={700} height={450} className="object-cover w-full h-[350px] lg:h-[420px]" />
+                    <Image src={service.image} alt={service.title} width={700} height={450} className="object-cover w-full h-[350px] lg:h-[420px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
                   </div>
                   <div className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-deep-green/30">
                     {String(i + 1).padStart(2, "0")}

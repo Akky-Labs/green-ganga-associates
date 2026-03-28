@@ -183,7 +183,7 @@ export default function ProjectsPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/project-farmhouse.png" alt="Green Ganga projects" fill className="object-cover" />
+          <Image src="/project-farmhouse.png" alt="Green Ganga projects" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>
@@ -236,6 +236,8 @@ export default function ProjectsPage() {
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-green/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute top-4 left-4">

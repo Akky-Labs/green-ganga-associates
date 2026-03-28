@@ -225,3 +225,51 @@
 ::-webkit-scrollbar-thumb:hover { background: #163D28; }
 
 ::selection { background-color: #1F5D3B; color: #ffffff; }
+
+/* ─── AOS Safety Net ──────────────────────────────────────────── */
+/* If AOS JS fails to load, content should still be visible after 3s */
+@keyframes aos-fallback {
+  to { opacity: 1; transform: none; }
+}
+
+/* On mobile, if AOS hasn't initialized after 3s, force-show all content */
+@media (max-width: 768px) {
+  [data-aos] {
+    animation: aos-fallback 0s 3s forwards;
+  }
+  /* Also ensure AOS-initialized elements are always visible on mobile */
+  [data-aos].aos-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Mobile Performance ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Disable expensive hover animations on touch devices */
+  .premium-card:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(31, 93, 59, 0.08);
+  }
+  .img-hover-zoom:hover img {
+    transform: none;
+  }
+  /* Disable floating decorativs */
+  .animate-float {
+    animation: none;
+  }
+  /* Reduce blur effects that hurt mobile GPU */
+  .blur-3xl {
+    filter: blur(32px);
+  }
+}
+
+/* ─── Touch device optimizations ──────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .premium-card:hover {
+    transform: none;
+  }
+  .animate-shimmer {
+    animation: none;
+  }
+}

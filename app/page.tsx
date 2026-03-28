@@ -136,6 +136,7 @@ export default function Home() {
             alt="Best landscaping and gardening services in Lucknow by Green Ganga Associates"
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -143,15 +144,15 @@ export default function Home() {
         </div>
 
         {/* Floating decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
           <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-accent-gold/40 animate-float" />
           <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-fresh-green/30 animate-float delay-200" />
           <div className="absolute bottom-1/4 right-1/5 w-1.5 h-1.5 rounded-full bg-white/20 animate-float delay-400" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 lg:py-40">
-          <div className="max-w-2xl" data-aos="fade-up">
-
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+          {/* NO data-aos on hero - critical above-fold content must be visible immediately */}
+          <div className="max-w-2xl animate-fade-in-up">
 
             <h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
@@ -187,7 +188,7 @@ export default function Home() {
             </div>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10">
               {[
                 { num: "25+", label: "Projects" },
                 { num: "15+", label: "cities" },
@@ -231,17 +232,17 @@ export default function Home() {
 
       {/* ─── PARALLAX STATS BANNER ──────────────────────── */}
       <section className="relative h-[300px] sm:h-[400px] flex items-center justify-center overflow-hidden">
-        {/* Parallax Background */}
-        <div
-          className="absolute inset-0 z-0 bg-fixed bg-center bg-cover"
-          style={{
-            backgroundImage: "url('/hero.png')",
-            backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
-          }}
-        />
+        {/* Background - no background-attachment:fixed on mobile (iOS doesn't support it) */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero.png"
+            alt="Green Ganga Statistics Background"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            loading="lazy"
+          />
+        </div>
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/70 z-[1]" />
 
@@ -287,6 +288,8 @@ export default function Home() {
                   width={700}
                   height={500}
                   className="object-cover w-full h-[400px] lg:h-[500px]"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white rounded-2xl shadow-xl p-5 border border-deep-green/5">
@@ -456,7 +459,7 @@ export default function Home() {
                 data-aos-delay={`${projects.indexOf(project) * 60}`}
               >
                 <div className="aspect-[4/3]">
-                  <Image src={project.image} alt={project.title} fill className="object-cover" />
+                  <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -508,6 +511,8 @@ export default function Home() {
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 112px, 144px"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-deep-green mb-0.5 group-hover:text-fresh-green transition-colors">

@@ -90,6 +90,8 @@ export default function GalleryPage() {
           alt="Green Ganga Gallery"
           fill
           className="object-cover"
+          sizes="100vw"
+          priority
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-soft-beige via-transparent to-transparent" />
@@ -117,10 +119,12 @@ export default function GalleryPage() {
               onClick={() => openLightbox(index)}
             >
               <Image
-                src={`/gallery/${img}`}
+                src={`/gallery/${encodeURIComponent(img)}`}
                 alt={`Green Ganga Work ${index + 1}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-deep-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
@@ -167,17 +171,17 @@ export default function GalleryPage() {
           </button>
 
           <button
-            className="absolute left-6 w-14 h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 hidden md:flex"
+            className="absolute left-4 md:left-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-[110]"
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
           >
-            <ChevronLeft className="w-8 h-8" />
+            <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
           </button>
 
           <button
-            className="absolute right-6 w-14 h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 hidden md:flex"
+            className="absolute right-4 md:right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-[110]"
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
           >
-            <ChevronRight className="w-8 h-8" />
+            <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
           </button>
 
           {/* Image Container */}
@@ -186,10 +190,11 @@ export default function GalleryPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={`/gallery/${galleryImages[selectedImage]}`}
+              src={`/gallery/${encodeURIComponent(galleryImages[selectedImage])}`}
               alt="Gallery Image Full"
               fill
               className="object-contain"
+              sizes="90vw"
               priority
             />
 

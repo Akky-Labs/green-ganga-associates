@@ -96,7 +96,7 @@ export default function ContactPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/hero.png" alt="Contact Green Ganga" fill className="object-cover" />
+          <Image src="/hero.png" alt="Contact Green Ganga" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>

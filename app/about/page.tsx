@@ -120,7 +120,7 @@ export default function AboutPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/project-farmhouse.png" alt="Green Ganga landscaping project" fill className="object-cover" />
+          <Image src="/project-farmhouse.png" alt="Green Ganga landscaping project" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10">
-                <Image src="/project-residential.png" alt="Green Ganga project" width={700} height={500} className="object-cover w-full h-[450px]" />
+                <Image src="/project-residential.png" alt="Green Ganga project" width={700} height={500} className="object-cover w-full h-[450px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-deep-green text-white rounded-2xl p-6 shadow-xl">
                 <Leaf className="w-8 h-8 text-fresh-green mb-1" />
@@ -329,6 +329,8 @@ export default function AboutPage() {
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 112px, 144px"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-deep-green mb-0.5 group-hover:text-fresh-green transition-colors">
