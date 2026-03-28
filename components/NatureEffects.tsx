@@ -139,8 +139,8 @@ export default function NatureEffects() {
     const { x, y } = mouseRef.current;
     if (x === 0 && y === 0) return;
 
-    // Spawn 1-2 leaves (reduced from 2-4)
-    const count = 1 + Math.floor(Math.random() * 2);
+    // Spawn 1-3 leaves (slightly more for better effect)
+    const count = 1 + Math.floor(Math.random() * 3);
     for (let i = 0; i < count; i++) {
       spawnSingleLeaf(x, y);
     }
@@ -239,7 +239,7 @@ export default function NatureEffects() {
     };
     document.addEventListener("visibilitychange", handleVisibility);
 
-    // Spawn cursor leaves every 200ms (reduced from 60ms for much better performance)
+    // Spawn cursor leaves every 120ms (optimized balance between visual and performance)
     let lastX = 0;
     let lastY = 0;
     const leafInterval = setInterval(() => {
@@ -250,7 +250,7 @@ export default function NatureEffects() {
         lastX = x;
         lastY = y;
       }
-    }, 200);
+    }, 120);
     leafTimerRef.current = leafInterval;
 
     // 🦋 Spawn butterflies: 1 or 2 at a time (optimized)
