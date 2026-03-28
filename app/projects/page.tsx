@@ -11,7 +11,7 @@ const categories = ["All", "Garden Development", "Farmhouse & Resorts", "Hotels"
 const projects = [
   // Garden Development & Maintenance
   {
-    image: "/indian-institutional.png",
+    image: "/client/GS infra.jpeg",
     title: "GS infra - Client UPRNN PGI Hospital",
     category: "Garden Development",
     location: "Lucknow, UP",
@@ -19,7 +19,7 @@ const projects = [
     area: "Campus Wide",
   },
   {
-    image: "/indian-institutional.png",
+    image: "/client/abdul-kalam.png",
     title: "UPRNN - Abdul Kalam UPAKTU University",
     category: "Garden Development",
     location: "New Campus, Lucknow",
@@ -27,7 +27,7 @@ const projects = [
     area: "Campus Wide",
   },
   {
-    image: "/indian-institutional.png",
+    image: "/project-industrial.png",
     title: "Durable Polymers Unit",
     category: "Garden Development",
     location: "Kanpur Road, Lucknow",
@@ -37,7 +37,7 @@ const projects = [
 
   // Marriage Home & Farm Houses
   {
-    image: "/indian-resort.png",
+    image: "/client/guru-kripa-utsav.jpeg",
     title: "GuruKirpa Utsav",
     category: "Farmhouse & Resorts",
     location: "Raebareli Road, Lalganj",
@@ -45,7 +45,7 @@ const projects = [
     area: "Marriage Resort",
   },
   {
-    image: "/indian-resort.png",
+    image: "/client/farmhouse-cum-resort.jpeg",
     title: "Farm House Cum Resort",
     category: "Farmhouse & Resorts",
     location: "Satrik Road, Barabanki",
@@ -53,7 +53,7 @@ const projects = [
     area: "Resort Complex",
   },
   {
-    image: "/indian-farmhouse.png",
+    image: "/client/nandi-farmhuse.jpeg",
     title: "Farm House - Mr. Nandi Gopal Nandi",
     category: "Farmhouse & Resorts",
     location: "Prayagraj, UP",
@@ -61,7 +61,7 @@ const projects = [
     area: "Private Estate",
   },
   {
-    image: "/indian-farmhouse.png",
+    image: "/client/garden-development-mr-dines.jpeg",
     title: "Garden Development - Mr. Dinesh Sharma",
     category: "Farmhouse & Resorts",
     location: "Lucknow, UP",
@@ -69,7 +69,7 @@ const projects = [
     area: "Estate Garden",
   },
   {
-    image: "/indian-farmhouse.png",
+    image: "/client/farmhouse-vrindavan-yojna.jpeg",
     title: "Farm House Vrindavan Yojna",
     category: "Farmhouse & Resorts",
     location: "Sec-B Road, Lucknow",
@@ -79,7 +79,7 @@ const projects = [
 
   // Hotels
   {
-    image: "/indian-hotel.png",
+    image: "/client/grand-hotel-resort.jpeg",
     title: "The Grand Hotel & Resort",
     category: "Hotels",
     location: "RBL Road, Mohanlalganj, Lko",
@@ -87,7 +87,7 @@ const projects = [
     area: "Hotel Grounds",
   },
   {
-    image: "/indian-hotel.png",
+    image: "/client/subh-vilas-hotel.jpeg",
     title: "Shubh Villas Hotel & Resort",
     category: "Hotels",
     location: "Naini, Prayagraj",
@@ -97,7 +97,7 @@ const projects = [
 
   // Consultancy
   {
-    image: "/indian-township.png",
+    image: "/client/ds-group.jpeg",
     title: "DS Group",
     category: "Consultancy",
     location: "Noida, UP",
@@ -105,7 +105,7 @@ const projects = [
     area: "6 Years Experience",
   },
   {
-    image: "/indian-township.png",
+    image: "/client/orris.jpeg",
     title: "Orris Infrastructure Pvt Ltd",
     category: "Consultancy",
     location: "Gurugram, HR",
@@ -113,7 +113,7 @@ const projects = [
     area: "1 Year Experience",
   },
   {
-    image: "/indian-township.png",
+    image: "/client/jaypee-group.jpeg",
     title: "Jaypee Group (JIIT)",
     category: "Consultancy",
     location: "Noida, UP",
@@ -121,7 +121,7 @@ const projects = [
     area: "7 Years Experience",
   },
   {
-    image: "/indian-township.png",
+    image: "/client/ansal-api.jpeg",
     title: "Ansal API Hitech Township",
     category: "Consultancy",
     location: "Lucknow, UP",
@@ -130,7 +130,7 @@ const projects = [
   },
 
   {
-    image: "/indian-township.png",
+    image: "/client/jindal.jpeg",
     title: "Jindal Steel & Power Ltd",
     category: "Consultancy",
     location: "Raigarh, CG",

@@ -74,12 +74,12 @@ const services = [
 ];
 
 const projects = [
-  { image: "/indian-institutional.png", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
-  { image: "/indian-resort.png", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
-  { image: "/indian-farmhouse.png", title: "Minister Nandi Gopal Nandi Farm", category: "Farmhouse & Resorts", location: "Prayagraj" },
-  { image: "/indian-township.png", title: "Ansal API Hitech Township", category: "Consultancy", location: "Lucknow" },
-  { image: "/indian-institutional.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
-  { image: "/indian-hotel.png", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
+  { image: "/client/GS infra.jpeg", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
+  { image: "/client/guru-kripa-utsav.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
+  { image: "/client/nandi-farmhuse.jpeg", title: "Minister Nandi Gopal Nandi Farm", category: "Farmhouse & Resorts", location: "Prayagraj" },
+  { image: "/client/ansal-api.jpeg", title: "Ansal API Hitech Township", category: "Consultancy", location: "Lucknow" },
+  { image: "/client/abdul-kalam.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
+  { image: "/client/grand-hotel-resort.jpeg", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
 ];
 
 const team = [
@@ -132,7 +132,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
           <Image
-            src="/hero.png"
+            src="/client/ds-group.jpeg"
             alt="Best landscaping and gardening services in Lucknow by Green Ganga Associates"
             fill
             className="object-cover"
@@ -235,7 +235,7 @@ export default function Home() {
         {/* Background - no background-attachment:fixed on mobile (iOS doesn't support it) */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.png"
+            src="/client/GS infra.jpeg"
             alt="Green Ganga Statistics Background"
             fill
             className="object-cover"
@@ -298,7 +298,7 @@ export default function Home() {
                     <Trophy className="w-6 h-6 text-accent-gold" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-deep-green">500+</div>
+                    <div className="text-2xl font-bold text-deep-green">25+</div>
                     <div className="text-xs text-muted-foreground">Projects Delivered</div>
                   </div>
                 </div>
