@@ -112,7 +112,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
       </body>
-      <GoogleAnalytics gaId="G-XXXXXXXXXX" /> {/* Replace with actual GA4 Measurement ID */}
+      <GoogleAnalytics gaId="G-SZ1EBXLMWT" />
     </html>
   );
 }
