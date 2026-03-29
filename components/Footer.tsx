@@ -24,7 +24,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-dark-green to-[#0f2918] text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+    <footer className="bg-linear-to-b from-dark-green to-[#0f2918] text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-t-[5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-fresh-green/5 blur-3xl" />
@@ -37,17 +37,27 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {/* Brand Column */}
             <div className="lg:col-span-1">
-              <Link href="/" className="flex items-center group mb-6">
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 shadow-2xl transition-all duration-300 group-hover:bg-white/10 group-hover:scale-105">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl shrink-0 bg-white p-1">
                   <Image
-                    src="/logo.png"
-                    alt="Green Ganga Associates Logo"
-                    width={220}
-                    height={80}
-                    className="h-12 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100"
+                    src="/images/footer-logo.jpeg"
+                    alt="Green Ganga Associates Brand"
+                    fill
+                    className="object-cover rounded-full"
                   />
                 </div>
-              </Link>
+                <Link href="/" className="flex items-center group">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 shadow-2xl transition-all duration-300 group-hover:bg-white/10 group-hover:scale-105">
+                    <Image
+                      src="/logo.png"
+                      alt="Green Ganga Associates Logo"
+                      width={180}
+                      height={60}
+                      className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100"
+                    />
+                  </div>
+                </Link>
+              </div>
               <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
                 Professional landscaping and gardening firm based in Lucknow.
                 We deliver more than just plants — we deliver reliability and
@@ -105,7 +115,7 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0 mt-0.5">
                     <MapPin className="w-4 h-4 text-fresh-green" />
                   </div>
                   <span className="text-white/50 text-sm leading-relaxed">
@@ -115,7 +125,7 @@ export default function Footer() {
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4 text-fresh-green" />
                   </div>
                   <a
@@ -126,7 +136,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-fresh-green" />
                   </div>
                   <a

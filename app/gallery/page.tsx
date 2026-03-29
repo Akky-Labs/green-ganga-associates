@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 
 const galleryImages = [
   "WhatsApp Image 2026-03-27 at 11.49.39 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.49.40 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.40 AM (2).jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.40 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.41 AM (1).jpeg",
@@ -25,8 +24,6 @@ const galleryImages = [
   "WhatsApp Image 2026-03-27 at 11.49.42 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.43 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.50.21 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.50.22 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.52.08 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.53.14 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.45 AM.jpeg",
@@ -36,7 +33,6 @@ const galleryImages = [
   "WhatsApp Image 2026-03-27 at 11.57.48 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.49 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.50 AM (1).jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.51 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.51 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.52 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.53 AM.jpeg",
@@ -45,7 +41,6 @@ const galleryImages = [
   "WhatsApp Image 2026-03-27 at 12.16.53 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.18.00 PM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 12.18.00 PM.jpeg",
-  "WhatsApp Image 2026-03-27 at 12.18.35 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.29.44 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.34.48 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.34.49 PM (1).jpeg",
@@ -54,6 +49,17 @@ const galleryImages = [
   "WhatsApp Image 2026-03-27 at 12.34.51 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.35.26 PM.jpeg",
   "WhatsApp Image 2026-03-27 at 12.43.35 PM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.52.14 AM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.52.15 AM (1).jpeg",
+  "WhatsApp Image 2026-03-29 at 10.52.46 AM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.52.47 AM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.22 AM (1).jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.22 AM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.25 AM (1).jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.25 AM.jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.26 AM (1).jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.27 AM (1).jpeg",
+  "WhatsApp Image 2026-03-29 at 10.53.27 AM.jpeg",
 ];
 
 export default function GalleryPage() {
@@ -86,7 +92,7 @@ export default function GalleryPage() {
       {/* ─── HEADER ─── */}
       <div className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/hero.png"
+          src="/client/farmhouse-vrindavan-yojna.jpeg"
           alt="Green Ganga Gallery"
           fill
           className="object-cover"
@@ -94,7 +100,7 @@ export default function GalleryPage() {
           priority
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-soft-beige via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-soft-beige via-transparent to-transparent" />
 
         <div className="relative z-10 text-center px-6" data-aos="fade-up">
 
@@ -113,7 +119,7 @@ export default function GalleryPage() {
           {galleryImages.map((img, index) => (
             <div
               key={index}
-              className="premium-card group relative aspect-[4/5] rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-fresh-green/20 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
+              className="premium-card group relative aspect-4/5 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-fresh-green/20 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
               data-aos="fade-up"
               data-aos-delay={(index % 4) * 50}
               onClick={() => openLightbox(index)}
@@ -126,7 +132,7 @@ export default function GalleryPage() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-t from-deep-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
                 <div className="flex items-center justify-between">
                   <span className="text-white font-bold">Site Visit {index + 1}</span>
@@ -159,26 +165,26 @@ export default function GalleryPage() {
       {/* ─── LIGHTBOX ─── */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center transition-all duration-300"
+          className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center transition-all duration-300"
           onClick={closeLightbox}
         >
           {/* Controls */}
           <button
-            className="absolute top-6 right-6 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 overflow-hidden"
+            className="absolute top-6 right-6 z-110 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 overflow-hidden"
             onClick={closeLightbox}
           >
             <X className="w-6 h-6" />
           </button>
 
           <button
-            className="absolute left-4 md:left-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-[110]"
+            className="absolute left-4 md:left-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-110"
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
           >
             <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
           </button>
 
           <button
-            className="absolute right-4 md:right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-[110]"
+            className="absolute right-4 md:right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 border border-white/10 z-110"
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
           >
             <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />

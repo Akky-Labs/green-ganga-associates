@@ -72,6 +72,15 @@ const team = [
     bio: "With a doctorate in Horticulture & Landscaping, Dr. Ajay Sharma is the driving force behind our innovative landscape designs and consultancy based on new technology and research.",
   },
   {
+    name: "Dr. P.P. Singh",
+    role: "Soil Scientist",
+    initials: "PPS",
+    image: "/images/pp-singh.png",
+    qualification: "PhD. in Soil Science",
+    experience: "Farm & Rice Industry Expert",
+    bio: "Dr. P.P. Singh is an expert in soil science and rice industry consultancy, bringing specialized agricultural knowledge to large-scale farm and industrial projects.",
+  },
+  {
     name: "Aditya Sharma",
     role: "Team Manager (Commercial)",
     initials: "AS",
@@ -120,21 +129,21 @@ export default function AboutPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/project-farmhouse.png" alt="Green Ganga landscaping project" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/client/farmhouse-vrindavan-yojna.jpeg" alt="Green Ganga landscaping project" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
+            <div data-aos="fade-down" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
               <Leaf className="w-4 h-4 text-fresh-green" />
               <span className="text-fresh-green text-sm font-medium">About Our Company</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Landscaping & <br />
               <span className="text-accent-gold">Gardening Experts</span>
             </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-lg">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-white/70 text-lg leading-relaxed max-w-lg">
               Professional landscaping and gardening firm based in Lucknow,
               specializing in designing, developing, and maintaining outdoor spaces.
             </p>
@@ -148,7 +157,7 @@ export default function AboutPage() {
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div data-aos="fade-right">
               <div className="section-decorator">
                 <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Who We Are</span>
               </div>
@@ -169,7 +178,7 @@ export default function AboutPage() {
                   "Known for transparent operations, fair labor management, and reliable delivery",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-fresh-green mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-fresh-green mt-0.5 shrink-0" />
                     <span className="text-muted-foreground text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
@@ -181,11 +190,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="relative">
+            <div className="relative" data-aos="fade-left">
               <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10">
                 <Image src="/project-residential.png" alt="Green Ganga project" width={700} height={500} className="object-cover w-full h-[450px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-deep-green text-white rounded-2xl p-6 shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-deep-green text-white rounded-2xl p-6 shadow-xl" data-aos="zoom-in" data-aos-delay="200">
                 <Leaf className="w-8 h-8 text-fresh-green mb-1" />
                 <span className="text-white/70 text-sm block">Your Green Vision</span>
                 <span className="text-white text-sm font-semibold">Our Expertise</span>
@@ -201,7 +210,7 @@ export default function AboutPage() {
           {/* Mission & Vision Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
             <div className="p-10 rounded-3xl bg-white border border-gray-100 shadow-lg">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 shadow-lg shadow-deep-green/20">
+              <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 shadow-lg shadow-deep-green/20">
                 <Target className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-deep-green mb-4">Mission Statement</h3>
@@ -212,7 +221,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="p-10 rounded-3xl bg-white border border-gray-100 shadow-lg">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-gold to-[#E8D47A] text-dark-green flex items-center justify-center mb-5 shadow-lg shadow-accent-gold/20">
+              <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-accent-gold to-[#E8D47A] text-dark-green flex items-center justify-center mb-5 shadow-lg shadow-accent-gold/20">
                 <Eye className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-deep-green mb-4">Why Clients Trust Us</h3>
@@ -239,6 +248,7 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* consultancy & experience section mapped */}
               {[
                 { title: "DS Group", duration: "6 Years", location: "Noida" },
                 { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
@@ -246,7 +256,7 @@ export default function AboutPage() {
                 { title: "Orris Infrastructure", duration: "1 Year", location: "Gurugram" },
                 { title: "Jindal Steel & Power", duration: "1 Year", location: "Raigarh (C.G)" },
               ].map((exp, idx) => (
-                <div key={idx} className="p-6 rounded-2xl bg-white border border-fresh-green/10 hover:border-fresh-green/30 transition-all group shadow-sm hover:shadow-md">
+                <div key={idx} className="p-6 rounded-2xl bg-white border border-fresh-green/10 hover:border-fresh-green/30 transition-all group shadow-sm hover:shadow-md" data-aos="fade-up" data-aos-delay={idx * 50}>
                   <div className="flex justify-between items-start mb-4">
                     <Building2 className="w-8 h-8 text-fresh-green" />
                     <span className="text-xs font-bold text-accent-gold bg-accent-gold/5 px-2 py-1 rounded-md">{exp.duration}</span>
@@ -288,7 +298,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── STATS ───────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-deep-green to-dark-green text-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-linear-to-br from-deep-green to-dark-green text-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-fresh-green/10 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent-gold/5 blur-3xl" />
@@ -322,7 +332,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {team.map((member, i) => (
-              <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center">
+              <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center" data-aos="fade-up" data-aos-delay={i * 50}>
                 <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-5 transition-all duration-500 group-hover:scale-110 shadow-xl shadow-deep-green/5 ring-4 ring-white group-hover:ring-fresh-green/20">
                   <Image
                     src={member.image}
@@ -343,7 +353,7 @@ export default function AboutPage() {
                   </div>
                 )}
                 <div className="flex items-center gap-1.5 justify-center mb-2">
-                  <GraduationCap className="w-3 h-3 text-accent-gold flex-shrink-0" />
+                  <GraduationCap className="w-3 h-3 text-accent-gold shrink-0" />
                   <span className="text-[10px] sm:text-[11px] text-muted-foreground font-medium">{member.qualification}</span>
                 </div>
                 <p className="text-muted-foreground text-[10px] sm:text-[11px] leading-tight max-w-[180px]">{member.bio}</p>

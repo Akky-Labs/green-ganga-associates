@@ -101,21 +101,21 @@ export default function ServicesPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/project-commercial.png" alt="Green Ganga services" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/client/farmhouse-vrindavan-yojna.jpeg" alt="Green Ganga services" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
+            <div data-aos="fade-down" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
               <Leaf className="w-4 h-4 text-fresh-green" />
               <span className="text-fresh-green text-sm font-medium">Services We Provide</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               End-to-End <br />
               <span className="text-accent-gold">Green Solutions</span>
             </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-lg">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-white/70 text-lg leading-relaxed max-w-lg">
               From creative design to long-term maintenance — ensuring every
               space we work on remains green, functional, and inspiring.
             </p>
@@ -133,25 +133,25 @@ export default function ServicesPage() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${i % 2 !== 0 ? "lg:[direction:rtl]" : ""
                   }`}
               >
-                <div className={`relative ${i % 2 !== 0 ? "lg:[direction:ltr]" : ""}`}>
+                <div className={`relative ${i % 2 !== 0 ? "lg:[direction:ltr]" : ""}`} data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}>
                   <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10 img-hover-zoom">
                     <Image src={service.image} alt={service.title} width={700} height={450} className="object-cover w-full h-[350px] lg:h-[420px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
                   </div>
-                  <div className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-deep-green/30">
+                  <div className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-deep-green/30" data-aos="zoom-in" data-aos-delay="200">
                     {String(i + 1).padStart(2, "0")}
                   </div>
                 </div>
 
-                <div className={i % 2 !== 0 ? "lg:[direction:ltr]" : ""}>
+                <div className={i % 2 !== 0 ? "lg:[direction:ltr]" : ""} data-aos={i % 2 === 0 ? "fade-left" : "fade-right"}>
                   <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-5">
                     {service.icon}
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-deep-green mb-4">{service.title}</h2>
                   <p className="text-muted-foreground text-base leading-relaxed mb-6">{service.desc}</p>
                   <div className="grid grid-cols-2 gap-3 mb-8">
-                    {service.features.map((f) => (
-                      <div key={f} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-fresh-green flex-shrink-0" />
+                    {service.features.map((f, featureIdx) => (
+                      <div key={f} className="flex items-center gap-2" data-aos="fade-up" data-aos-delay={featureIdx * 50}>
+                        <CheckCircle2 className="w-4 h-4 text-fresh-green shrink-0" />
                         <span className="text-sm text-foreground/80">{f}</span>
                       </div>
                     ))}
@@ -183,9 +183,9 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {process.map((p, i) => (
-              <div key={p.step} className="relative">
+              <div key={p.step} className="relative" data-aos="fade-up" data-aos-delay={i * 50}>
                 <div className="premium-card p-6 rounded-3xl bg-white border border-gray-100 text-center h-full cursor-pointer hover:shadow-2xl hover:shadow-deep-green/5 hover:-translate-y-1 transition-all duration-500">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green text-white mb-4 shadow-lg shadow-deep-green/20">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green text-white mb-4 shadow-lg shadow-deep-green/20">
                     {p.icon}
                   </div>
                   <h3 className="text-base font-bold text-deep-green mb-2">{p.title}</h3>

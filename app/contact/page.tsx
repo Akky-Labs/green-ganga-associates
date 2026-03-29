@@ -96,20 +96,26 @@ export default function ContactPage() {
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
-          <Image src="/hero.png" alt="Contact Green Ganga" fill className="object-cover" sizes="100vw" priority />
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+          <Image
+          src="/client/farmhouse-vrindavan-yojna.jpeg"
+          alt="Contact Green Ganga"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />  <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
+            <div data-aos="fade-down" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 mb-6">
               <Leaf className="w-4 h-4 text-fresh-green" />
               <span className="text-fresh-green text-sm font-medium">Contact Us</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 data-aos="fade-up" className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Let's Create Something <span className="text-accent-gold">Beautiful</span>
             </h1>
-            <p className="text-white/70 text-lg leading-relaxed max-w-lg">
+            <p data-aos="fade-up" data-aos-delay="100" className="text-white/70 text-lg leading-relaxed max-w-lg">
               We would love to hear from you and discuss how Green Ganga Associates
               can bring your landscaping vision to life.
             </p>
@@ -125,7 +131,7 @@ export default function ContactPage() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form (3 cols) */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3" data-aos="fade-right">
               <div className="section-decorator">
                 <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Send us a Message</span>
               </div>
@@ -138,7 +144,7 @@ export default function ContactPage() {
 
               {submitted && (
                 <div className="mb-6 p-4 rounded-2xl bg-light-green border border-fresh-green/20 flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-deep-green flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-deep-green shrink-0" />
                   <span className="text-deep-green text-sm font-medium">
                     Thank you! Your message has been sent. We&apos;ll get back to you within 24 hours.
                   </span>
@@ -233,7 +239,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full sm:w-auto rounded-full bg-gradient-to-r from-deep-green to-fresh-green hover:from-dark-green hover:to-deep-green text-white px-10 h-13 font-semibold shadow-lg shadow-deep-green/20 transition-all duration-300 hover:shadow-deep-green/30"
+                  className="w-full sm:w-auto rounded-full bg-linear-to-r from-deep-green to-fresh-green hover:from-dark-green hover:to-deep-green text-white px-10 h-13 font-semibold shadow-lg shadow-deep-green/20 transition-all duration-300 hover:shadow-deep-green/30"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
@@ -242,14 +248,14 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info (2 cols) */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-6" data-aos="fade-left">
               {contactInfo.map((info) => (
                 <div
                   key={info.title}
                   className="p-6 rounded-2xl bg-soft-beige/50 border border-gray-100 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-deep-green to-fresh-green text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-deep-green/20">
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-deep-green to-fresh-green text-white flex items-center justify-center shrink-0 shadow-lg shadow-deep-green/20">
                       {info.icon}
                     </div>
                     <div>

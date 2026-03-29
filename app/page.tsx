@@ -67,7 +67,7 @@ const services = [
   { title: "Maintenance & Care", icon: <Wrench className="w-8 h-8" />, desc: "Regular watering, pruning, seasonal planting, pest control, and plant health monitoring." },
   { title: "Water Management", icon: <Droplets className="w-8 h-8" />, desc: "Smart irrigation systems — sprinklers, drip irrigation, and eco-friendly water solutions." },
   { title: "Vertical & Terrace Gardens", icon: <TreePine className="w-8 h-8" />, desc: "Modern vertical garden designs and terrace garden development for urban environments." },
-  { title: "Consultancy", icon: <ClipboardList className="w-8 h-8" />, desc: "Expert advice on plant selection, layout planning, sustainability, and project reports." },
+  { title: "Consultancy & Services", icon: <ClipboardList className="w-8 h-8" />, desc: "Expert advice on plant selection, layout planning, sustainability, and project reports." },
   { title: "Industrial & Govt. Projects", icon: <Factory className="w-8 h-8" />, desc: "Large-scale landscaping for factories, public parks, and institutional campuses." },
   { title: "Farmhouse & Commercial", icon: <HomeIcon className="w-8 h-8" />, desc: "Elegant garden designs for farmhouses, resorts, hotels, and high-traffic commercial areas." },
   { title: "Organic Farming", icon: <Flower2 className="w-8 h-8" />, desc: "Organic vegetable & fruit garden plans for commercial and personal use." },
@@ -77,17 +77,34 @@ const projects = [
   { image: "/client/GS infra.jpeg", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
   { image: "/client/guru-kripa-utsav.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
   { image: "/client/nandi-farmhuse.jpeg", title: "Minister Nandi Gopal Nandi Farm", category: "Farmhouse & Resorts", location: "Prayagraj" },
-  { image: "/client/ansal-api.jpeg", title: "Ansal API Hitech Township", category: "Consultancy", location: "Lucknow" },
+  { image: "/client/ansal-api.jpeg", title: "Ansal API Hitech Township", category: "Consultancy & Services", location: "Lucknow" },
   { image: "/client/abdul-kalam.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
   { image: "/client/grand-hotel-resort.jpeg", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
 ];
 
 const team = [
-  { name: "Mrs. Seema Sharma", role: "Director", image: "/images/female-avatar.png", qualification: "P.G. Economics", experience: "10+ Years" },
-  { name: "Dr. Ajay Sharma", role: "Consultant", image: "/images/ajaysharma.jpeg", qualification: "Ph.D. Horticulture & Landscaping", experience: "25+ Years" },
-  { name: "Aditya Sharma", role: "Team Manager (Commercial)", image: "/images/adityasharma.jpeg", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", },
-  { name: "Nisha Kumari", role: "Team Manager (House)", image: "/images/nishakumari.jpeg", qualification: "B.Sc. Agriculture, SHUATS", },
-  { name: "Aditi", role: "Field Associate", image: "/images/female-avatar.png", qualification: "B.Sc. Agriculture, CCSU Meerut", },
+  { name: "Mrs. Seema Sharma", role: "Director", image: "/images/female-avatar.png", experience: "10+ Years" },
+  {
+    name: "Dr. Ajay Sharma",
+    role: "Consultant",
+    initials: "AS",
+    image: "/images/ajaysharma.jpeg",
+    qualification: "Ph.D. Horticulture & Landscaping",
+    experience: "25+ Years",
+    bio: "With a doctorate in Horticulture & Landscaping, Dr. Ajay Sharma is the driving force behind our innovative landscape designs and consultancy based on new technology and research.",
+  },
+  {
+    name: "Dr. P.P. Singh",
+    role: "Soil Scientist",
+    initials: "PPS",
+    image: "/images/pp-singh.png",
+    qualification: "PhD. in Soil Science",
+    experience: "Farm & Rice Industry Expert",
+    bio: "Dr. P.P. Singh is an expert in soil science and rice industry consultancy, bringing specialized agricultural knowledge to large-scale farm and industrial projects.",
+  },
+  { name: "Aditya Sharma", role: "Team Manager (Commercial)", image: "/images/adityasharma.jpeg", qualification: "B.Sc. Agriculture, (SHUATS Prayagraj)", },
+  { name: "Nisha Kumari", role: "Team Manager (House)", image: "/images/nishakumari.jpeg", qualification: "B.Sc. Agriculture, (SHUATS)", },
+  { name: "Aditi", role: "Field Associate", image: "/images/female-avatar.png", qualification: "B.Sc. Agriculture, (CCSU Meerut)", },
   { name: "Aryan Sharma", role: "Field Associate", image: "/images/male-avatar.png", qualification: "B.Sc. Ag. (Horticulture), NDAU Kumarganj", },
 ];
 
@@ -140,7 +157,7 @@ export default function Home() {
             priority
           />
           <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20" />
         </div>
 
         {/* Floating decorative elements */}
@@ -170,7 +187,7 @@ export default function Home() {
               <Link href="/services">
                 <Button
                   size="lg"
-                  className="rounded-full bg-gradient-to-r from-fresh-green to-deep-green hover:from-deep-green hover:to-dark-green text-white hover:text-white px-8 h-14 text-base font-semibold shadow-2xl shadow-deep-green/30 transition-all duration-500 hover:shadow-deep-green/50 hover:scale-[1.05]"
+                  className="rounded-full bg-linear-to-r from-fresh-green to-deep-green hover:from-deep-green hover:to-dark-green text-white hover:text-white px-8 h-14 text-base font-semibold shadow-2xl shadow-deep-green/30 transition-all duration-500 hover:shadow-deep-green/50 hover:scale-[1.05]"
                 >
                   Our Services
                   <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
@@ -217,7 +234,7 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={`${trustFeatures.indexOf(f) * 60}`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-deep-green/20">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-deep-green/20">
                   {f.icon}
                 </div>
                 <h3 className="text-lg font-bold text-deep-green mb-2">
@@ -244,7 +261,7 @@ export default function Home() {
           />
         </div>
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-[1]" />
+        <div className="absolute inset-0 bg-black/70 z-1" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center text-white" data-aos="fade-up">
@@ -380,14 +397,14 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={`${services.indexOf(service) * 50}`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-deep-green group-hover:to-fresh-green group-hover:text-white group-hover:scale-110 group-hover:-rotate-3">
+                <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-linear-to-br group-hover:from-deep-green group-hover:to-fresh-green group-hover:text-white group-hover:scale-110 group-hover:-rotate-3">
                   {service.icon}
                 </div>
                 <h3 className="text-base font-bold text-deep-green mb-2">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
-                <div className="absolute bottom-0 left-6 right-6 h-[3px] rounded-full bg-gradient-to-r from-deep-green to-fresh-green scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute bottom-0 left-0 right-0 h-[3px] rounded-full bg-linear-to-r from-deep-green to-fresh-green scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
             ))}
           </div>
@@ -397,7 +414,7 @@ export default function Home() {
       </section>
 
       {/* ─── WHY CHOOSE US ───────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-deep-green via-deep-green to-dark-green text-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-linear-to-br from-deep-green via-deep-green to-dark-green text-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-fresh-green/10 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent-gold/5 blur-3xl" />
@@ -451,26 +468,43 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, i) => (
               <div
                 key={project.title}
-                className="group relative rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer img-hover-zoom"
                 data-aos="fade-up"
-                data-aos-delay={`${projects.indexOf(project) * 60}`}
+                data-aos-delay={i * 50}
+                className="group relative h-full rounded-2xl sm:rounded-3xl bg-white border border-gray-100 p-5 sm:p-7 hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
               >
-                <div className="aspect-[4/3]">
-                  <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 rounded-full bg-fresh-green/20 text-fresh-green text-xs font-medium mb-2 backdrop-blur-sm border border-fresh-green/20">
+                {/* Visual Decorative Backgrounds */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-fresh-green/5 rounded-bl-[60px] -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-1000 ease-out" />
+
+                {/* Top Badge Section */}
+                <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
+                  <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
                     {project.category}
-                  </span>
-                  <h3 className="text-lg font-bold text-white mb-1">{project.title}</h3>
-                  <p className="text-white/50 text-sm flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {project.location}
-                  </p>
+                  </div>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige flex items-center justify-center text-deep-green group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                    <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="relative z-10 grow">
+                  <h3 className="text-xl font-black text-deep-green mb-4 leading-tight group-hover:text-fresh-green transition-colors duration-500">
+                    {project.title}
+                  </h3>
+                </div>
+
+                {/* Bottom Info Section */}
+                <div className="relative z-10 mt-auto pt-6 border-t border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-deep-green/70">
+                      <div className="w-7 h-7 rounded-full bg-fresh-green/10 flex items-center justify-center">
+                        <MapPin className="w-3.5 h-3.5 text-fresh-green" />
+                      </div>
+                      <span className="text-xs font-bold tracking-tight">{project.location}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -524,7 +558,7 @@ export default function Home() {
                     {member.experience} Experties
                   </div>
                 )}
-                <p className="text-muted-foreground text-[10px] sm:text-[11px] font-medium max-w-[160px] leading-tight flex-grow">{member.qualification}</p>
+                <p className="text-muted-foreground text-[10px] sm:text-[11px] font-medium max-w-[160px] leading-tight grow">{member.qualification}</p>
               </div>
             ))}
           </div>
@@ -557,7 +591,7 @@ export default function Home() {
                   &ldquo;{t.text}&rdquo;
                 </p>
                 <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-deep-green to-fresh-green flex items-center justify-center text-white font-semibold text-sm">
+                  <div className="w-11 h-11 rounded-full bg-linear-to-br from-deep-green to-fresh-green flex items-center justify-center text-white font-semibold text-sm">
                     {t.name.split(" ").map((n) => n[0]).join("")}
                   </div>
                   <div>
