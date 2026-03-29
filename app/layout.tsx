@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE", // Replace with actual code
+    google: "9MtFcmT1l01BFM-K7Q4111TfeONTAZ1MElNpe4zcl5o",
     yandex: "yandex_verification_code",
     me: "greenganga.aso@gmail.com",
   },
