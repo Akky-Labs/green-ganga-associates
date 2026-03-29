@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact Green Ganga Associates for professional landscaping and gardening in Lucknow and All India. Free quote for garden design, terrace gardens, and more. Call +91 9999177119.",
+  title: "Contact Green Ganga",
+  description: "Get a free landscaping quote and a professional garden assessment today. Reach out across Lucknow, Prayagraj, Noida, and Northern India.",
+  openGraph: {
+    title: "Contact India's Best Landscaping Experts",
+    description: "Connect with us to plan your green vision. Serving Lucknow, Noida, and India wide.",
+  }
 };
 
 export default function ContactLayout({

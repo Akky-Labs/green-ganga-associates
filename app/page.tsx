@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Green Ganga Associates | Professional Landscaping & Gardening Lucknow",
+  description: "India's top landscaping group. Expert garden design, vertical gardens, and terrace development in Lucknow, Noida, Prayagraj and across India. 25+ years of excellence.",
+  openGraph: {
+    title: "Green Ganga Associates - Your Green Vision, Our Expertise",
+    description: "Transforming spaces into lush paradises across India. Best landscaping services for resorts, farmhouses, and homes.",
+  }
+};
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

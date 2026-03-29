@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, Leaf, Filter } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const categories = ["All", "Garden Development", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
 
@@ -180,6 +181,12 @@ export default function ProjectsPage() {
 
   return (
     <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", item: "https://greengangaassociates.com" },
+          { name: "Projects", item: "https://greengangaassociates.com/projects" }
+        ]} 
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">

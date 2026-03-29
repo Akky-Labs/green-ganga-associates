@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AOSProvider from "@/components/AOSProvider";
 import NatureEffects from "@/components/NatureEffects";
 import GoogleLocalBusinessSchema from "@/components/GoogleLocalBusinessSchema";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -20,15 +21,25 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Green Ganga Associates | Professional Landscaping & Gardening in India",
-    template: "%s | Green Ganga Associates - India's Top Landscaping Experts"
+    template: "%s | Green Ganga Associates"
   },
   description:
-    "Top-rated landscaping & gardening company in India. Green Ganga Associates offers professional garden design, maintenance, vertical gardens, terrace gardens, and farmhouse landscaping across Lucknow, Noida, Prayagraj, and All India. Free landscaping quotes available!",
-  keywords:
-    "landscaping in India, landscaping company in Lucknow, garden design India, best landscaping experts Noida, terrace garden design Prayagraj, vertical gardens India, farmhouse landscaping UP, resort landscape design Kanpur, smart irrigation India, industrial landscaping experts, horticulture consultant India, organic farming Lucknow, professional gardening services India, terrace garden designer Lucknow, vertical garden installation North India, best rose garden makers, house garden setup Allahabad, landscape architect Varanasi, Green Ganga Associates projects, landscaping in Barabanki, gardening services Ayodhya, landscaping for cafes Lucknow, cafe garden design India, restaurant landscaping services, rooftop cafe garden design",
+    "India's best landscaping & gardening company. Green Ganga Associates experts in garden design, maintenance, vertical gardens, terrace gardens, and farmhouse landscaping across Lucknow, Noida, and All India. 25+ years expertise.",
+  keywords: [
+    "landscaping in India", "landscaping company in Lucknow", "garden design India", 
+    "best landscaping experts Noida", "terrace garden design Prayagraj", "vertical gardens India", 
+    "farmhouse landscaping UP", "resort landscape design Kanpur", "smart irrigation India", 
+    "industrial landscaping experts", "horticulture consultant India", "organic farming Lucknow", 
+    "professional gardening services India", "terrace garden designer Lucknow", 
+    "vertical garden installation North India", "best rose garden makers India", 
+    "landscape architect Varanasi", "Green Ganga Associates Lucknow", "landscaping in Barabanki", 
+    "gardening services Ayodhya", "cafe garden design India", "restaurant landscaping Lucknow"
+  ],
   authors: [{ name: "Green Ganga Associates" }],
   creator: "Green Ganga Associates",
   publisher: "Green Ganga Associates",
+  category: "Home & Garden",
+  classification: "Landscaping Services",
   formatDetection: {
     email: false,
     address: true,
@@ -64,6 +75,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+  verification: {
+    google: "YOUR_GOOGLE_VERIFICATION_CODE", // Replace with actual code
+    yandex: "yandex_verification_code",
+    me: "greenganga.aso@gmail.com",
+  },
   robots: {
     index: true,
     follow: true,
@@ -96,6 +112,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
       </body>
+      <GoogleAnalytics gaId="G-XXXXXXXXXX" /> {/* Replace with actual GA4 Measurement ID */}
     </html>
   );
 }

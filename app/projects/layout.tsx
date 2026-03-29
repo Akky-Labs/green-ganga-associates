@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects",
-  description: "Explore 25+ landscaping and gardening projects by Green Ganga Associates across Lucknow, Prayagraj, Noida, and all of India. Farmhouses, resorts, and govt projects.",
+  title: "Our Landscaping Portfolio",
+  description: "Explore Green Ganga Associates' diverse portfolio of landscaping and gardening projects across residential, commercial, industrial, and government sectors in India.",
+  openGraph: {
+    title: "Green Ganga Associates | Project Portfolio",
+    description: "Explore our stunning landscaping transformations across Lucknow, Noida, and India.",
+  }
 };
 
 export default function ProjectsLayout({

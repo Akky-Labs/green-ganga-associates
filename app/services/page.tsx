@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   Palette,
   Wrench,
@@ -23,9 +24,9 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Landscaping & Gardening Services Across India",
+  title: "Professional Landscaping & Gardening Services India",
   description:
-    "Landscaping and gardening services in Lucknow and all of India — garden design, vertical gardens, terrace gardens, organic farming, and industrial projects by Green Ganga Associates.",
+    "Expert landscaping and gardening services in Lucknow, Noida, and across India. Specialized in garden design, vertical gardens, terrace gardens, and organic farming by Green Ganga Associates.",
 };
 
 const services = [
@@ -98,6 +99,12 @@ const process = [
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", item: "https://greengangaassociates.com" },
+          { name: "Services", item: "https://greengangaassociates.com/services" }
+        ]} 
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
