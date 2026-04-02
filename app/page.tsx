@@ -43,6 +43,7 @@ import {
   Fence,
   Smile,
   History,
+  GraduationCap,
 } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
 
@@ -82,23 +83,30 @@ const services = [
   { title: "Industrial & Govt. Projects", icon: <Factory className="w-8 h-8" />, desc: "Large-scale landscaping for factories, public parks, and institutional campuses." },
   { title: "Farmhouse & Commercial", icon: <HomeIcon className="w-8 h-8" />, desc: "Elegant garden designs for farmhouses, resorts, hotels, and high-traffic commercial areas." },
   { title: "Organic Farming", icon: <Flower2 className="w-8 h-8" />, desc: "Organic vegetable & fruit garden plans for commercial and personal use." },
+  { title: "Plantation According To Vastu", icon: <Sparkles className="w-8 h-8" />, desc: "Expert guidance on plant placement and species selection according to Vastu principles for positive energy." },
 ];
 
 const projects = [
   { image: "/client/GS infra.jpeg", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
   { image: "/client/guru-kripa-utsav.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
-  { image: "/client/nandi-farmhuse.jpeg", title: "Minister Nandi Gopal Nandi Farm", category: "Farmhouse & Resorts", location: "Prayagraj" },
+  { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: "Farmhouse & Resorts", location: "Prayagraj" },
   { image: "/client/ansal-api.jpeg", title: "Ansal API Hitech Township", category: "Consultancy & Services", location: "Lucknow" },
   { image: "/client/abdul-kalam.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
   { image: "/client/grand-hotel-resort.jpeg", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
 ];
 
 const team = [
-  { name: "Mrs. Seema Sharma", role: "Director", image: "/images/female-avatar.png", experience: "10+ Years" },
+  {
+    name: "Mrs. Seema Sharma",
+    role: "Director",
+    image: "/images/seema-sharma.jpeg",
+    qualification: "P.G. Economics",
+    experience: "10+ Years",
+    bio: "As the Director of Green Ganga Associates, Mrs. Seema Sharma leads the company with a strong business acumen and a deep passion for creating sustainable green environments.",
+  },
   {
     name: "Dr. Ajay Sharma",
     role: "Consultant",
-    initials: "AS",
     image: "/images/ajaysharma.jpeg",
     qualification: "Ph.D. Horticulture & Landscaping",
     experience: "25+ Years",
@@ -106,17 +114,40 @@ const team = [
   },
   {
     name: "Dr. P.P. Singh",
-    role: "Soil Scientist",
-    initials: "PPS",
+    role: "Consultant",
     image: "/images/pp-singh.png",
     qualification: "PhD. in Soil Science",
     experience: "Farm & Rice Industry Expert",
     bio: "Dr. P.P. Singh is an expert in soil science and rice industry consultancy, bringing specialized agricultural knowledge to large-scale farm and industrial projects.",
   },
-  { name: "Aditya Sharma", role: "Team Manager (Commercial)", image: "/images/adityasharma.jpeg", qualification: "B.Sc. Agriculture, (SHUATS Prayagraj)", },
-  { name: "Nisha Kumari", role: "Team Manager (House)", image: "/images/nishakumari.jpeg", qualification: "B.Sc. Agriculture, (SHUATS)", },
-  { name: "Aditi", role: "Field Associate", image: "/images/female-avatar.png", qualification: "B.Sc. Agriculture, (CCSU Meerut)", },
-  { name: "Aryan Sharma", role: "Field Associate", image: "/images/male-avatar.png", qualification: "B.Sc. Ag. (Horticulture), NDAU Kumarganj", },
+  {
+    name: "Aditya Sharma",
+    role: "Team Manager (Commercial)",
+    image: "/images/adityasharma.jpeg",
+    qualification: "B.Sc. Agriculture, SHUATS Prayagraj",
+    bio: "Aditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
+  },
+  {
+    name: "Nisha Kumari",
+    role: "Team Manager (House)",
+    image: "/images/nishakumari.jpeg",
+    qualification: "B.Sc. Agriculture, SHUATS",
+    bio: "Nisha leads our residential projects team, specializing in home gardens, terrace gardens, and personalized green spaces that bring joy to everyday living.",
+  },
+  {
+    name: "Aditi",
+    role: "Field Associate",
+    image: "/images/female-avatar.png",
+    qualification: "B.Sc. Agriculture, CCSU Meerut",
+    bio: "Aditi works on-ground to ensure every installation meets our quality standards, handling planting, soil management, and on-site execution with precision.",
+  },
+  {
+    name: "Aryan Sharma",
+    role: "Field Associate",
+    image: "/images/male-avatar.png",
+    qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj Ayodhya",
+    bio: "Aryan brings specialized horticulture knowledge to the field, ensuring optimal plant health, correct species selection, and beautiful garden execution.",
+  },
 ];
 
 const testimonials = [
@@ -127,14 +158,14 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Anita Desai",
-    role: "CEO, TechVista Corp.",
+    name: "Lalit Gupta ",
+    role: "Director of Ansal API Lucknow",
     text: "Our office campus has become the talk of the city. The vertical gardens and open spaces have significantly improved our team's productivity and well-being.",
     rating: 5,
   },
   {
-    name: "Col. Pratap Singh",
-    role: "Farmhouse Owner, Dehradun",
+    name: "Col. T.N",
+    role: "Farmhouse Owner, (Gurugram)",
     text: "Impeccable work on our 5-acre farmhouse. The design blends perfectly with the natural surroundings. Professional, timely, and genuinely passionate about their craft.",
     rating: 5,
   },
@@ -400,7 +431,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <div
                 key={service.title}
@@ -569,7 +600,11 @@ export default function Home() {
                     {member.experience} Experties
                   </div>
                 )}
-                <p className="text-muted-foreground text-[10px] sm:text-[11px] font-medium max-w-[160px] leading-tight grow">{member.qualification}</p>
+                <div className="flex items-center gap-1.5 justify-center mb-2 leading-tight">
+                  <GraduationCap className="w-3 h-3 text-accent-gold shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] text-muted-foreground font-medium text-center">{member.qualification}</span>
+                </div>
+                <p className="text-muted-foreground text-[10px] sm:text-[11px] leading-tight max-w-[180px] line-clamp-3">{member.bio}</p>
               </div>
             ))}
           </div>

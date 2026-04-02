@@ -50,12 +50,12 @@ const businessHours = [
 ];
 
 const teamMembers = [
-  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G. Economics", image: "/images/female-avatar.png" },
+  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G. Economics", image: "/images/seema-sharma.jpeg" },
   { name: "Dr. Ajay Sharma", role: "Consultant", qualification: "Ph.D. Horticulture & Landscaping", image: "/images/ajaysharma.jpeg" },
   { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/images/adityasharma.jpeg" },
   { name: "Nisha Kumari", role: "Team Manager (House)", qualification: "B.Sc. Agriculture, SHUATS", image: "/images/nishakumari.jpeg" },
   { name: "Aditi", role: "Field Associate", qualification: "B.Sc. Agriculture, CCSU Meerut", image: "/images/female-avatar.png" },
-  { name: "Aryan Sharma", role: "Field Associate", qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj", image: "/images/male-avatar.png" },
+  { name: "Aryan Sharma", role: "Field Associate", qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj Ayodhya", image: "/images/male-avatar.png" },
 ];
 
 export default function ContactPage() {

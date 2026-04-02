@@ -20,6 +20,7 @@ import {
   ChevronRight,
   Leaf,
   Phone,
+  Sparkles,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -64,6 +65,7 @@ const services = [
     desc: "Expert advice on plant selection, layout planning, and sustainability. Guidance for industrial landscaping, government projects, and large institutions. Professional project reports and cost-effective solutions.",
     features: ["Plant Selection", "Layout Planning", "Project Reports", "Cost-Effective Plans"],
     image: "/gallery/consultency.jpeg",
+    objectFit: "object-contain bg-soft-beige",
   },
   {
     icon: <Factory className="w-8 h-8" />,
@@ -85,6 +87,13 @@ const services = [
     desc: "In organic farming system — vegetable and fruit garden plans for commercial and personal use. Sustainable, chemical-free growing solutions that bring fresh produce to your doorstep.",
     features: ["Vegetable Gardens", "Fruit Orchards", "Chemical-Free", "Commercial Plans"],
     image: "/hero.png",
+  },
+  {
+    icon: <Sparkles className="w-8 h-8" />,
+    title: "Plantation According To Vastu",
+    desc: "Harmonize your living space with expert guidance on plant placement and species selection according to Vastu principles. Create a garden that not only looks beautiful but also invites positive energy and prosperity into your home.",
+    features: ["Auspicious Plant Selection", "Directional Placement", "Energy Balance", "Expert Consultation"],
+    image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.51 AM (1).jpeg",
   },
 ];
 
@@ -142,7 +151,7 @@ export default function ServicesPage() {
               >
                 <div className={`relative ${i % 2 !== 0 ? "lg:[direction:ltr]" : ""}`} data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}>
                   <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10 img-hover-zoom">
-                    <Image src={service.image} alt={service.title} width={700} height={450} className="object-cover w-full h-[350px] lg:h-[420px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
+                    <Image src={service.image} alt={service.title} width={700} height={450} className={`${(service as any).objectFit || "object-cover"} w-full h-[350px] lg:h-[420px]`} sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
                   </div>
                   <div className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-deep-green/30" data-aos="zoom-in" data-aos-delay="200">
                     {String(i + 1).padStart(2, "0")}

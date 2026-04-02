@@ -58,7 +58,7 @@ const projects = [
     title: "Farm House",
     category: "Farmhouse & Resorts",
     location: "Prayagraj, UP",
-    desc: "High-profile farmhouse landscape design for Cabinet Minister Mr. Nandi Gopal Nandi.",
+    desc: "High-profile farmhouse landscape design with native flora and modern amenities.",
     area: "Private Estate",
   },
   {
@@ -99,7 +99,7 @@ const projects = [
   // Consultancy
   {
     image: "/client/ds-group.jpeg",
-    title: "DS Group",
+    title: "Paras merchant pvt ltd sister con. of DS group",
     category: "Consultancy & Services",
     location: "Noida, UP",
     desc: "Technical consultancy and service management for over 6 years.",
@@ -181,11 +181,11 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", item: "https://greengangaassociates.com" },
           { name: "Projects", item: "https://greengangaassociates.com/projects" }
-        ]} 
+        ]}
       />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
@@ -241,7 +241,7 @@ export default function ProjectsPage() {
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filtered.map((project, i) => (
-                <div
+              <div
                 key={`${project.title}-${i}`}
                 data-aos="fade-up"
                 data-aos-delay={i * 50}
@@ -250,7 +250,7 @@ export default function ProjectsPage() {
                 {/* Visual Decorative Backgrounds */}
                 <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-fresh-green/5 rounded-bl-[60px] sm:rounded-bl-[100px] -mr-12 -mt-12 sm:-mr-16 sm:-mt-16 group-hover:scale-125 transition-transform duration-1000 ease-out" />
                 <div className="absolute -bottom-12 -left-12 sm:-bottom-16 sm:-left-16 w-24 h-24 sm:w-32 sm:h-32 bg-accent-gold/5 rounded-tr-full group-hover:scale-125 transition-transform duration-1000 ease-out" />
-                
+
                 {/* Top Badge Section */}
                 <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
                   <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
@@ -266,7 +266,7 @@ export default function ProjectsPage() {
                   <h3 className="text-xl sm:text-2xl font-black text-deep-green mb-3 sm:mb-5 leading-tight group-hover:text-fresh-green transition-colors duration-500">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed sm:leading-[1.8] mb-8 sm:mb-10 line-clamp-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                     {project.desc}
                   </p>
@@ -281,7 +281,7 @@ export default function ProjectsPage() {
                       </div>
                       <span className="text-xs sm:text-sm font-bold tracking-tight">{project.location}</span>
                     </div>
-                    
+
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-fresh-green" />

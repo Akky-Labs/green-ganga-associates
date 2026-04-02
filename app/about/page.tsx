@@ -57,7 +57,7 @@ const team = [
     name: "Mrs. Seema Sharma",
     role: "Director",
     initials: "SS",
-    image: "/images/female-avatar.png",
+    image: "/images/seema-sharma.jpeg",
     qualification: "P.G. Economics",
     experience: "10+ Years",
     bio: "As the Director of Green Ganga Associates, Mrs. Seema Sharma leads the company with a strong business acumen and a deep passion for creating sustainable green environments.",
@@ -73,7 +73,7 @@ const team = [
   },
   {
     name: "Dr. P.P. Singh",
-    role: "Soil Scientist",
+    role: "Consultant",
     initials: "PPS",
     image: "/images/pp-singh.png",
     qualification: "PhD. in Soil Science",
@@ -250,7 +250,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* consultancy & experience section mapped */}
               {[
-                { title: "DS Group", duration: "6 Years", location: "Noida" },
+                { title: "Paras merchant pvt ltd sister con. of DS group", duration: "6 Years", location: "Noida" },
                 { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
                 { title: "Ansal API", duration: "5 Years", site: "4,500 Acre Hitech Township" },
                 { title: "Orris Infrastructure", duration: "1 Year", location: "Gurugram" },

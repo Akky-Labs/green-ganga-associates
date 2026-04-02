@@ -15,6 +15,16 @@ import {
 import { Button } from "@/components/ui/button";
 
 const galleryImages = [
+  { src: "certificate.jpeg", title: "" },
+  { src: "certificate2.jpeg", title: "" },
+  { src: "certificate3.jpeg", title: "" },
+  { src: "2018 Agriculture & Udhan Director Lko..jpeg", title: "2018 Agriculture & Udhyan Director Lucknow" },
+  { src: "Coo Noida Vikas Pradhikaran Noida.jpeg", title: "COO Noida Vikas Pradhikaran Noida" },
+  { src: "Smt.Anandiben Mafatbhai Patel Governor of Uttar Pradesh, 2025..jpeg", title: "Smt. Anandiben Mafatbhai Patel (Governor of UP, 2025)" },
+  { src: "Sri.Ram Naik ji 2016 (Governor Utter Pardesh).jpeg", title: "Sri. Ram Naik ji (Governor UP, 2016)" },
+  { src: "Dr.Jai Ram Verma Director Udhan vibhag Lucknow.jpeg", title: "Dr. Jai Ram Verma (Director, Udyan Vibhag)" },
+  { src: "Mr.mathur ji Horticulture Director Rastpati bhawan Delhi ..jpeg", title: "Mr. Mathur ji (Horticulture Director, Rashtrapati Bhawan)" },
+  { src: "at raj sabha.jpeg", title: "Sriram chauchan ji Agriculture minister UP." },
   "WhatsApp Image 2026-03-27 at 11.49.39 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.40 AM (2).jpeg",
   "WhatsApp Image 2026-03-27 at 11.49.40 AM.jpeg",
@@ -28,13 +38,8 @@ const galleryImages = [
   "WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.45 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.46 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.47 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.48 AM (1).jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.48 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.49 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.50 AM (1).jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.51 AM.jpeg",
-  "WhatsApp Image 2026-03-27 at 11.57.52 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.53 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.54 AM.jpeg",
   "WhatsApp Image 2026-03-27 at 11.57.56 AM.jpeg",
@@ -116,33 +121,44 @@ export default function GalleryPage() {
       {/* ─── GALLERY GRID ─── */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {galleryImages.map((img, index) => (
-            <div
-              key={index}
-              className="premium-card group relative aspect-4/5 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-fresh-green/20 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
-              data-aos="fade-up"
-              data-aos-delay={(index % 4) * 50}
-              onClick={() => openLightbox(index)}
-            >
-              <Image
-                src={`/gallery/${encodeURIComponent(img)}`}
-                alt={`Green Ganga Work ${index + 1}`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-deep-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
-                <div className="flex items-center justify-between">
-                  <span className="text-white font-bold">Site Visit {index + 1}</span>
-                  <div className="w-10 h-10 rounded-full bg-fresh-green flex items-center justify-center text-white shadow-lg">
-                    <Maximize2 className="w-5 h-5" />
+          {galleryImages.map((img, index) => {
+            const imageSrc = typeof img === "string" ? img : img.src;
+            const imageTitle = typeof img === "string" ? `Site Visit ${index + 1}` : img.title;
+            const isFormalImage = typeof img !== "string";
+            const isContain = isFormalImage || imageTitle.includes("COO Noida") || imageSrc.toLowerCase().includes("certificate") || imageSrc.toLowerCase().includes("award") || imageSrc.toLowerCase().includes("praman");
+            return (
+              <div key={index} className="flex flex-col gap-4" data-aos="fade-up" data-aos-delay={(index % 4) * 50}>
+                <div
+                  className="premium-card group relative aspect-4/5 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-fresh-green/20 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
+                  onClick={() => openLightbox(index)}
+                >
+                  <Image
+                    src={`/gallery/${encodeURIComponent(imageSrc)}`}
+                    alt={imageTitle}
+                    fill
+                    className={`${isContain ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-105`}
+                    style={isContain ? { objectFit: 'contain' } : {}}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-deep-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-bold truncate pr-4">{imageTitle}</span>
+                      <div className="w-10 h-10 rounded-full bg-fresh-green flex items-center justify-center text-white shadow-lg shrink-0">
+                        <Maximize2 className="w-5 h-5" />
+                      </div>
+                    </div>
                   </div>
                 </div>
+                {typeof img !== "string" && (
+                  <p className="text-deep-green text-[13px] font-bold text-center px-1 line-clamp-2 leading-tight">
+                    {img.title}
+                  </p>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Footer CTA */}
@@ -196,7 +212,7 @@ export default function GalleryPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={`/gallery/${encodeURIComponent(galleryImages[selectedImage])}`}
+              src={`/gallery/${encodeURIComponent(typeof galleryImages[selectedImage] === "string" ? (galleryImages[selectedImage] as string) : (galleryImages[selectedImage] as any).src)}`}
               alt="Gallery Image Full"
               fill
               className="object-contain"
@@ -206,7 +222,7 @@ export default function GalleryPage() {
 
             {/* Counter */}
             <div className="absolute bottom-[-40px] left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium">
-              {selectedImage + 1} / {galleryImages.length}
+              {(typeof galleryImages[selectedImage] !== "string" ? (galleryImages[selectedImage] as any).title : null) || `Site Visit ${selectedImage + 1}`} ({selectedImage + 1} / {galleryImages.length})
             </div>
           </div>
         </div>
