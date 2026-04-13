@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 
 const services = [
   "Design & Development",
@@ -144,6 +144,19 @@ export default function Footer() {
                     className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300"
                   >
                     greenganga.aso@gmail.com
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0">
+                    <Instagram className="w-4 h-4 text-fresh-green" />
+                  </div>
+                  <a
+                    href="https://www.instagram.com/green_ganga_associates"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300"
+                  >
+                    Instagram
                   </a>
                 </li>
               </ul>

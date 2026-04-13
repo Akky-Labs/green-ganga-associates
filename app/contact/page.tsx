@@ -18,6 +18,7 @@ import {
   ArrowRight,
   GraduationCap,
   Users,
+  Instagram,
 } from "lucide-react";
 
 const contactInfo = [
@@ -43,6 +44,12 @@ const contactInfo = [
     title: "GSTIN",
     lines: ["09DCYPS9697J2ZV"],
   },
+  {
+    icon: <Instagram className="w-5 h-5" />,
+    title: "Instagram",
+    lines: ["@green_ganga_associates"],
+    href: "https://www.instagram.com/green_ganga_associates",
+  },
 ];
 
 const businessHours = [
@@ -50,7 +57,7 @@ const businessHours = [
 ];
 
 const teamMembers = [
-  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G. Economics", image: "/images/seema-sharma.jpeg" },
+  { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G.", image: "/images/seema-sharma.jpeg" },
   { name: "Dr. Ajay Sharma", role: "Consultant", qualification: "Ph.D. Horticulture & Landscaping", image: "/images/ajaysharma.jpeg" },
   { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/images/adityasharma.jpeg" },
   { name: "Nisha Kumari", role: "Team Manager (House)", qualification: "B.Sc. Agriculture, SHUATS", image: "/images/nishakumari.jpeg" },
@@ -97,13 +104,13 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
           <Image
-          src="/client/farmhouse-vrindavan-yojna.jpeg"
-          alt="Contact Green Ganga"
-          fill
-          className="object-cover"
-          sizes="100vw"
-          priority
-        />  <div className="absolute inset-0 bg-black/40" />
+            src="/client/farmhouse-vrindavan-yojna.jpeg"
+            alt="Contact Green Ganga"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />  <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -265,7 +272,12 @@ export default function ContactPage() {
                       {info.lines.map((line) => (
                         <p key={line} className="text-muted-foreground text-sm">
                           {info.href ? (
-                            <a href={info.href} className="hover:text-deep-green transition-colors duration-300">
+                            <a 
+                              href={info.href} 
+                              target={info.href.startsWith('http') ? "_blank" : undefined}
+                              rel={info.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                              className="hover:text-deep-green transition-colors duration-300"
+                            >
                               {line}
                             </a>
                           ) : (

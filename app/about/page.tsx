@@ -58,7 +58,7 @@ const team = [
     role: "Director",
     initials: "SS",
     image: "/images/seema-sharma.jpeg",
-    qualification: "P.G. Economics",
+    qualification: "P.G.",
     experience: "10+ Years",
     bio: "As the Director of Green Ganga Associates, Mrs. Seema Sharma leads the company with a strong business acumen and a deep passion for creating sustainable green environments.",
   },
