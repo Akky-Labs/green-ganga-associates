@@ -81,12 +81,12 @@ const team = [
     bio: "Dr. P.P. Singh is an expert in soil science and rice industry consultancy, bringing specialized agricultural knowledge to large-scale farm and industrial projects.",
   },
   {
-    name: "Aditya Sharma",
+    name: "Aaditya",
     role: "Team Manager (Commercial)",
     initials: "AS",
-    image: "/images/adityasharma.jpeg",
+    image: "",
     qualification: "B.Sc. Agriculture, SHUATS Prayagraj",
-    bio: "Aditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
+    bio: "Aaditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
   },
   {
     name: "Nisha Kumari",
