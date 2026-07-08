@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   verification: {
-    google: "9MtFcmT1l01BFM-K7Q4111TfeONTAZ1MElNpe4zcl5o",
+    google: "g1tLhIbn_2ExoSTvLsYkpqH4vRdkK9SOJOvO__bbLh0",
     yandex: "yandex_verification_code",
     me: "greenganga.aso@gmail.com",
   },
