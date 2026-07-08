@@ -116,7 +116,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
       </body>
-      <GoogleAnalytics gaId="G-SZ1EBXLMWT" />
+      <GoogleAnalytics gaId="G-29R5R9BCPS" />
     </html>
   );
 }
