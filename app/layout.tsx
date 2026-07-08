@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description:
     "India's best landscaping & gardening company. Green Ganga Associates experts in garden design, maintenance, vertical gardens, terrace gardens, and farmhouse landscaping across Lucknow, Noida, and All India. 25+ years expertise.",
   keywords: [
+    "best gardening in Lucknow", "best landscaping in Lucknow", "green ganda landscaping", 
+    "green ganaga gardening", "green ganga flowering", "best gardening in UP", "best landscaping in UP",
     "landscaping in India", "landscaping company in Lucknow", "garden design India", 
     "best landscaping experts Noida", "terrace garden design Prayagraj", "vertical gardens India", 
     "farmhouse landscaping UP", "resort landscape design Kanpur", "smart irrigation India", 
@@ -101,6 +103,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className="min-h-full flex flex-col font-outfit" suppressHydrationWarning>

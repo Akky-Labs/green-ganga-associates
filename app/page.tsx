@@ -14,6 +14,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Leaf,
+  Sprout,
+  Trees,
+  HeartHandshake,
   Building2,
   Droplets,
   TreePine,
@@ -46,6 +49,9 @@ import {
   GraduationCap,
 } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import YouTubeSection from "@/components/YouTubeSection";
+import GoogleReviews from "@/components/GoogleReviews";
 
 /* ═══════════════════════════════════════════════════════
    DATA
@@ -187,11 +193,14 @@ const whyChooseUs = [
 export default function Home() {
   return (
     <>
+      <h2 className="sr-only">
+        Green Ganga Associates - Professional Gardening and Landscaping services in Lucknow, Noida, Prayagraj, and across Uttar Pradesh (UP). Specializing in Garden Design, Vertical Gardens, Terrace Gardening, and Farmhouse Landscape development. Ranked as the best gardening in Lucknow, best landscaping in Lucknow, green ganda landscaping, green ganaga gardening, green ganga flowering, best gardening in UP, and best landscaping in UP.
+      </h2>
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
           <Image
-            src="/client/ds-group.jpeg"
+            src="/client/luxury-hero.png"
             alt="Best landscaping and gardening services in Lucknow by Green Ganga Associates"
             fill
             className="object-cover"
@@ -202,33 +211,45 @@ export default function Home() {
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20" />
         </div>
 
-        {/* Floating decorative elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
-          <div className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-accent-gold/40 animate-float" />
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 rounded-full bg-fresh-green/30 animate-float delay-200" />
-          <div className="absolute bottom-1/4 right-1/5 w-1.5 h-1.5 rounded-full bg-white/20 animate-float delay-400" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-20 pb-10 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-14">
           {/* NO data-aos on hero - critical above-fold content must be visible immediately */}
-          <div className="max-w-2xl animate-fade-in-up">
+          <div className="max-w-3xl animate-fade-in-up">
+            {/* Canva Luxury Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 max-w-2xl">
+              {[
+                { icon: <Leaf className="w-5 h-5 text-accent-gold" />, title: "Bespoke", subtitle: "Design" },
+                { icon: <Sprout className="w-5 h-5 text-accent-gold" />, title: "Expert", subtitle: "Execution" },
+                { icon: <Trees className="w-5 h-5 text-accent-gold" />, title: "Sustainable", subtitle: "Solutions" },
+                { icon: <HeartHandshake className="w-5 h-5 text-accent-gold" />, title: "Lifetime", subtitle: "Care" },
+              ].map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl border border-accent-gold/40 flex items-center justify-center bg-accent-gold/5 shrink-0">
+                    {badge.icon}
+                  </div>
+                  <div className="leading-tight">
+                    <span className="text-[10px] sm:text-[11px] uppercase font-bold text-accent-gold tracking-widest block">{badge.title}</span>
+                    <span className="text-[10px] sm:text-[11px] uppercase font-bold text-white/95 tracking-widest block">{badge.subtitle}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-bold text-white leading-[1.08] mb-5 tracking-tight"
             >
-              Your Green Vision, <span className="text-fresh-green">Our Expertise</span>
+              Your Green Vision, <br className="hidden sm:block" />
+              <span className="text-fresh-green">Our Expertise</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/70 leading-relaxed mb-10 max-w-lg">
-              We create landscapes that inspire, nurture, and endure — combining
-              nature&apos;s beauty with professional care to deliver gardens that
-              truly belong to you.
+            <p className="text-sm sm:text-base lg:text-lg text-gray-200/95 leading-relaxed mb-8 max-w-xl">
+              We design and maintain custom luxury gardens, vertical walls, and automated irrigation systems across Uttar Pradesh with certified horticulture experts.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link href="/services">
                 <Button
                   size="lg"
+                  aria-label="Explore Green Ganga Associates Gardening and Landscaping Services in UP"
                   className="rounded-full bg-linear-to-r from-fresh-green to-deep-green hover:from-deep-green hover:to-dark-green text-white hover:text-white px-8 h-14 text-base font-semibold shadow-2xl shadow-deep-green/30 transition-all duration-500 hover:shadow-deep-green/50 hover:scale-[1.05]"
                 >
                   Our Services
@@ -239,7 +260,8 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white/30 text-white hover:text-white bg-white/10 hover:bg-white/20 px-8 h-14 text-base font-medium backdrop-blur-md transition-all duration-500 border-2 hover:border-white/60"
+                  aria-label="Contact Green Ganga Associates Lucknow office"
+                  className="rounded-full border-white/30 text-white hover:text-white bg-white/10 hover:bg-white/20 px-8 h-14 text-base font-semibold backdrop-blur-md transition-all duration-500 border-2 hover:border-white/60"
                 >
                   Contact Us
                 </Button>
@@ -247,7 +269,7 @@ export default function Home() {
             </div>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-8 mt-14 pt-8 border-t border-white/10">
+            <div className="flex flex-wrap gap-8 mt-8 pt-3">
               {[
                 { num: "25+", label: "Projects" },
                 { num: "15+", label: "cities" },
@@ -255,14 +277,13 @@ export default function Home() {
                 { num: "4.9", label: "Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">{stat.num}</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-white">{stat.num}</div>
+                  <div className="text-[11px] sm:text-xs text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
       </section>
 
       {/* ─── TRUST FEATURES ──────────────────────────────── */}
@@ -563,6 +584,8 @@ export default function Home() {
         </div>
       </section>
 
+      <BeforeAfterSlider />
+
       {/* ─── TEAM ────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -612,7 +635,7 @@ export default function Home() {
       </section>
 
       {/* ─── TESTIMONIALS ────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
+      {/* <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-deep-green/3 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -649,7 +672,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <GoogleReviews />
+
+      <YouTubeSection />
 
       {/* ─── FAQ SECTION ─────────────────────────────────── */}
       <FAQSection />
@@ -674,6 +701,7 @@ export default function Home() {
             <Link href="/contact">
               <Button
                 size="lg"
+                aria-label="Get a Free Quote for Gardening or Landscaping in Lucknow and UP"
                 className="rounded-full bg-deep-green hover:bg-dark-green text-white hover:text-white font-bold px-10 h-14 text-base shadow-xl shadow-deep-green/10 transition-all duration-300 hover:scale-[1.05]"
               >
                 Get Free Quote
@@ -684,6 +712,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
+                aria-label="Chat with Green Ganga Associates Gardening & Landscaping experts on WhatsApp"
                 className="rounded-full border-deep-green/20 text-deep-green hover:text-deep-green hover:bg-deep-green/5 px-10 h-14 text-base font-bold transition-all duration-300 hover:border-deep-green/40 hover:scale-[1.05]"
               >
                 <Phone className="w-5 h-5 mr-2" />

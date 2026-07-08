@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   MapPin,
   Phone,
@@ -25,7 +26,7 @@ const contactInfo = [
   {
     icon: <MapPin className="w-5 h-5" />,
     title: "Office Address",
-    lines: ["Green Ganga Associates", "Adds-Vrindavan yojna", "Lucknow, Uttar Pradesh"],
+    lines: ["Green Ganga Associates", "Vrindavan Yojana, Sector 5B", "Lucknow, Uttar Pradesh"],
   },
   {
     icon: <Mail className="w-5 h-5" />,
@@ -100,12 +101,18 @@ export default function ContactPage() {
 
   return (
     <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", item: "https://greengangaassociates.com" },
+          { name: "Contact", item: "https://greengangaassociates.com/contact" }
+        ]} 
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
           <Image
             src="/client/farmhouse-vrindavan-yojna.jpeg"
-            alt="Contact Green Ganga"
+            alt="Contact Green Ganga Associates - Gardening & Landscaping Services Lucknow, UP"
             fill
             className="object-cover"
             sizes="100vw"

@@ -18,6 +18,7 @@ const projects = [
     location: "Lucknow, UP",
     desc: "Comprehensive garden development and maintenance services for UPRNN at PGI Hospital campus.",
     area: "Campus Wide",
+    slug: "pgi-hospital",
   },
   {
     image: "/client/abdul-kalam.png",
@@ -26,6 +27,7 @@ const projects = [
     location: "New Campus, Lucknow",
     desc: "Professional landscaping and green belt development for the new university campus.",
     area: "Campus Wide",
+    slug: "abdul-kalam-university",
   },
   {
     image: "/project-industrial.png",
@@ -44,6 +46,7 @@ const projects = [
     location: "Raebareli Road, Lalganj",
     desc: "Elegant marriage home cum farmhouse with lush gardens and event spaces.",
     area: "Marriage Resort",
+    slug: "guru-kripa-utsav",
   },
   {
     image: "/client/farmhouse-cum-resort.jpeg",
@@ -76,6 +79,7 @@ const projects = [
     location: "Sec-B Road, Lucknow",
     desc: "Contemporary farmhouse landscape design with minimalist planting and open lawns.",
     area: "Farm House",
+    slug: "vrindavan-yojana-farmhouse",
   },
 
   // Hotels
@@ -86,6 +90,7 @@ const projects = [
     location: "RBL Road, Mohanlalganj, Lko",
     desc: "Complete landscape design and development for the premium hotel and resort property.",
     area: "Hotel Grounds",
+    slug: "grand-hotel-resort",
   },
   {
     image: "/client/subh-vilas-hotel.jpeg",
@@ -128,6 +133,7 @@ const projects = [
     location: "Lucknow, UP",
     desc: "Managed landscaping for the 4,500-acre Hitech Township developmental project.",
     area: "4,500 Acres",
+    slug: "ansal-api-township",
   },
 
   {
@@ -240,62 +246,81 @@ export default function ProjectsPage() {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {filtered.map((project, i) => (
-              <div
-                key={`${project.title}-${i}`}
-                data-aos="fade-up"
-                data-aos-delay={i * 50}
-                className="group relative h-full rounded-2xl sm:rounded-3xl bg-white border border-gray-100 p-5 sm:p-7 hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
-              >
-                {/* Visual Decorative Backgrounds */}
-                <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-fresh-green/5 rounded-bl-[60px] sm:rounded-bl-[100px] -mr-12 -mt-12 sm:-mr-16 sm:-mt-16 group-hover:scale-125 transition-transform duration-1000 ease-out" />
-                <div className="absolute -bottom-12 -left-12 sm:-bottom-16 sm:-left-16 w-24 h-24 sm:w-32 sm:h-32 bg-accent-gold/5 rounded-tr-full group-hover:scale-125 transition-transform duration-1000 ease-out" />
+            {filtered.map((project, i) => {
+              const cardContent = (
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={i * 50}
+                  className="group relative h-full rounded-2xl sm:rounded-3xl bg-white border border-gray-100 p-5 sm:p-7 hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
+                >
+                  {/* Visual Decorative Backgrounds */}
+                  <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-fresh-green/5 rounded-bl-[60px] sm:rounded-bl-[100px] -mr-12 -mt-12 sm:-mr-16 sm:-mt-16 group-hover:scale-125 transition-transform duration-1000 ease-out" />
+                  <div className="absolute -bottom-12 -left-12 sm:-bottom-16 sm:-left-16 w-24 h-24 sm:w-32 sm:h-32 bg-accent-gold/5 rounded-tr-full group-hover:scale-125 transition-transform duration-1000 ease-out" />
 
-                {/* Top Badge Section */}
-                <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
-                  <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
-                    {project.category}
-                  </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige flex items-center justify-center text-deep-green group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
-                    <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="relative z-10 flex-grow">
-                  <h3 className="text-xl sm:text-2xl font-black text-deep-green mb-3 sm:mb-5 leading-tight group-hover:text-fresh-green transition-colors duration-500">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed sm:leading-[1.8] mb-8 sm:mb-10 line-clamp-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                    {project.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Info Section */}
-                <div className="relative z-10 mt-auto pt-6 sm:pt-8 border-t border-gray-100">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-center gap-3 text-deep-green/70">
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-fresh-green/10 flex items-center justify-center">
-                        <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh-green" />
-                      </div>
-                      <span className="text-xs sm:text-sm font-bold tracking-tight">{project.location}</span>
+                  {/* Top Badge Section */}
+                  <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
+                    <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
+                      {project.category}
                     </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-fresh-green" />
-                        <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-fresh-green/80">
-                          {project.area}
-                        </span>
-                      </div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige flex items-center justify-center text-deep-green group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                      <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
                     </div>
                   </div>
+
+                  {/* Content Section */}
+                  <div className="relative z-10 flex-grow">
+                    <h3 className="text-xl sm:text-2xl font-black text-deep-green mb-3 sm:mb-5 leading-tight group-hover:text-fresh-green transition-colors duration-500">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed sm:leading-[1.8] mb-8 sm:mb-10 line-clamp-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                      {project.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Info Section */}
+                  <div className="relative z-10 mt-auto pt-6 sm:pt-8 border-t border-gray-100">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center gap-3 text-deep-green/70">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-fresh-green/10 flex items-center justify-center">
+                          <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh-green" />
+                        </div>
+                        <span className="text-xs sm:text-sm font-bold tracking-tight">{project.location}</span>
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-fresh-green" />
+                          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-fresh-green/80">
+                            {project.area}
+                          </span>
+                        </div>
+                        
+                        {"slug" in project && project.slug && (
+                          <span className="text-xs font-bold text-fresh-green group-hover:translate-x-1 transition-transform">
+                            View Case Study →
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              );
 
-
-              </div>
-            ))}
+              return "slug" in project && project.slug ? (
+                <Link
+                  key={`${project.title}-${i}`}
+                  href={`/projects/${project.slug}`}
+                  className="block h-full"
+                >
+                  {cardContent}
+                </Link>
+              ) : (
+                <div key={`${project.title}-${i}`} className="block h-full">
+                  {cardContent}
+                </div>
+              );
+            })}
           </div>
 
           {filtered.length === 0 && (

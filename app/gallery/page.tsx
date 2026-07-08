@@ -13,6 +13,7 @@ import {
   Camera
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const galleryImages = [
   { src: "certificate.jpeg", title: "" },
@@ -94,11 +95,17 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-soft-beige">
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", item: "https://greengangaassociates.com" },
+          { name: "Gallery", item: "https://greengangaassociates.com/gallery" }
+        ]} 
+      />
       {/* ─── HEADER ─── */}
       <div className="relative h-[40vh] min-h-[300px] flex items-center justify-center overflow-hidden">
         <Image
           src="/client/farmhouse-vrindavan-yojna.jpeg"
-          alt="Green Ganga Gallery"
+          alt="Green Ganga Associates - Professional Gardening and Landscaping Gallery in Lucknow, UP"
           fill
           className="object-cover"
           sizes="100vw"
@@ -123,7 +130,25 @@ export default function GalleryPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {galleryImages.map((img, index) => {
             const imageSrc = typeof img === "string" ? img : img.src;
-            const imageTitle = typeof img === "string" ? `Site Visit ${index + 1}` : img.title;
+            
+            // Generate keyword-rich localized fallback titles for image search bots
+            const fallbackTitles = [
+              "Professional Landscaping Services Lucknow by Green Ganga Associates",
+              "Beautiful Farmhouse Gardening Design in Uttar Pradesh",
+              "Modern Vertical Garden Installation in Noida",
+              "Terrace Garden Development and Plant Care Lucknow",
+              "Resort Landscape Architecture and Lawn Management UP",
+              "Industrial green belt plantation by Green Ganga Associates",
+              "Premium Garden Maintenance Services Lucknow",
+              "Vastu Gardening and Plantation Consulting",
+              "Smart Drip Irrigation System Installation UP",
+              "Commercial Office Landscaping Setup in Noida",
+            ];
+            
+            const imageTitle = typeof img === "string" 
+              ? (fallbackTitles[index % fallbackTitles.length] + ` - Site Photo ${index + 1}`)
+              : img.title || `Site Work Photo ${index + 1}`;
+
             const isFormalImage = typeof img !== "string";
             const isContain = isFormalImage || imageTitle.includes("COO Noida") || imageSrc.toLowerCase().includes("certificate") || imageSrc.toLowerCase().includes("award") || imageSrc.toLowerCase().includes("praman");
             return (

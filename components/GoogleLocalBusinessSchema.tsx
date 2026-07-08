@@ -5,23 +5,23 @@ export default function GoogleLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LandscapingService",
     "name": "Green Ganga Associates",
-    "description": "Green Ganga Associates — India's leading professional landscaping & gardening company. Specialized in garden design, maintenance, vertical gardens, terrace gardens, farmhouse & resort landscaping, and smart irrigation. Best gardening experts in Lucknow, Prayagraj, Noida, and across India.",
+    "description": "Green Ganga Associates — India's leading professional landscaping & gardening company. Specialized in garden design, maintenance, vertical gardens, terrace gardens, farmhouse & resort landscaping, and smart irrigation. Best gardening experts in Lucknow, Prayagraj, Noida, and across Uttar Pradesh.",
     "url": "https://greengangaassociates.com",
     "logo": "https://greengangaassociates.com/favicon.png",
     "image": "https://greengangaassociates.com/hero.png",
     "telephone": "+91-9999177119",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Adds-Vrindavan yojna",
+      "streetAddress": "Vrindavan Yojana, Sector 5B",
       "addressLocality": "Lucknow",
       "addressRegion": "Uttar Pradesh",
-      "postalCode": "226001",
+      "postalCode": "226029",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 26.8467,
-      "longitude": 80.9462
+      "latitude": 26.7865,
+      "longitude": 80.9632
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -31,13 +31,27 @@ export default function GoogleLocalBusinessSchema() {
     },
     "sameAs": [
       "https://www.facebook.com/greenganga",
-      "https://www.instagram.com/greenganga",
+      "https://www.instagram.com/green_ganga_associates",
       "https://www.linkedin.com/company/greenganga"
     ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "India"
-    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Uttar Pradesh"
+      },
+      {
+        "@type": "City",
+        "name": "Lucknow"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Prayagraj"
+      }
+    ],
     "priceRange": "₹₹",
     "aggregateRating": {
       "@type": "AggregateRating",

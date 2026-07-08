@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Green Ganga Gallery",
-  description: "Witness our commitment to excellence through these captures of our working sites and completed landscaping transformations across India.",
+  title: "Garden & Landscape Design Gallery | Lucknow & UP",
+  description: "Witness our commitment to excellence through these captures of our working sites and completed landscaping and gardening transformations across Lucknow, UP, and India.",
   openGraph: {
-    title: "Project Gallery | Green Ganga Associates",
-    description: "Visual portfolio of our best landscaping and gardening projects in Lucknow, Noida, and beyond.",
+    title: "Garden & Landscape Design Gallery | Green Ganga Associates",
+    description: "Visual portfolio of our best landscaping and gardening projects in Lucknow, Noida, and Uttar Pradesh.",
   }
 };
 

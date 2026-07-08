@@ -37,6 +37,8 @@ const services = [
     desc: "Customized landscape layouts for homes, hotels, parks, cafes, farmhouses, offices, and institutions. Plant selection based on climate, soil, and visual appeal. Integration of lawns, flower beds, pathways, and decorative features.",
     features: ["Custom Layouts", "Plant Selection", "Lawns & Flower Beds", "Pathways & Decor"],
     image: "/gallery/design-development.jpeg",
+    slug: "landscaping",
+    startingPrice: "Starting from ₹65 / sq. ft."
   },
   {
     icon: <Wrench className="w-8 h-8" />,
@@ -44,13 +46,17 @@ const services = [
     desc: "Regular watering, pruning, and soil treatment. Seasonal flower planting and lawn upkeep. Pest control and plant health monitoring to keep your garden vibrant year-round.",
     features: ["Watering & Pruning", "Soil Treatment", "Pest Control", "Seasonal Planting"],
     image: "/gallery/maintain-care.jpeg",
+    slug: "garden-maintenance",
+    startingPrice: "Starting from ₹5 / sq. ft. / month"
   },
   {
     icon: <Droplets className="w-8 h-8" />,
-    title: "Water Management",
+    title: "Water Management & Irrigation",
     desc: "Smart irrigation systems for efficient water use. Sprinklers, drip irrigation, and eco-friendly solutions. Consultancy on sustainable water practices for large projects.",
     features: ["Drip Irrigation", "Sprinkler Systems", "Smart Controllers", "Sustainable Practices"],
     image: "/gallery/water-management.jpeg",
+    slug: "irrigation",
+    startingPrice: "Starting from ₹15 / sq. ft."
   },
   {
     icon: <TreePine className="w-8 h-8" />,
@@ -58,14 +64,18 @@ const services = [
     desc: "Modern vertical garden designs for walls and compact spaces. Terrace garden development for homes, hotels, and offices. Customized solutions for urban environments with limited land.",
     features: ["Vertical Walls", "Terrace Gardens", "Urban Solutions", "Custom Designs"],
     image: "/gallery/Vertical-Terrace .jpeg",
+    slug: "terrace-garden",
+    startingPrice: "Starting from ₹130 / sq. ft."
   },
   {
     icon: <ClipboardList className="w-8 h-8" />,
-    title: "Consultancy",
+    title: "Consultancy & Green Belts",
     desc: "Expert advice on plant selection, layout planning, and sustainability. Guidance for industrial landscaping, government projects, and large institutions. Professional project reports and cost-effective solutions.",
     features: ["Plant Selection", "Layout Planning", "Project Reports", "Cost-Effective Plans"],
     image: "/gallery/consultency.jpeg",
     objectFit: "object-contain bg-soft-beige",
+    slug: "commercial-landscaping",
+    startingPrice: "Custom Quote / Site Survey"
   },
   {
     icon: <Factory className="w-8 h-8" />,
@@ -73,6 +83,8 @@ const services = [
     desc: "Large-scale landscaping for factories, public parks, and institutional campuses. Compliance with safety and environmental standards. Durable designs that withstand heavy use and long-term exposure.",
     features: ["Factory Campuses", "Public Parks", "Safety Compliance", "Durable Designs"],
     image: "/project-industrial.png",
+    slug: "commercial-landscaping",
+    startingPrice: "Consultancy Rates"
   },
   {
     icon: <HomeIcon className="w-8 h-8" />,
@@ -80,6 +92,8 @@ const services = [
     desc: "Elegant garden designs for farmhouses, resorts, and hotels. Compact, evergreen plants for high-traffic commercial areas. Landscaping that enhances property value and guest experience.",
     features: ["Farmhouse Design", "Resort Gardens", "Property Value", "Evergreen Plants"],
     image: "/project-farmhouse.png",
+    slug: "residential-landscaping",
+    startingPrice: "Starting from ₹85 / sq. ft."
   },
   {
     icon: <Flower2 className="w-8 h-8" />,
@@ -87,6 +101,8 @@ const services = [
     desc: "In organic farming system — vegetable and fruit garden plans for commercial and personal use. Sustainable, chemical-free growing solutions that bring fresh produce to your doorstep.",
     features: ["Vegetable Gardens", "Fruit Orchards", "Chemical-Free", "Commercial Plans"],
     image: "/hero.png",
+    slug: "plant-supply",
+    startingPrice: "Starting from ₹120 / sq. ft."
   },
   {
     icon: <Sparkles className="w-8 h-8" />,
@@ -94,6 +110,8 @@ const services = [
     desc: "Harmonize your living space with expert guidance on plant placement and species selection according to Vastu principles. Create a garden that not only looks beautiful but also invites positive energy and prosperity into your home.",
     features: ["Auspicious Plant Selection", "Directional Placement", "Energy Balance", "Expert Consultation"],
     image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.51 AM (1).jpeg",
+    slug: "garden-design",
+    startingPrice: "Starting from ₹4,999 Flat"
   },
 ];
 
@@ -162,8 +180,16 @@ export default function ServicesPage() {
                   <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-5">
                     {service.icon}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-deep-green mb-4">{service.title}</h2>
-                  <p className="text-muted-foreground text-base leading-relaxed mb-6">{service.desc}</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-deep-green mb-2">{service.title}</h2>
+                  
+                  {/* Pricing Badge */}
+                  <div className="mb-4">
+                    <span className="inline-block bg-soft-beige border border-deep-green/10 text-deep-green text-xs font-bold px-3 py-1.5 rounded-full">
+                      {service.startingPrice}
+                    </span>
+                  </div>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-6">{service.desc}</p>
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {service.features.map((f, featureIdx) => (
                       <div key={f} className="flex items-center gap-2" data-aos="fade-up" data-aos-delay={featureIdx * 50}>
@@ -172,9 +198,9 @@ export default function ServicesPage() {
                       </div>
                     ))}
                   </div>
-                  <Link href="/contact">
+                  <Link href={`/services/${service.slug}`}>
                     <Button className="rounded-full bg-deep-green hover:bg-dark-green text-white px-6 h-11 font-semibold transition-all duration-300 shadow-lg shadow-deep-green/20">
-                      Get Quote <ArrowRight className="w-4 h-4 ml-2" />
+                      Learn More & Rates <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
                 </div>

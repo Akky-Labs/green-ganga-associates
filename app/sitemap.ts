@@ -43,7 +43,99 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
-  ]
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/case-studies`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+  ];
 
-  return routes
+  const services = [
+    "landscaping", "garden-design", "garden-maintenance", "lawn-maintenance",
+    "terrace-garden", "vertical-garden", "commercial-landscaping", "residential-landscaping",
+    "plant-supply", "irrigation", "artificial-grass", "water-features", "garden-lighting"
+  ];
+
+  const cities = ["lucknow", "kanpur", "noida", "prayagraj", "varanasi"];
+  
+  const lucknowLocalities = [
+    "gomti-nagar", "indira-nagar", "aliganj", "hazratganj", 
+    "jankipuram", "alambagh", "ashiyana", "vrindavan-yojana"
+  ];
+
+  const blogSlugs = [
+    "best-plants-lucknow",
+    "garden-maintenance-tips",
+    "landscaping-cost-lucknow",
+    "terrace-garden-ideas",
+    "vertical-garden-guide"
+  ];
+
+  const projectSlugs = [
+    "pgi-hospital",
+    "abdul-kalam-university",
+    "guru-kripa-utsav",
+    "vrindavan-yojana-farmhouse",
+    "grand-hotel-resort",
+    "ansal-api-township"
+  ];
+
+  // Append services
+  services.forEach((slug) => {
+    routes.push({
+      url: `${baseUrl}/services/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    });
+  });
+
+  // Append cities
+  cities.forEach((city) => {
+    routes.push({
+      url: `${baseUrl}/cities/${city}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    });
+  });
+
+  // Append localities for Lucknow
+  lucknowLocalities.forEach((loc) => {
+    routes.push({
+      url: `${baseUrl}/cities/lucknow/${loc}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    });
+  });
+
+  // Append blog posts
+  blogSlugs.forEach((slug) => {
+    routes.push({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    });
+  });
+
+  // Append projects
+  projectSlugs.forEach((slug) => {
+    routes.push({
+      url: `${baseUrl}/projects/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    });
+  });
+
+  return routes;
 }

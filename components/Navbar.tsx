@@ -5,19 +5,35 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, X } from "lucide-react";
+import { Phone, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
+  { href: "/cities/lucknow", label: "Lucknow Local" },
   { href: "/gallery", label: "Gallery" },
   { href: "/projects", label: "Our Clients" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact Us" },
+];
+
+const desktopNavLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/services", label: "Services" },
+  { href: "/cities/lucknow", label: "Lucknow Local" },
+];
+
+const desktopNavLinksAfter = [
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isPortfolioActive = ["/case-studies", "/projects", "/gallery"].includes(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -80,14 +96,79 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => {
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Regular Links (First Half) */}
+            {desktopNavLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
+                  className={`relative px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 ${
+                    isActive
+                      ? (scrolled
+                        ? "text-deep-green bg-light-green"
+                        : "text-white bg-white/20")
+                      : (scrolled
+                      ? "text-foreground/70 hover:text-deep-green hover:bg-light-green/50"
+                      : "text-white/80 hover:text-white hover:bg-white/10")
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+
+            {/* Portfolio Dropdown (Case Studies, Clients, Gallery) */}
+            <div className="relative group py-2">
+              <button
+                className={`flex items-center gap-1 px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 cursor-pointer ${
+                  isPortfolioActive
+                    ? (scrolled
+                      ? "text-deep-green bg-light-green"
+                      : "text-white bg-white/20")
+                    : (scrolled
+                    ? "text-foreground/70 hover:text-deep-green hover:bg-light-green/50"
+                    : "text-white/80 hover:text-white hover:bg-white/10")
+                }`}
+              >
+                <span>Portfolio</span>
+                <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180 duration-300" />
+              </button>
+
+              {/* Hover Dropdown Panel */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-52 rounded-2xl bg-white border border-gray-100 p-2 shadow-2xl opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-300 z-50">
+                {[
+                  { href: "/case-studies", label: "Case Studies" },
+                  { href: "/projects", label: "Our Clients" },
+                  { href: "/gallery", label: "Photo Gallery" }
+                ].map((item) => {
+                  const isItemActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block px-4 py-2.5 text-sm font-bold rounded-xl transition-all ${
+                        isItemActive
+                          ? "bg-light-green/45 text-deep-green"
+                          : "text-deep-green/80 hover:text-deep-green hover:bg-light-green/20"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Regular Links (Second Half) */}
+            {desktopNavLinksAfter.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 ${
                     isActive
                       ? (scrolled
                         ? "text-deep-green bg-light-green"
@@ -104,15 +185,22 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+919999177119" className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/30 text-white bg-white/10 hover:bg-white/20 transition-all">
+          <div className="hidden lg:flex items-center gap-2.5">
+            <a 
+              href="tel:+919999177119" 
+              className={`flex items-center gap-1.5 px-2.5 py-1.5 xl:px-4 rounded-full border transition-all ${
+                scrolled
+                  ? "border-deep-green/30 text-deep-green bg-deep-green/5 hover:bg-deep-green/10"
+                  : "border-white/30 text-white bg-white/10 hover:bg-white/20"
+              }`}
+            >
                <Phone className={`w-4 h-4 ${scrolled ? "text-deep-green" : "text-white"}`} />
                <span className={`text-sm font-bold ${scrolled ? "text-deep-green" : "text-white"}`}>9999177119</span>
             </a>
             <Link href="/contact">
               <Button
                 size="sm"
-                className="rounded-full bg-gradient-to-r from-deep-green to-fresh-green hover:from-dark-green hover:to-deep-green text-white shadow-lg shadow-deep-green/20 transition-all duration-300 hover:shadow-deep-green/30"
+                className="rounded-full bg-gradient-to-r from-deep-green to-fresh-green hover:from-dark-green hover:to-deep-green text-white shadow-lg shadow-deep-green/20 transition-all duration-300 hover:shadow-deep-green/30 whitespace-nowrap"
               >
                 Get Free Quote
               </Button>

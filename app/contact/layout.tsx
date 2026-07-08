@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Green Ganga",
-  description: "Get a free landscaping quote and a professional garden assessment today. Reach out across Lucknow, Prayagraj, Noida, and Northern India.",
+  title: "Contact Green Ganga Associates | Landscaping Services Lucknow",
+  description: "Get a free landscaping and gardening quote in Lucknow, Noida, Prayagraj, and Uttar Pradesh. Reach out to Green Ganga Associates today.",
   openGraph: {
-    title: "Contact India's Best Landscaping Experts",
-    description: "Connect with us to plan your green vision. Serving Lucknow, Noida, and India wide.",
+    title: "Contact Green Ganga Associates | Landscaping & Gardening Experts",
+    description: "Connect with us to plan your green vision. Serving Lucknow, Noida, Prayagraj, and across Uttar Pradesh.",
   }
 };
 

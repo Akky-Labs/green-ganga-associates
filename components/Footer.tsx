@@ -3,14 +3,14 @@ import Image from "next/image";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 
 const services = [
-  "Design & Development",
-  "Maintenance & Care",
-  "Water Management",
-  "Vertical & Terrace Gardens",
-  "Consultancy",
-  "Industrial & Govt. Projects",
-  "Farmhouse & Commercial",
-  "Organic Farming",
+  { href: "/services/landscaping", label: "Landscaping & Design" },
+  { href: "/services/garden-design", label: "Garden Design" },
+  { href: "/services/garden-maintenance", label: "Garden Maintenance" },
+  { href: "/services/lawn-maintenance", label: "Lawn Installation" },
+  { href: "/services/terrace-garden", label: "Terrace Gardens" },
+  { href: "/services/vertical-garden", label: "Vertical Gardens" },
+  { href: "/services/irrigation", label: "Smart Irrigation" },
+  { href: "/services/artificial-grass", label: "Artificial Grass" },
 ];
 
 const quickLinks = [
@@ -19,6 +19,8 @@ const quickLinks = [
   { href: "/services", label: "Services" },
   { href: "/gallery", label: "Gallery" },
   { href: "/projects", label: "Our Clients" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -95,13 +97,13 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3">
                 {services.map((service) => (
-                  <li key={service}>
+                  <li key={service.href}>
                     <Link
-                      href="/services"
+                      href={service.href}
                       className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300 flex items-center gap-2 group"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-fresh-green/30 group-hover:bg-fresh-green transition-colors duration-300" />
-                      {service}
+                      {service.label}
                     </Link>
                   </li>
                 ))}
@@ -119,7 +121,7 @@ export default function Footer() {
                     <MapPin className="w-4 h-4 text-fresh-green" />
                   </div>
                   <span className="text-white/50 text-sm leading-relaxed">
-                    Adds-Vrindavan yojna,
+                    Vrindavan Yojana, Sector 5B,
                     <br />
                     Lucknow, Uttar Pradesh
                   </span>
@@ -171,6 +173,14 @@ export default function Footer() {
               © {new Date().getFullYear()} Green Ganga Associates. All rights
               reserved.
             </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-white/30 items-center">
+              <span className="font-bold text-white/50">Our Service Cities:</span>
+              <Link href="/cities/lucknow" className="hover:text-fresh-green transition-colors">Lucknow</Link>
+              <Link href="/cities/noida" className="hover:text-fresh-green transition-colors">Noida</Link>
+              <Link href="/cities/kanpur" className="hover:text-fresh-green transition-colors">Kanpur</Link>
+              <Link href="/cities/prayagraj" className="hover:text-fresh-green transition-colors">Prayagraj</Link>
+              <Link href="/cities/varanasi" className="hover:text-fresh-green transition-colors">Varanasi</Link>
+            </div>
 
           </div>
         </div>

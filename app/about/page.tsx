@@ -22,11 +22,12 @@ import {
   ClipboardList,
 } from "lucide-react";
 import type { Metadata } from "next";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "About Our Expertise",
+  title: "About Us | Professional Gardening & Landscaping Experts in UP",
   description:
-    "About Green Ganga Associates — a premier professional landscaping and gardening group serving Lucknow, Noida, and cities across India with 25+ years expertise.",
+    "About Green Ganga Associates — a premier professional landscaping and gardening group serving Lucknow, Noida, and cities across Uttar Pradesh (UP) with 25+ years expertise.",
 };
 
 const values = [
@@ -126,6 +127,12 @@ const trustReasons = [
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", item: "https://greengangaassociates.com" },
+          { name: "About", item: "https://greengangaassociates.com/about" }
+        ]} 
+      />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
         <div className="absolute inset-0">
