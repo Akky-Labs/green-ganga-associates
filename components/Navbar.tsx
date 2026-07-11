@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/cities/lucknow", label: "Lucknow Local" },
+  { href: "/case-studies", label: "Case Studies" },
   { href: "/gallery", label: "Gallery" },
   { href: "/projects", label: "Our Clients" },
   { href: "/blog", label: "Blog" },
@@ -140,6 +141,7 @@ export default function Navbar() {
               {/* Hover Dropdown Panel */}
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-52 rounded-2xl bg-white dark:bg-card border border-gray-100 dark:border-white/10 p-2 shadow-2xl opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-300 z-50">
                 {[
+                  { href: "/case-studies", label: "Case Studies" },
                   { href: "/projects", label: "Our Clients" },
                   { href: "/gallery", label: "Photo Gallery" }
                 ].map((item) => {
