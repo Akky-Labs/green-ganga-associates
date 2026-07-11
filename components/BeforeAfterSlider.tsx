@@ -14,8 +14,8 @@ interface BeforeAfterSliderProps {
 }
 
 export default function BeforeAfterSlider({
-  beforeImage = "/client/GS infra.jpeg", // Raw site setup placeholder
-  afterImage = "/client/ds-group.jpeg",  // Finished landscaping showcase
+  beforeImage = "/images/before.jpeg", // Raw site setup placeholder
+  afterImage = "/images/after.jpeg",  // Finished landscaping showcase
   beforeLabel = "Before (Raw Site)",
   afterLabel = "After (Green Ganga Landscaping)",
   title = "Transforming Spaces Into Paradises",
@@ -79,21 +79,21 @@ export default function BeforeAfterSlider({
   }, [isDragging]);
 
   return (
-    <section className="py-20 lg:py-28 bg-soft-beige relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-linear-to-br from-deep-green via-deep-green to-dark-green text-white relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-fresh-green/5 blur-3xl" />
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-fresh-green/10 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-accent-gold/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 px-4 py-1.5 mb-4 border border-deep-green/10">
-            <Sparkles className="w-4 h-4 text-fresh-green animate-pulse" />
-            <span className="text-deep-green text-xs font-semibold uppercase tracking-widest">Visual Portfolio</span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 mb-4 border border-white/10 backdrop-blur-md">
+            <Sparkles className="w-4 h-4 text-accent-gold animate-pulse" />
+            <span className="text-accent-gold text-xs font-semibold uppercase tracking-widest">Visual Portfolio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mt-2 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-2 mb-4 leading-tight">
             {title}
           </h2>
-          <p className="text-muted-foreground text-sm lg:text-base max-w-2xl mx-auto">
+          <p className="text-white/70 text-sm lg:text-base max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>

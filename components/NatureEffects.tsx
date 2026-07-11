@@ -84,6 +84,7 @@ export default function NatureEffects() {
   const leafTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const butterflyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isVisibleRef = useRef(true);
+  const activeButterfliesCountRef = useRef(0);
 
   /* ─── Single Cursor Leaf ───────────────────────────── */
   const spawnSingleLeaf = useCallback((baseX: number, baseY: number) => {
@@ -149,6 +150,9 @@ export default function NatureEffects() {
   /* ─── Floating Butterflies ─────────────────────────── */
   const spawnButterfly = useCallback(() => {
     if (!containerRef.current || !isVisibleRef.current) return;
+    if (activeButterfliesCountRef.current >= 2) return; // Limit to maximum 2 active butterflies on screen
+
+    activeButterfliesCountRef.current++;
 
     const butterfly = document.createElement("div");
     const colorIdx = Math.floor(Math.random() * BUTTERFLY_COLORS.length);
@@ -213,6 +217,7 @@ export default function NatureEffects() {
     setTimeout(() => {
       butterfly.remove();
       style.remove();
+      activeButterfliesCountRef.current = Math.max(0, activeButterfliesCountRef.current - 1);
     }, duration * 1000 + 200);
   }, []);
 
@@ -253,29 +258,20 @@ export default function NatureEffects() {
     }, 120);
     leafTimerRef.current = leafInterval;
 
-    // 🦋 Spawn butterflies: 1 or 2 at a time (optimized)
+    // 🦋 Spawn butterflies: 1 at a time (peaceful & calm)
     const spawnLoop = () => {
       if (!isVisibleRef.current) return;
       
-      const count = Math.random() > 0.4 ? 2 : 1; // 60% chance for 2, 40% for 1
-      for (let i = 0; i < count; i++) {
-        // Stagger if 2
-        if (i > 0) {
-          setTimeout(() => spawnButterfly(), 1000 + Math.random() * 2000);
-        } else {
-          spawnButterfly();
-        }
-      }
+      spawnButterfly();
       
-      const nextDelay = 5000 + Math.random() * 4000; // Next spawn in 5-9s
+      const nextDelay = 10000 + Math.random() * 5000; // Next spawn in 10-15s
       butterflyTimerRef.current = setTimeout(spawnLoop, nextDelay);
     };
 
-    // Initial spawn: 2 butterflies after 2s
+    // Initial spawn: 1 butterfly after 2s
     setTimeout(() => {
       spawnButterfly();
-      setTimeout(() => spawnButterfly(), 1500);
-      butterflyTimerRef.current = setTimeout(spawnLoop, 7000);
+      butterflyTimerRef.current = setTimeout(spawnLoop, 8000);
     }, 2000);
 
     return () => {

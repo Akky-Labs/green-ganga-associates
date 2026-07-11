@@ -117,7 +117,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* ─── CASE STUDIES INDEX LIST ─────────────────────── */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-soft-beige/40 relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-soft-beige/40 dark:bg-background relative overflow-hidden transition-colors duration-300">
         {/* Decorative backdrop elements */}
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-fresh-green/5 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent-gold/5 blur-3xl pointer-events-none" />
@@ -127,7 +127,7 @@ export default function CaseStudiesPage() {
             {caseStudies.map((cs, idx) => (
               <div
                 key={cs.slug}
-                className="group flex flex-col lg:flex-row items-stretch bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-xs hover:shadow-xl hover:border-fresh-green/20 transition-all duration-500"
+                className="group flex flex-col lg:flex-row items-stretch bg-white dark:bg-card border border-gray-100 dark:border-white/5 overflow-hidden shadow-xs hover:shadow-xl hover:border-fresh-green/20 dark:hover:border-fresh-green/30 transition-all duration-500"
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] overflow-hidden bg-gray-150">
@@ -147,8 +147,8 @@ export default function CaseStudiesPage() {
                 <div className="w-full lg:w-1/2 p-8 sm:p-12 flex flex-col justify-between relative">
                   <div>
                     {/* Meta Row */}
-                    <div className="flex flex-wrap items-center gap-4 mb-4 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                      <div className="flex items-center gap-1.5 text-deep-green">
+                    <div className="flex flex-wrap items-center gap-4 mb-6 text-xs font-bold text-muted-foreground dark:text-gray-400 uppercase tracking-wider">
+                      <div className="flex items-center gap-1.5 text-deep-green dark:text-accent-gold">
                         <MapPin className="w-4 h-4 text-fresh-green" />
                         <span>{cs.location}</span>
                       </div>
@@ -162,24 +162,24 @@ export default function CaseStudiesPage() {
                       </div>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-black text-deep-green mb-4 leading-tight group-hover:text-fresh-green transition-colors">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-deep-green dark:text-white mb-5 leading-tight group-hover:text-fresh-green transition-colors">
                       {cs.title}
                     </h2>
 
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-medium">
+                    <p className="text-muted-foreground dark:text-gray-300 text-sm leading-relaxed mb-8 font-medium">
                       {cs.description}
                     </p>
 
                     {/* Plants Pills */}
                     <div className="mb-8">
-                      <h4 className="text-xs uppercase font-bold text-deep-green mb-3 tracking-wider flex items-center gap-1">
+                      <h4 className="text-xs uppercase font-bold text-deep-green dark:text-white mb-3 tracking-wider flex items-center gap-1">
                         <Leaf className="w-3.5 h-3.5 text-fresh-green" /> Key Foliage & Materials:
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {cs.plants.map((plant) => (
                           <span
                             key={plant}
-                            className="text-xs bg-soft-beige border border-gray-150 text-deep-green/90 px-3 py-1 rounded-full font-semibold"
+                            className="text-xs bg-soft-beige dark:bg-white/10 border border-gray-150 dark:border-white/5 text-deep-green/90 dark:text-white/90 px-3 py-1 rounded-full font-semibold"
                           >
                             {plant}
                           </span>
@@ -188,7 +188,7 @@ export default function CaseStudiesPage() {
                     </div>
                   </div>
 
-                  <div className="border-t border-gray-100 pt-6">
+                  <div className="border-t border-gray-100 dark:border-white/10 pt-6">
                     <Link href={`/projects/${cs.slug}`}>
                       <Button className="rounded-full bg-deep-green hover:bg-dark-green text-white px-8 h-12 font-bold transition-all shadow-md shadow-deep-green/10 flex items-center">
                         Read Full Case Study

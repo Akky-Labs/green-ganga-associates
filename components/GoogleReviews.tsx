@@ -50,21 +50,21 @@ const googleReviewsList = [
 
 export default function GoogleReviews() {
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section className="py-20 lg:py-24 bg-linear-to-br from-deep-green via-deep-green to-dark-green text-white relative overflow-hidden">
       {/* Visual background details */}
-      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-fresh-green/5 blur-3xl" />
+      <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-fresh-green/10 blur-3xl" />
       <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-accent-gold/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-deep-green/5 px-3 py-1 mb-4 border border-deep-green/10">
-            <Sparkles className="w-3.5 h-3.5 text-fresh-green animate-pulse" />
-            <span className="text-deep-green text-xs font-semibold uppercase tracking-wider">Social Proof</span>
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 mb-4 border border-white/10 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-accent-gold animate-pulse" />
+            <span className="text-accent-gold text-xs font-semibold uppercase tracking-wider">Social Proof</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-deep-green mt-2 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2 mb-4">
             Verified Customer Google Reviews
           </h2>
-          <p className="text-muted-foreground text-sm lg:text-base max-w-2xl mx-auto">
+          <p className="text-white/70 text-sm lg:text-base max-w-2xl mx-auto">
             Read what residential homeowners, resort builders, and corporate managers across Uttar Pradesh say about our landscaping and gardening work.
           </p>
 
@@ -72,11 +72,11 @@ export default function GoogleReviews() {
           <div className="flex items-center justify-center gap-2 mt-6">
             <div className="flex text-accent-gold">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-accent-gold" />
+                <Star key={i} className="w-5 h-5 fill-accent-gold text-accent-gold" />
               ))}
             </div>
-            <span className="text-sm font-bold text-deep-green">4.9 / 5.0 Rating</span>
-            <span className="text-xs text-muted-foreground">(Based on 120+ verified reviews)</span>
+            <span className="text-sm font-bold text-white">4.9 / 5.0 Rating</span>
+            <span className="text-xs text-white/60">(Based on 120+ verified reviews)</span>
           </div>
         </div>
 
@@ -84,7 +84,7 @@ export default function GoogleReviews() {
           {googleReviewsList.map((review, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-soft-beige/30 border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 relative group"
+              className="p-8 rounded-3xl bg-white border border-white/10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 relative group shadow-lg shadow-black/10"
             >
               <Quote className="absolute top-6 right-6 w-8 h-8 text-fresh-green/10 group-hover:text-fresh-green/20 transition-colors" />
 
@@ -101,14 +101,14 @@ export default function GoogleReviews() {
                 </p>
               </div>
 
-              <div className="border-t border-gray-150 pt-4 flex items-center justify-between">
+              <div className="border-t border-gray-100 pt-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-deep-green text-white font-bold flex items-center justify-center text-xs">
                     {review.name[0]}
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-deep-green">{review.name}</h4>
-                    <p className="text-[10px] text-muted-foreground">{review.location}</p>
+                    <p className="text-[10px] text-gray-500">{review.location}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 text-[10px] font-semibold text-fresh-green bg-fresh-green/10 px-2 py-0.5 rounded-full">
@@ -122,18 +122,18 @@ export default function GoogleReviews() {
         {/* Call to review on GMB */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
           <a
-            href="https://www.google.com/search?q=GREEN+GANGA+ASSOCIATES+Reviews#lrd=0x295298ceaf5f0b1:0xb0319c9793397e68,3,,,,"
+            href="https://www.google.com/maps/place/GREEN+GANGA+ASSOCIATES/@21.0680074,82.7525294,5z/data=!3m1!4b1!4m6!3m5!1s0x295298ceaf5f0b1:0xb0319c9793397e68!8m2!3d21.0680074!4d82.7525294!16s%2Fg%2F11z4016ymb?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-deep-green hover:bg-dark-green text-white px-8 h-12 text-sm font-bold shadow-md shadow-deep-green/15 transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center rounded-full bg-accent-gold hover:bg-accent-gold/90 text-deep-green px-8 h-12 text-sm font-bold shadow-md shadow-accent-gold/15 transition-all duration-300 hover:scale-[1.02]"
           >
             Write a Google Review
           </a>
           <a
-            href="https://www.google.com/search?q=GREEN+GANGA+ASSOCIATES+Reviews#lrd=0x295298ceaf5f0b1:0xb0319c9793397e68,1,,,,"
+            href="https://www.google.com/maps/place/GREEN+GANGA+ASSOCIATES/@21.0680074,82.7525294,5z/data=!3m1!4b1!4m6!3m5!1s0x295298ceaf5f0b1:0xb0319c9793397e68!8m2!3d21.0680074!4d82.7525294!16s%2Fg%2F11z4016ymb?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-deep-green/20 text-deep-green hover:bg-deep-green/5 bg-white px-8 h-12 text-sm font-bold transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 bg-white/5 px-8 h-12 text-sm font-bold transition-all duration-300 hover:scale-[1.02]"
           >
             View All Reviews on Google Maps
           </a>

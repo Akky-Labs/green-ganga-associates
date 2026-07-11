@@ -241,15 +241,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const resolvedParams = await params;
   const post = blogPostsData[resolvedParams.slug] || blogPostsData["best-plants-lucknow"];
   const title = `${post.title} | Green Ganga Associates`;
+  const description = `${post.desc.slice(0, 140)}... Expert gardening guides & landscaping advice in Lucknow & UP.`;
   return {
     title,
-    description: post.desc,
+    description,
     alternates: {
       canonical: `https://greengangaassociates.com/blog/${resolvedParams.slug}`
     },
     openGraph: {
       title,
-      description: post.desc,
+      description,
       images: [{ url: post.image }]
     }
   };
@@ -271,7 +272,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     "headline": post.title,
     "description": post.desc,
     "image": `https://greengangaassociates.com${post.image}`,
-    "datePublished": "2026-06-01", 
+    "datePublished": "2026-06-01",
     "author": {
       "@type": "Person",
       "name": post.author
@@ -301,31 +302,31 @@ export default async function BlogPostPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <article className="pt-36 sm:pt-40 pb-20 bg-white relative">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          
+      <article className="pt-36 sm:pt-40 pb-20 bg-white dark:bg-background relative transition-colors duration-300">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+
           {/* Premium Back to Blog & Category row */}
           <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50/50 hover:bg-light-green/30 hover:border-fresh-green/30 hover:-translate-x-1.5 transition-all duration-300 shadow-xs text-xs font-bold text-deep-green"
+              className="back-to-articles-btn group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-card hover:bg-light-green/30 dark:hover:bg-white/10 transition-all duration-300 shadow-xs text-xs font-bold text-deep-green dark:text-white"
             >
               <ArrowLeft className="w-4 h-4 text-fresh-green transition-transform group-hover:-translate-x-0.5" />
               <span>Back to Articles</span>
             </Link>
-            <span className="bg-fresh-green/10 text-fresh-green text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-fresh-green/10">
+            <span className="bg-fresh-green/10 text-fresh-green text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-fresh-green/10 dark:border-fresh-green/20">
               {post.category}
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-deep-green leading-tight mb-6 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-deep-green dark:text-white leading-tight mb-8 tracking-tight">
             {post.title}
           </h1>
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-gray-100 mb-10">
-            <span className="flex items-center gap-2 font-semibold text-gray-700 bg-soft-beige/40 px-3 py-1 rounded-lg border border-gray-100">
+          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-gray-100 dark:border-white/10 mb-12">
+            <span className="author-meta-box flex items-center gap-2 font-semibold px-3 py-1 rounded-lg border border-gray-100 dark:border-white/10 bg-soft-beige/40 dark:bg-card text-gray-700 dark:text-gray-300">
               <User className="w-4 h-4 text-fresh-green" />
               By {post.author}
             </span>
@@ -340,7 +341,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           {/* Featured Image */}
-          <div className="relative aspect-16/9 rounded-3xl overflow-hidden shadow-2xl mb-12 border border-gray-100 shadow-deep-green/5">
+          <div className="relative aspect-16/9 rounded-3xl overflow-hidden shadow-2xl mb-12 border border-gray-100 dark:border-white/5 shadow-deep-green/5">
             <Image
               src={post.image}
               alt={post.title}
@@ -353,18 +354,18 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Grid Layout: Content + Side CTA */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
+
             {/* Left Content */}
-            <div className="lg:col-span-2 prose prose-green max-w-none prose-headings:text-deep-green prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-strong:text-deep-green">
-              
+            <div className="lg:col-span-2 max-w-none">
+
               {/* Highlights callout */}
-              <div className="p-6 rounded-2xl bg-soft-beige/50 border border-gray-100 mb-8">
-                <h3 className="text-sm font-bold text-deep-green uppercase tracking-wider mb-3 flex items-center gap-1.5">
+              <div className="p-6 rounded-2xl bg-soft-beige/50 dark:bg-white/5 border border-gray-100 dark:border-white/5 mb-8 animate-pulse-slow">
+                <h3 className="text-sm font-bold text-deep-green dark:text-white uppercase tracking-wider mb-3 flex items-center gap-1.5">
                   <Sparkles className="w-4 h-4 text-fresh-green animate-pulse" /> Key Highlights inside:
                 </h3>
                 <ul className="space-y-2">
                   {post.highlights.map((hl, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs font-semibold text-gray-700">
+                    <li key={i} className="flex items-start gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300">
                       <CheckCircle2 className="w-4 h-4 text-fresh-green shrink-0 mt-0.5" />
                       <span>{hl}</span>
                     </li>
@@ -373,33 +374,33 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
 
               {/* Rich Body Content */}
-              <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+              <div className="article-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
 
             </div>
 
             {/* Right Side Sticky Consultation Box */}
             <div className="lg:col-span-1">
-              <div className="sticky top-28 p-6 rounded-3xl bg-soft-beige/40 border border-gray-100 shadow-xl shadow-deep-green/5 space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-deep-green/10 flex items-center justify-center">
-                  <Leaf className="w-6 h-6 text-deep-green" />
+              <div className="consultation-sticky-box sticky top-28 p-6 rounded-3xl border border-gray-100 dark:border-white/10 bg-soft-beige/40 dark:bg-dark-green shadow-xl shadow-deep-green/5 space-y-6">
+                <div className="w-12 h-12 rounded-2xl bg-deep-green/10 dark:bg-white/10 flex items-center justify-center">
+                  <Leaf className="w-6 h-6 text-deep-green dark:text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-deep-green">Need Expert Advice?</h3>
+                  <h3 className="text-lg font-bold text-deep-green dark:text-white">Need Expert Advice?</h3>
                   <p className="text-xs text-muted-foreground mt-1">Get an on-site horticulture soil and landscape survey.</p>
                 </div>
 
                 <div className="space-y-3 pt-2">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-fresh-green" />
-                    <span className="text-xs font-bold text-gray-700">Ph.D. Agronomist Review</span>
+                    <span className="text-xs font-bold text-gray-700 dark:text-gray-300">Ph.D. Agronomist Review</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-fresh-green" />
-                    <span className="text-xs font-bold text-gray-700">Vastu Directional Advice</span>
+                    <span className="text-xs font-bold text-gray-700 dark:text-gray-300">Vastu Directional Advice</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-fresh-green" />
-                    <span className="text-xs font-bold text-gray-700">Water Flow Calculations</span>
+                    <span className="text-xs font-bold text-gray-700 dark:text-gray-300">Water Flow Calculations</span>
                   </div>
                 </div>
 
@@ -415,7 +416,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     </Button>
                   </a>
                   <a href="tel:+919999177119" className="block w-full">
-                    <Button variant="outline" className="w-full rounded-full border-deep-green/20 text-deep-green hover:bg-deep-green/5 h-11 text-xs font-bold">
+                    <Button variant="outline" className="w-full rounded-full border-deep-green/20 dark:border-white/20 text-deep-green dark:text-white hover:bg-deep-green/5 dark:hover:bg-white/5 h-11 text-xs font-bold">
                       <Phone className="w-3.5 h-3.5 mr-2 text-fresh-green" /> Call 9999177119
                     </Button>
                   </a>

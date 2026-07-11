@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Completed Landscaping & Gardening Projects in Lucknow & UP",
-  description: "Explore Green Ganga Associates' diverse portfolio of landscaping and gardening projects across residential, commercial, industrial, and government sectors in Uttar Pradesh (UP) and India.",
+  title: "Completed Landscaping & Gardening Projects in Lucknow | Green Ganga",
+  description: "Browse Green Ganga Associates' project portfolio. Featuring corporate garden designs, luxury farmhouse landscaping & vertical walls in Lucknow & UP.",
+  alternates: {
+    canonical: "/projects",
+  },
   openGraph: {
-    title: "Completed Landscaping & Gardening Projects | Green Ganga Associates",
-    description: "Explore our stunning landscaping transformations across Lucknow, Noida, and Uttar Pradesh.",
+    title: "Completed Landscaping & Gardening Projects in Lucknow | Green Ganga Associates",
+    description: "Browse Green Ganga Associates' project portfolio. Featuring corporate garden designs, luxury farmhouse landscaping & vertical walls in Lucknow & UP.",
   }
 };
 

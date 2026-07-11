@@ -81,30 +81,30 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
   };
 
   return (
-    <section className={`py-20 lg:py-24 bg-white relative overflow-hidden ${className}`}>
+    <section className={`py-20 lg:py-24 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300 ${className}`}>
       <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-deep-green/5 blur-3xl -translate-y-1/2" />
       <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full bg-accent-gold/5 blur-3xl -translate-y-1/2" />
 
       <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 px-4 py-1.5 mb-4 border border-deep-green/10">
+          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 dark:bg-white/10 px-4 py-1.5 mb-4 border border-deep-green/10 dark:border-white/10">
             <Calculator className="w-4 h-4 text-fresh-green animate-pulse" />
-            <span className="text-deep-green text-xs font-semibold uppercase tracking-widest">Instant Calculator</span>
+            <span className="text-deep-green dark:text-accent-gold text-xs font-semibold uppercase tracking-widest">Instant Calculator</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-deep-green mt-2 mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-deep-green dark:text-white mt-2 mb-4 leading-tight">
             Estimate Your Landscaping Cost
           </h2>
-          <p className="text-muted-foreground text-sm lg:text-base max-w-2xl mx-auto">
+          <p className="text-muted-foreground dark:text-gray-300 text-sm lg:text-base max-w-2xl mx-auto">
             Select your preferred service type, adjust the slider to match your garden space area size, and calculate an instant rough budget estimate.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Inputs Panel (7 cols) */}
-          <div className="lg:col-span-7 bg-soft-beige/50 p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-xl shadow-deep-green/5 space-y-8">
+          <div className="lg:col-span-7 bg-soft-beige/50 dark:bg-card p-6 sm:p-8 rounded-3xl border border-gray-100 dark:border-white/5 shadow-xl shadow-deep-green/5 space-y-8">
             {/* Service Select */}
             <div className="space-y-3">
-              <label className="text-sm font-bold text-deep-green uppercase tracking-wider">
+              <label className="text-sm font-bold text-deep-green dark:text-white uppercase tracking-wider">
                 1. Select Garden Service
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -114,13 +114,13 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
                     onClick={() => setSelectedService(key)}
                     className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 ${
                       selectedService === key
-                        ? "border-deep-green bg-deep-green text-white shadow-lg"
-                        : "border-gray-200 bg-white text-foreground hover:border-deep-green/30"
+                        ? "border-deep-green dark:border-fresh-green bg-deep-green dark:bg-fresh-green text-white shadow-lg"
+                        : "border-gray-200 dark:border-white/10 bg-white dark:bg-background text-foreground dark:text-white hover:border-deep-green/30 dark:hover:border-fresh-green/30"
                     }`}
                   >
                     <div>
                       <div className="text-sm font-bold leading-tight">{value.name}</div>
-                      <div className={`text-[11px] mt-1 ${selectedService === key ? "text-white/80" : "text-muted-foreground"}`}>
+                      <div className={`text-[11px] mt-1 ${selectedService === key ? "text-white/80" : "text-muted-foreground dark:text-gray-400"}`}>
                         ₹{value.rate}/{value.unit}
                       </div>
                     </div>
@@ -133,10 +133,10 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
             {/* Area Slider */}
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <label className="text-sm font-bold text-deep-green uppercase tracking-wider">
+                <label className="text-sm font-bold text-deep-green dark:text-white uppercase tracking-wider">
                   2. Area Size (sq. ft.)
                 </label>
-                <span className="bg-deep-green/10 text-deep-green font-extrabold px-3 py-1 rounded-lg text-sm">
+                <span className="bg-deep-green/10 dark:bg-white/10 text-deep-green dark:text-accent-gold font-extrabold px-3 py-1 rounded-lg text-sm">
                   {areaSize} sq. ft.
                 </span>
               </div>
@@ -147,9 +147,9 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
                 step="50"
                 value={areaSize}
                 onChange={(e) => setAreaSize(Number(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-deep-green"
+                className="w-full h-2 bg-gray-200 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-deep-green dark:accent-fresh-green"
               />
-              <div className="flex justify-between text-xs text-muted-foreground font-medium">
+              <div className="flex justify-between text-xs text-muted-foreground dark:text-gray-400 font-medium">
                 <span>100 sq. ft.</span>
                 <span>2,500 sq. ft.</span>
                 <span>5,000 sq. ft.</span>
@@ -158,7 +158,7 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
 
             {/* Add-ons Checklist */}
             <div className="space-y-3">
-              <label className="text-sm font-bold text-deep-green uppercase tracking-wider">
+              <label className="text-sm font-bold text-deep-green dark:text-white uppercase tracking-wider">
                 3. Premium Optional Add-ons
               </label>
               <div className="space-y-2">
@@ -168,21 +168,21 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
                     onClick={() => toggleAddon(addon.id)}
                     className={`w-full flex items-center justify-between p-4 rounded-xl border text-left transition-all duration-300 ${
                       selectedAddons.includes(addon.id)
-                        ? "border-fresh-green bg-fresh-green/5 text-deep-green"
-                        : "border-gray-200 bg-white text-muted-foreground hover:border-deep-green/20"
+                        ? "border-fresh-green bg-fresh-green/5 dark:bg-fresh-green/10 text-deep-green dark:text-white"
+                        : "border-gray-200 dark:border-white/10 bg-white dark:bg-background text-muted-foreground dark:text-gray-300 hover:border-deep-green/20 dark:hover:border-fresh-green/30"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
                         selectedAddons.includes(addon.id)
-                          ? "bg-deep-green border-deep-green text-white"
-                          : "border-gray-300"
+                          ? "bg-deep-green dark:bg-fresh-green border-deep-green dark:border-fresh-green text-white"
+                          : "border-gray-300 dark:border-white/20"
                       }`}>
                         {selectedAddons.includes(addon.id) && <span className="text-[10px]">✓</span>}
                       </div>
-                      <span className="text-sm font-bold text-gray-800">{addon.name}</span>
+                      <span className="text-sm font-bold text-gray-800 dark:text-white/90">{addon.name}</span>
                     </div>
-                    <span className="text-xs font-extrabold text-deep-green shrink-0">
+                    <span className="text-xs font-extrabold text-deep-green dark:text-accent-gold shrink-0">
                       +{addon.type === "per-sqft" ? `₹${addon.rate}/sq. ft.` : `₹${addon.rate.toLocaleString("en-IN")}`}
                     </span>
                   </button>
@@ -192,7 +192,7 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
           </div>
 
           {/* Results Card (5 cols) */}
-          <div className="lg:col-span-5 bg-linear-to-br from-deep-green to-dark-green text-white p-8 rounded-3xl shadow-2xl flex flex-col justify-between h-full sticky top-28 border border-deep-green/20">
+          <div className="lg:col-span-5 bg-linear-to-br from-deep-green to-dark-green text-white p-8 rounded-3xl shadow-2xl flex flex-col justify-between h-full sticky top-28 border border-deep-green/20 dark:border-white/10">
             <div>
               <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 mb-6 border border-white/10">
                 <Sparkles className="w-3.5 h-3.5 text-accent-gold" />

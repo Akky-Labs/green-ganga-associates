@@ -94,7 +94,7 @@ export default function GalleryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-soft-beige">
+    <div className="min-h-screen bg-soft-beige dark:bg-background transition-colors duration-300">
       <BreadcrumbSchema 
         items={[
           { name: "Home", item: "https://greengangaassociates.com" },
@@ -112,7 +112,7 @@ export default function GalleryPage() {
           priority
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-linear-to-t from-soft-beige via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-soft-beige dark:from-background via-transparent to-transparent" />
 
         <div className="relative z-10 text-center px-6" data-aos="fade-up">
 
@@ -148,13 +148,13 @@ export default function GalleryPage() {
             const imageTitle = typeof img === "string" 
               ? (fallbackTitles[index % fallbackTitles.length] + ` - Site Photo ${index + 1}`)
               : img.title || `Site Work Photo ${index + 1}`;
-
+ 
             const isFormalImage = typeof img !== "string";
             const isContain = isFormalImage || imageTitle.includes("COO Noida") || imageSrc.toLowerCase().includes("certificate") || imageSrc.toLowerCase().includes("award") || imageSrc.toLowerCase().includes("praman");
             return (
               <div key={index} className="flex flex-col gap-4" data-aos="fade-up" data-aos-delay={(index % 4) * 50}>
                 <div
-                  className="premium-card group relative aspect-4/5 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-fresh-green/20 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
+                  className="premium-card group relative aspect-4/5 rounded-3xl overflow-hidden bg-white dark:bg-card border border-gray-100 dark:border-white/5 hover:border-fresh-green/20 dark:hover:border-fresh-green/30 transition-all duration-500 cursor-pointer shadow-lg hover:shadow-2xl"
                   onClick={() => openLightbox(index)}
                 >
                   <Image
@@ -177,7 +177,7 @@ export default function GalleryPage() {
                   </div>
                 </div>
                 {typeof img !== "string" && (
-                  <p className="text-deep-green text-[13px] font-bold text-center px-1 line-clamp-2 leading-tight">
+                  <p className="text-deep-green dark:text-white text-[13px] font-bold text-center px-1 line-clamp-2 leading-tight">
                     {img.title}
                   </p>
                 )}
@@ -188,11 +188,11 @@ export default function GalleryPage() {
 
         {/* Footer CTA */}
         <div className="mt-32 text-center" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 px-5 py-2 mb-8 border border-deep-green/10">
+          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 dark:bg-white/10 px-5 py-2 mb-8 border border-deep-green/10 dark:border-white/10">
             <Sparkles className="w-4 h-4 text-fresh-green animate-pulse" />
-            <span className="text-deep-green text-xs font-semibold uppercase tracking-widest">Interested in similar work?</span>
+            <span className="text-deep-green dark:text-accent-gold text-xs font-semibold uppercase tracking-widest">Interested in similar work?</span>
           </div>
-          <h2 className="text-3xl font-bold text-deep-green mb-8">Ready to transform your green space?</h2>
+          <h2 className="text-3xl font-bold text-deep-green dark:text-white mb-8">Ready to transform your green space?</h2>
           <div className="flex justify-center gap-4">
             <Link href="/contact">
               <Button size="lg" className="rounded-full bg-deep-green hover:bg-dark-green text-white font-bold px-10 h-14 shadow-xl shadow-deep-green/10 transition-all duration-300 hover:scale-[1.05]">

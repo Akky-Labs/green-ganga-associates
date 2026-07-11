@@ -122,10 +122,11 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const project = projectsData[resolvedParams.slug] || projectsData["pgi-hospital"];
-  const title = `${project.title} - Case Study | Green Ganga Associates`;
+  const title = `${project.title} Landscaping Project Lucknow | Green Ganga`;
+  const description = `Read case study on ${project.title} in ${project.location}. View our professional garden planning, site parameters & results in UP.`;
   return {
     title,
-    description: `Case study on ${project.title}. Location: ${project.location}, Area: ${project.area}, Duration: ${project.timeTaken}. Plants used: ${project.plantsUsed.join(", ")}.`,
+    description,
     alternates: {
       canonical: `https://greengangaassociates.com/projects/${resolvedParams.slug}`
     }

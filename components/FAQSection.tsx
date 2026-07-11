@@ -47,24 +47,24 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+    <section className="py-20 lg:py-24 bg-linear-to-br from-deep-green via-deep-green to-dark-green text-white relative overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-deep-green/5 blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-1/2 left-0 w-64 h-64 rounded-full bg-white/5 blur-3xl -translate-y-1/2 -translate-x-1/2" />
       <div className="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-accent-gold/5 blur-3xl -translate-y-1/2 translate-x-1/2" />
 
       <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-10">
-          <div className="section-decorator-center">
-            <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">FAQ</span>
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-4 py-1.5 mb-4 border border-white/10 backdrop-blur-md">
+            <span className="text-accent-gold text-xs font-semibold uppercase tracking-widest">FAQ</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-deep-green mt-3 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-3 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground text-sm lg:text-base max-w-2xl mx-auto">
+          <p className="text-white/70 text-sm lg:text-base max-w-2xl mx-auto">
             Quick answers to our most common queries.
           </p>
         </div>
@@ -75,8 +75,8 @@ export default function FAQSection() {
               key={index}
               className={`group transition-all duration-300 rounded-2xl border ${
                 openIndex === index
-                  ? "border-deep-green bg-deep-green/5"
-                  : "border-gray-100 bg-white hover:border-deep-green/20"
+                  ? "border-accent-gold/50 bg-white/10 backdrop-blur-md shadow-lg"
+                  : "border-white/10 bg-white/5 hover:bg-white/10"
               }`}
             >
               <button
@@ -86,8 +86,8 @@ export default function FAQSection() {
                 <div className="flex items-center gap-3">
                   <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-colors ${
                     openIndex === index 
-                      ? "bg-deep-green text-white" 
-                      : "bg-deep-green/10 text-deep-green group-hover:bg-deep-green group-hover:text-white"
+                      ? "bg-accent-gold text-deep-green" 
+                      : "bg-white/15 text-white group-hover:bg-accent-gold group-hover:text-deep-green"
                   }`}>
                     {openIndex === index ? (
                       <Minus className="w-3.5 h-3.5" />
@@ -96,7 +96,7 @@ export default function FAQSection() {
                     )}
                   </div>
                   <span className={`text-sm lg:text-base font-bold transition-colors ${
-                    openIndex === index ? "text-deep-green" : "text-gray-800 group-hover:text-deep-green"
+                    openIndex === index ? "text-accent-gold" : "text-white/90 group-hover:text-white"
                   }`}>
                     {faq.question}
                   </span>
@@ -109,7 +109,7 @@ export default function FAQSection() {
                 }`}
               >
                 <div className="px-5 pb-5 pt-0 ml-10">
-                  <p className="text-muted-foreground leading-relaxed text-xs lg:text-sm">
+                  <p className="text-white/85 leading-relaxed text-xs lg:text-sm">
                     {faq.answer}
                   </p>
                 </div>

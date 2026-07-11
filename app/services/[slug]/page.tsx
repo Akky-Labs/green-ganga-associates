@@ -238,8 +238,8 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const service = servicesDetails[resolvedParams.slug] || servicesDetails["landscaping"];
-  const title = `${service.title} Services in Lucknow & UP | Green Ganga Associates`;
-  const description = `${service.description} 25+ years expertise in professional landscape planning, design, and garden maintenance.`;
+  const title = `Top-Rated ${service.title} in Lucknow | Green Ganga Associates`;
+  const description = `Transform your space with expert ${service.title.toLowerCase()} in Lucknow & UP. Affordable custom layouts, Vastu plants & site maintenance. Book now!`;
   return {
     title,
     description,

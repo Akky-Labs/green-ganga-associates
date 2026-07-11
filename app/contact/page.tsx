@@ -60,7 +60,7 @@ const businessHours = [
 const teamMembers = [
   { name: "Mrs. Seema Sharma", role: "Director", qualification: "P.G.", image: "/images/seema-sharma.jpeg" },
   { name: "Dr. Ajay Sharma", role: "Consultant", qualification: "Ph.D. Horticulture & Landscaping", image: "/images/ajaysharma.jpeg" },
-  { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/images/adityasharma.jpeg" },
+  { name: "Aditya Sharma", role: "Team Manager (Commercial)", qualification: "B.Sc. Agriculture, SHUATS Prayagraj", image: "/images/male-avatar.png" },
   { name: "Nisha Kumari", role: "Team Manager (House)", qualification: "B.Sc. Agriculture, SHUATS", image: "/images/nishakumari.jpeg" },
   { name: "Aditi", role: "Field Associate", qualification: "B.Sc. Agriculture, CCSU Meerut", image: "/images/female-avatar.png" },
   { name: "Aryan Sharma", role: "Field Associate", qualification: "B.Sc. Ag. (Horticulture), NDUA Kumarganj Ayodhya", image: "/images/male-avatar.png" },
@@ -330,24 +330,24 @@ export default function ContactPage() {
       <section className="relative">
         <div className="h-[400px] lg:h-[500px] w-full bg-warm-beige relative overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.3825624477!2d80.78127920938357!3d26.879417517767527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1679901234567!5m2!1sen!2sin"
+            src="https://maps.google.com/maps?q=Vrindavan+Yojana%2C+Sector+5B%2C+Lucknow%2C+Uttar+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, filter: "grayscale(30%) contrast(1.1)" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Green Ganga Associates Location - Lucknow"
+            title="Green Ganga Associates Location - Vrindavan Yojana"
           />
           <div className="absolute bottom-6 left-6 lg:bottom-10 lg:left-10 bg-white rounded-2xl shadow-2xl p-6 max-w-xs border border-gray-100">
             <h3 className="text-lg font-bold text-deep-green mb-2">
               Green Ganga Associates
             </h3>
             <p className="text-muted-foreground text-sm mb-4">
-              Lucknow, Uttar Pradesh, India
+              Vrindavan Yojana, Sector 5B, Lucknow, Uttar Pradesh
             </p>
             <a
-              href="https://maps.google.com/?q=Lucknow+Uttar+Pradesh"
+              href="https://www.google.com/maps/search/?api=1&query=Vrindavan+Yojana,+Sector+5B,+Lucknow,+Uttar+Pradesh"
               target="_blank"
               rel="noopener noreferrer"
             >

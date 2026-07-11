@@ -25,9 +25,11 @@ import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "About Us | Professional Gardening & Landscaping Experts in UP",
-  description:
-    "About Green Ganga Associates — a premier professional landscaping and gardening group serving Lucknow, Noida, and cities across Uttar Pradesh (UP) with 25+ years expertise.",
+  title: "Top Landscape Architects in Lucknow & UP | About Green Ganga",
+  description: "Meet Green Ganga Associates, the top-rated garden planners & landscape architects in Lucknow, Noida & UP. 25+ years creating gorgeous green spaces.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [
@@ -85,7 +87,7 @@ const team = [
     name: "Aaditya",
     role: "Team Manager (Commercial)",
     initials: "AS",
-    image: "",
+    image: "/images/male-avatar.png",
     qualification: "B.Sc. Agriculture, SHUATS Prayagraj",
     bio: "Aaditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
   },
@@ -198,8 +200,8 @@ export default function AboutPage() {
             </div>
 
             <div className="relative" data-aos="fade-left">
-              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10">
-                <Image src="/project-residential.png" alt="Green Ganga project" width={700} height={500} className="object-cover w-full h-[450px]" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
+              <div className="rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10 relative h-[450px]">
+                <Image src="/project-residential.png" alt="Green Ganga project" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-deep-green text-white rounded-2xl p-6 shadow-xl" data-aos="zoom-in" data-aos-delay="200">
                 <Leaf className="w-8 h-8 text-fresh-green mb-1" />
@@ -342,7 +344,7 @@ export default function AboutPage() {
               <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center" data-aos="fade-up" data-aos-delay={i * 50}>
                 <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-5 transition-all duration-500 group-hover:scale-110 shadow-xl shadow-deep-green/5 ring-4 ring-white group-hover:ring-fresh-green/20">
                   <Image
-                    src={member.image}
+                    src={member.image || "/images/male-avatar.png"}
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"

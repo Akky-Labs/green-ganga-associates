@@ -226,7 +226,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* ─── FILTER + GALLERY ────────────────────────────── */}
-      <section className="py-12 sm:py-20 lg:py-28 bg-soft-beige relative overflow-hidden">
+      <section className="py-12 sm:py-20 lg:py-28 bg-soft-beige dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Filter Bar */}
           <div className="flex flex-wrap justify-center gap-2 mb-10 sm:mb-14">
@@ -235,8 +235,8 @@ export default function ProjectsPage() {
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${activeFilter === cat
-                  ? "bg-deep-green text-white shadow-lg shadow-deep-green/20 scale-105"
-                  : "bg-white text-foreground/70 hover:bg-deep-green/10 hover:text-deep-green border border-gray-200"
+                  ? "bg-deep-green dark:bg-fresh-green text-white shadow-lg shadow-deep-green/20 scale-105"
+                  : "bg-white dark:bg-card text-foreground/70 dark:text-white/80 hover:bg-deep-green/10 dark:hover:bg-white/5 hover:text-deep-green dark:hover:text-white border border-gray-200 dark:border-white/10"
                   }`}
               >
                 {cat}
@@ -251,7 +251,7 @@ export default function ProjectsPage() {
                 <div
                   data-aos="fade-up"
                   data-aos-delay={i * 50}
-                  className="group relative h-full rounded-2xl sm:rounded-3xl bg-white border border-gray-100 p-5 sm:p-7 hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
+                  className="group relative h-full rounded-2xl sm:rounded-3xl bg-white dark:bg-card border border-gray-100 dark:border-white/5 p-5 sm:p-7 hover:border-fresh-green/30 dark:hover:border-fresh-green/40 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
                 >
                   {/* Visual Decorative Backgrounds */}
                   <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-fresh-green/5 rounded-bl-[60px] sm:rounded-bl-[100px] -mr-12 -mt-12 sm:-mr-16 sm:-mt-16 group-hover:scale-125 transition-transform duration-1000 ease-out" />
@@ -259,30 +259,30 @@ export default function ProjectsPage() {
 
                   {/* Top Badge Section */}
                   <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
-                    <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
+                    <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20">
                       {project.category}
                     </div>
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige flex items-center justify-center text-deep-green group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
                       <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
                     </div>
                   </div>
 
                   {/* Content Section */}
                   <div className="relative z-10 flex-grow">
-                    <h3 className="text-xl sm:text-2xl font-black text-deep-green mb-3 sm:mb-5 leading-tight group-hover:text-fresh-green transition-colors duration-500">
+                    <h3 className="text-xl sm:text-2xl font-black text-deep-green dark:text-white mb-3 sm:mb-5 leading-tight group-hover:text-fresh-green transition-colors duration-500">
                       {project.title}
                     </h3>
 
-                    <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed sm:leading-[1.8] mb-8 sm:mb-10 line-clamp-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                    <p className="text-muted-foreground dark:text-gray-300 text-xs sm:text-sm leading-relaxed sm:leading-[1.8] mb-8 sm:mb-10 line-clamp-4 font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                       {project.desc}
                     </p>
                   </div>
 
                   {/* Bottom Info Section */}
-                  <div className="relative z-10 mt-auto pt-6 sm:pt-8 border-t border-gray-100">
+                  <div className="relative z-10 mt-auto pt-6 sm:pt-8 border-t border-gray-100 dark:border-white/10">
                     <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-3 text-deep-green/70">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-fresh-green/10 flex items-center justify-center">
+                      <div className="flex items-center gap-3 text-deep-green/70 dark:text-gray-300">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-fresh-green/10 dark:bg-white/10 flex items-center justify-center">
                           <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh-green" />
                         </div>
                         <span className="text-xs sm:text-sm font-bold tracking-tight">{project.location}</span>
@@ -295,7 +295,7 @@ export default function ProjectsPage() {
                             {project.area}
                           </span>
                         </div>
-                        
+
                         {"slug" in project && project.slug && (
                           <span className="text-xs font-bold text-fresh-green group-hover:translate-x-1 transition-transform">
                             View Case Study →
@@ -338,7 +338,7 @@ export default function ProjectsPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { num: "25+", label: "Projects Completed" },
+              { num: "50+", label: "Projects Completed" },
               { num: "15+", label: "Cities Served" },
               { num: "100%", label: "Client Satisfaction" },
               { num: "25+", label: "Years Experience" },

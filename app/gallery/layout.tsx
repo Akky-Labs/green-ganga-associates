@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Garden & Landscape Design Gallery | Lucknow & UP",
-  description: "Witness our commitment to excellence through these captures of our working sites and completed landscaping and gardening transformations across Lucknow, UP, and India.",
+  title: "Landscape Design & Garden Gallery in Lucknow | Green Ganga",
+  description: "Browse photos of our stunning vertical gardens, terrace setups, and farmhouse landscaping in Lucknow, Noida & UP. See real transformations!",
+  alternates: {
+    canonical: "/gallery",
+  },
   openGraph: {
-    title: "Garden & Landscape Design Gallery | Green Ganga Associates",
-    description: "Visual portfolio of our best landscaping and gardening projects in Lucknow, Noida, and Uttar Pradesh.",
+    title: "Landscape Design & Garden Gallery in Lucknow | Green Ganga Associates",
+    description: "Browse photos of our stunning vertical gardens, terrace setups, and farmhouse landscaping in Lucknow, Noida & UP. See real transformations!",
   }
 };
 

@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Expert Landscaping & Gardening Blogs | Green Ganga Associates",
-  description: "Read professional gardening tips, vertical garden installation guides, terrace setup ideas, and landscaping cost breakups in Lucknow, Noida, and UP.",
+  title: "Gardening Guide & Landscaping Blogs Lucknow | Green Ganga",
+  description: "Read professional gardening tips, vertical garden setup guides, terrace garden layout ideas, and landscaping cost guides in Lucknow, Noida & UP.",
   alternates: {
-    canonical: "https://greengangaassociates.com/blog"
+    canonical: "/blog"
   }
 };
 
@@ -108,13 +108,13 @@ export default function BlogIndexPage() {
       </section>
 
       {/* ─── BLOG GRID ─── */}
-      <section className="py-20 lg:py-28 bg-soft-beige">
+      <section className="py-20 lg:py-28 bg-soft-beige dark:bg-background transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
-                className="group flex flex-col items-start bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 h-full"
+                className="group flex flex-col items-start bg-white dark:bg-card rounded-3xl overflow-hidden border border-gray-100 dark:border-white/5 shadow-md hover:shadow-xl transition-all duration-300 h-full"
               >
                 {/* Image */}
                 <div className="relative w-full aspect-16/10 overflow-hidden">
@@ -132,7 +132,7 @@ export default function BlogIndexPage() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
+                  <div className="flex items-center gap-4 text-xs text-muted-foreground dark:text-gray-400 mb-4">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5 text-fresh-green" />
                       {post.date}
@@ -143,22 +143,22 @@ export default function BlogIndexPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-deep-green leading-snug mb-3 group-hover:text-fresh-green transition-colors">
+                  <h3 className="text-lg font-bold text-deep-green dark:text-white leading-snug mb-3 group-hover:text-fresh-green transition-colors">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
                     </Link>
                   </h3>
 
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-muted-foreground dark:text-gray-300 text-sm leading-relaxed mb-6 line-clamp-3">
                     {post.desc}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between w-full">
-                    <span className="text-xs font-semibold text-gray-700 flex items-center gap-1.5">
+                  <div className="mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between w-full">
+                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
                       <User className="w-3.5 h-3.5 text-fresh-green" />
                       By {post.author.split(" ")[0]} {post.author.split(" ")[1]}
                     </span>
-                    <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-xs font-bold text-deep-green group-hover:text-fresh-green transition-colors">
+                    <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-xs font-bold text-deep-green dark:text-white group-hover:text-fresh-green transition-colors">
                       Read Full <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>

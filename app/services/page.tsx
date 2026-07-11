@@ -25,9 +25,11 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Professional Landscaping & Gardening Services India",
-  description:
-    "Expert landscaping and gardening services in Lucknow, Noida, and across India. Specialized in garden design, vertical gardens, terrace gardens, and organic farming by Green Ganga Associates.",
+  title: "Professional Gardening & Landscaping Services in Lucknow",
+  description: "Explore top landscaping services in Lucknow & UP by Green Ganga. Garden design, terrace setups, vertical walls & smart irrigation. Book site audit!",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services = [

@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+@variant dark (&:where(.dark, .dark *));
 
 /* ─── Font Variables ────────────────────────────────────────────── */
 @theme inline {
@@ -94,13 +94,91 @@
   --sidebar-ring: #1F5D3B;
 }
 
+.dark {
+  --background: #09120c;
+  --foreground: #f3f4f6;
+  --card: #0d1e13;
+  --card-foreground: #f3f4f6;
+  --popover: #0d1e13;
+  --popover-foreground: #f3f4f6;
+  --primary: #6FAF45;
+  --primary-foreground: #09120c;
+  --secondary: #163d28;
+  --secondary-foreground: #e8f5e0;
+  --muted: #112619;
+  --muted-foreground: #9ca3af;
+  --accent: #C9A227;
+  --accent-foreground: #f3f4f6;
+  --border: #1a3623;
+  --input: #1a3623;
+  --ring: #6FAF45;
+  --sidebar: #0d1e13;
+  --sidebar-foreground: #f3f4f6;
+  --sidebar-primary: #6FAF45;
+  --sidebar-primary-foreground: #09120c;
+  --sidebar-accent: #163d28;
+  --sidebar-accent-foreground: #e8f5e0;
+  --sidebar-border: #1a3623;
+  --sidebar-ring: #6FAF45;
+}
+
+/* ─── Global Overrides for Dark Mode ─────────────────────────── */
+.dark .bg-white {
+  background-color: var(--card) !important;
+}
+.dark section.bg-white,
+.dark article.bg-white,
+.dark main.bg-white,
+.dark header.bg-white {
+  background-color: var(--background) !important;
+}
+.dark .bg-soft-beige,
+.dark .bg-soft-beige\/60,
+.dark .bg-soft-beige\/30,
+.dark .bg-soft-beige\/50 {
+  background-color: var(--background) !important;
+}
+.dark .text-deep-green {
+  color: var(--foreground) !important;
+}
+.dark .text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-foreground\/70 {
+  color: #d1d5db !important;
+}
+.dark .border-gray-100,
+.dark .border-gray-150,
+.dark .border-gray-200,
+.dark .border-deep-green\/5 {
+  border-color: var(--border) !important;
+}
+.dark .bg-deep-green\/5 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark .border-deep-green\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.dark .text-deep-green\/70 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.dark .bg-light-green {
+  background-color: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+}
+.dark .bg-soft-beige\/50.dark\:bg-card {
+  background-color: var(--card) !important;
+}
+
 /* ─── Base Layer ────────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-soft-beige text-foreground font-sans;
+    @apply bg-soft-beige dark:bg-background text-foreground font-sans transition-colors duration-300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -272,4 +350,93 @@
   .animate-shimmer {
     animation: none;
   }
+}
+
+/* ─── Premium Article Typography & Spacing ───────────────────── */
+.article-content h2 {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #1F5D3B !important; /* deep-green */
+  margin-top: 3rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.015em !important;
+  font-family: inherit !important;
+  display: block !important;
+}
+.dark .article-content h2 {
+  color: #ffffff !important;
+}
+.article-content p {
+  font-size: 1.05rem !important;
+  line-height: 1.9 !important;
+  color: #1f2937 !important; /* gray-800 */
+  margin-bottom: 1.75rem !important;
+  font-weight: 500 !important;
+  display: block !important;
+  letter-spacing: -0.005em !important;
+}
+.dark .article-content p {
+  color: #f3f4f6 !important; /* gray-100 */
+}
+.article-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1.75rem !important;
+  display: block !important;
+}
+.article-content li {
+  font-size: 1.05rem !important;
+  line-height: 1.9 !important;
+  color: #1f2937 !important;
+  margin-bottom: 0.75rem !important;
+  font-weight: 500 !important;
+}
+.dark .article-content li {
+  color: #f3f4f6 !important;
+}
+.article-content strong {
+  color: #1F5D3B !important;
+  font-weight: 700 !important;
+}
+.dark .article-content strong {
+  color: #C9A227 !important; /* accent-gold */
+}
+
+/* ─── Back to Articles Button ─────────────────────────────────── */
+.back-to-articles-btn {
+  background-color: rgba(243, 244, 246, 0.6) !important;
+  border: 1px solid #e5e7eb !important;
+  color: #1F5D3B !important;
+}
+.dark .back-to-articles-btn {
+  background-color: var(--card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+.dark .back-to-articles-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ─── Author Meta Box ─────────────────────────────────────────── */
+.author-meta-box {
+  background-color: rgba(248, 247, 243, 0.5) !important;
+  border: 1px solid #e5e2d9 !important;
+  color: #374151 !important;
+}
+.dark .author-meta-box {
+  background-color: var(--card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #d1d5db !important;
+}
+
+/* ─── Consultation Sticky Box ─────────────────────────────────── */
+.consultation-sticky-box {
+  background-color: rgba(248, 247, 243, 0.4) !important;
+  border: 1px solid #e5e2d9 !important;
+}
+.dark .consultation-sticky-box {
+  background-color: #163d28 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }

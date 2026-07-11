@@ -7,7 +7,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import AOSProvider from "@/components/AOSProvider";
 import NatureEffects from "@/components/NatureEffects";
 import GoogleLocalBusinessSchema from "@/components/GoogleLocalBusinessSchema";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -74,9 +75,6 @@ export const metadata: Metadata = {
     description: "Your Green Vision, Our Expertise. Professional garden design and maintenance services for homes, cafes, and commercial projects across India.",
     images: ["/hero.png"],
   },
-  alternates: {
-    canonical: baseUrl,
-  },
   verification: {
     google: "g1tLhIbn_2ExoSTvLsYkpqH4vRdkK9SOJOvO__bbLh0",
     yandex: "yandex_verification_code",
@@ -106,15 +104,33 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.png" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme');
+                  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-outfit" suppressHydrationWarning>
-        <GoogleLocalBusinessSchema />
-        <AOSProvider />
-        <NatureEffects />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <ThemeProvider>
+          <GoogleLocalBusinessSchema />
+          <AOSProvider />
+          <NatureEffects />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-29R5R9BCPS" />
     </html>

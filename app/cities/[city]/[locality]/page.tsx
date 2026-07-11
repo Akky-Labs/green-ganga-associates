@@ -73,12 +73,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!localityName) {
     return {
       title: "Landscaping Services",
-      description: "Professional gardening and landscaping services by Green Ganga Associates."
+      description: "Professional gardening and landscaping services by Green Ganga Associates.",
+      alternates: {
+        canonical: `https://greengangaassociates.com/cities/${resolvedParams.city}`
+      }
     };
   }
 
-  const title = `Landscaping & Gardening Services in ${localityName}, ${cityName} | Green Ganga`;
-  const description = `Best garden designs, vertical walls, terrace setups, and regular lawn maintenance services in ${localityName}, ${cityName} by Green Ganga Associates.`;
+  const title = `Best Landscaping & Gardening in ${localityName}, ${cityName} | Green Ganga`;
+  const description = `Top-rated gardening & landscape contractor services in ${localityName}, ${cityName}. Specialized in vertical gardens, terrace setups & lawn care.`;
 
   return {
     title,

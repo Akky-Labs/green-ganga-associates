@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Green Ganga Associates | Professional Landscaping & Gardening Lucknow",
-  description: "India's top landscaping group. Expert garden design, vertical gardens, and terrace development in Lucknow, Noida, Prayagraj and across India. 25+ years of excellence.",
+  title: "Top Landscaping & Garden Design in Lucknow | Green Ganga",
+  description: "Transform your space with Green Ganga Associates, the #1 landscape contractor in Lucknow & UP. Get beautiful garden design & setups. Claim your Free site visit!",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Green Ganga Associates - Your Green Vision, Our Expertise",
-    description: "Transforming spaces into lush paradises across India. Best landscaping services for resorts, farmhouses, and homes.",
+    title: "Top Landscaping & Garden Design in Lucknow | Green Ganga Associates",
+    description: "Transform your space with Green Ganga Associates, the #1 landscape contractor in Lucknow & UP. Get beautiful garden design & setups. Claim your Free site visit!",
   }
 };
 
@@ -129,7 +132,7 @@ const team = [
   {
     name: "Aaditya",
     role: "Team Manager (Commercial)",
-    image: "",
+    image: "/images/male-avatar.png",
     qualification: "B.Sc. Agriculture, SHUATS Prayagraj",
     bio: "Aaditya manages our commercial landscaping division, bringing agricultural expertise and a keen eye for large-scale project management to hotels, offices, and institutions.",
   },
@@ -271,7 +274,7 @@ export default function Home() {
             {/* Stats row */}
             <div className="flex flex-wrap gap-8 mt-8 pt-3">
               {[
-                { num: "25+", label: "Projects" },
+                { num: "50+", label: "Projects" },
                 { num: "15+", label: "cities" },
                 { num: "10+", label: "Team" },
                 { num: "4.9", label: "Rating" },
@@ -287,23 +290,23 @@ export default function Home() {
       </section>
 
       {/* ─── TRUST FEATURES ──────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" data-aos="fade-up">
             {trustFeatures.map((f) => (
               <div
                 key={f.title}
-                className="group relative p-8 rounded-3xl bg-soft-beige/50 border border-transparent hover:border-deep-green/10 hover:bg-white hover:shadow-[0_20px_60px_rgba(31,93,59,0.08)] transition-all duration-500 cursor-pointer"
+                className="group relative p-8 rounded-3xl bg-soft-beige/50 dark:bg-card border border-transparent dark:border-white/5 hover:border-deep-green/10 dark:hover:border-fresh-green/30 hover:bg-white dark:hover:bg-white/5 hover:shadow-[0_20px_60px_rgba(31,93,59,0.08)] transition-all duration-500 cursor-pointer"
                 data-aos="fade-up"
                 data-aos-delay={`${trustFeatures.indexOf(f) * 60}`}
               >
                 <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-deep-green to-fresh-green text-white flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-deep-green/20">
                   {f.icon}
                 </div>
-                <h3 className="text-lg font-bold text-deep-green mb-2">
+                <h3 className="text-lg font-bold text-deep-green dark:text-white mb-2">
                   {f.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-muted-foreground dark:text-gray-400 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -329,7 +332,7 @@ export default function Home() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center text-white" data-aos="fade-up">
             {[
-              { icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "25+", label: "Completed Projects" },
+              { icon: <Building2 className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "50+", label: "Completed Projects" },
               { icon: <Smile className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "100%", label: "Happy Clients" },
               { icon: <History className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "25+", label: "Years Experience" },
               { icon: <MapPin className="w-8 h-8 md:w-10 md:h-10 text-fresh-green mb-4 mx-auto" />, num: "15+", label: "Cities Served" },
@@ -353,7 +356,7 @@ export default function Home() {
       </section>
 
       {/* ─── ABOUT PREVIEW (WHO WE ARE) ──────────────────── */}
-      <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-soft-beige dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="absolute -left-40 -top-40 w-80 h-80 rounded-full bg-deep-green/5 blur-3xl" />
         <div className="absolute -right-40 -bottom-40 w-80 h-80 rounded-full bg-accent-gold/5 blur-3xl" />
 
@@ -361,25 +364,24 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image side */}
             <div className="relative" data-aos="fade-up">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-deep-green/10 h-[400px] lg:h-[500px]">
                 <Image
                   src="/project-residential.png"
                   alt="Beautiful residential garden by Green Ganga"
-                  width={700}
-                  height={500}
-                  className="object-cover w-full h-[400px] lg:h-[500px]"
+                  fill
+                  className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white rounded-2xl shadow-xl p-5 border border-deep-green/5">
+              <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white dark:bg-card rounded-2xl shadow-xl p-5 border border-deep-green/5 dark:border-white/5">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center">
                     <Trophy className="w-6 h-6 text-accent-gold" />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-deep-green">25+</div>
-                    <div className="text-xs text-muted-foreground">Projects Delivered</div>
+                    <div className="text-2xl font-bold text-deep-green dark:text-accent-gold">50+</div>
+                    <div className="text-xs text-muted-foreground dark:text-gray-400">Projects Delivered</div>
                   </div>
                 </div>
               </div>
@@ -390,17 +392,17 @@ export default function Home() {
               <div className="section-decorator">
                 <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Who We Are</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green leading-tight mt-4 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green dark:text-white leading-tight mt-4 mb-6">
                 Landscaping &{" "}
                 <span className="text-gradient-green">Gardening Experts</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground dark:text-gray-300 text-lg leading-relaxed mb-6">
                 Green Ganga Associates is a professional landscaping and gardening
                 firm based in Lucknow, Uttar Pradesh. We specialize in designing,
                 developing, and maintaining outdoor spaces that combine natural
                 beauty with modern functionality.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground dark:text-gray-300 leading-relaxed mb-4">
                 Our philosophy is simple: a garden is not just decoration, it is a
                 living ecosystem that brings peace, joy, and sustainability to
                 everyday life. We deliver more than just plants — we deliver
@@ -409,15 +411,15 @@ export default function Home() {
 
               {/* Mission & Vision mini cards */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="p-4 rounded-2xl bg-white border border-gray-100">
+                <div className="p-4 rounded-2xl bg-white dark:bg-card border border-gray-100 dark:border-white/5">
                   <Target className="w-5 h-5 text-fresh-green mb-2" />
-                  <h4 className="text-sm font-bold text-deep-green mb-1">Our Mission</h4>
-                  <p className="text-xs text-muted-foreground">Creating landscapes that inspire, nurture, and endure.</p>
+                  <h4 className="text-sm font-bold text-deep-green dark:text-white mb-1">Our Mission</h4>
+                  <p className="text-xs text-muted-foreground dark:text-gray-400">Creating landscapes that inspire, nurture, and endure.</p>
                 </div>
-                <div className="p-4 rounded-2xl bg-white border border-gray-100">
+                <div className="p-4 rounded-2xl bg-white dark:bg-card border border-gray-100 dark:border-white/5">
                   <Eye className="w-5 h-5 text-accent-gold mb-2" />
-                  <h4 className="text-sm font-bold text-deep-green mb-1">Our Vision</h4>
-                  <p className="text-xs text-muted-foreground">Bringing greenery into every urban and rural environment.</p>
+                  <h4 className="text-sm font-bold text-deep-green dark:text-white mb-1">Our Vision</h4>
+                  <p className="text-xs text-muted-foreground dark:text-gray-400">Bringing greenery into every urban and rural environment.</p>
                 </div>
               </div>
 
@@ -433,9 +435,9 @@ export default function Home() {
       </section>
 
       {/* ─── SERVICES GRID ───────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-light-green/30 blur-3xl" />
+          <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-light-green/30 dark:bg-deep-green/10 blur-3xl" />
           <div className="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-accent-gold/5 blur-3xl" />
         </div>
 
@@ -444,10 +446,10 @@ export default function Home() {
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Services We Provide</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mt-4 mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green dark:text-white mt-4 mb-5">
               End-to-End Landscaping Solutions
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground dark:text-gray-300 text-lg max-w-3xl mx-auto">
               From creative design to long-term maintenance — ensuring every space we work on remains green, functional, and inspiring.
             </p>
           </div>
@@ -456,18 +458,18 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="premium-card group relative p-7 rounded-3xl bg-white border border-gray-100 hover:border-deep-green/10 cursor-pointer"
+                className="premium-card group relative p-7 rounded-3xl bg-white dark:bg-card border border-gray-100 dark:border-white/5 hover:border-deep-green/10 dark:hover:border-fresh-green/30 cursor-pointer overflow-hidden"
                 data-aos="fade-up"
                 data-aos-delay={`${services.indexOf(service) * 50}`}
               >
-                <div className="w-14 h-14 rounded-2xl bg-light-green/50 text-deep-green flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-linear-to-br group-hover:from-deep-green group-hover:to-fresh-green group-hover:text-white group-hover:scale-110 group-hover:-rotate-3">
+                <div className="w-14 h-14 rounded-2xl bg-light-green/50 dark:bg-white/10 text-deep-green dark:text-white flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-linear-to-br group-hover:from-deep-green group-hover:to-fresh-green group-hover:text-white group-hover:scale-110 group-hover:-rotate-3">
                   {service.icon}
                 </div>
-                <h3 className="text-base font-bold text-deep-green mb-2">
+                <h3 className="text-base font-bold text-deep-green dark:text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
-                <div className="absolute bottom-0 left-0 right-0 h-[3px] rounded-full bg-linear-to-r from-deep-green to-fresh-green scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <p className="text-muted-foreground dark:text-gray-400 text-sm leading-relaxed">{service.desc}</p>
+                <div className="absolute bottom-0 left-6 right-6 h-[3px] rounded-full bg-linear-to-r from-deep-green to-fresh-green scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </div>
             ))}
           </div>
@@ -498,17 +500,17 @@ export default function Home() {
             {whyChooseUs.map((item) => (
               <div
                 key={item.title}
-                className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-fresh-green/20 hover:shadow-2xl hover:shadow-deep-green/5 transition-all duration-500 cursor-pointer"
+                className="group p-8 rounded-3xl bg-white dark:bg-card border border-gray-100 dark:border-white/5 hover:border-fresh-green/20 dark:hover:border-fresh-green/35 hover:shadow-2xl hover:shadow-deep-green/5 transition-all duration-500 cursor-pointer"
                 data-aos="fade-up"
                 data-aos-delay={`${whyChooseUs.indexOf(item) * 60}`}
               >
-                <div className="w-12 h-12 rounded-2xl bg-deep-green/5 flex items-center justify-center mb-4 text-accent-gold group-hover:bg-accent-gold/10 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-deep-green/5 dark:bg-white/10 flex items-center justify-center mb-4 text-accent-gold group-hover:bg-accent-gold/10 transition-colors duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-deep-green mb-2">
+                <h3 className="text-lg font-bold text-deep-green dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-muted-foreground dark:text-gray-300 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -516,16 +518,16 @@ export default function Home() {
       </section>
 
       {/* ─── PROJECTS GALLERY ────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-soft-beige dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Our Portfolio</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mt-4 mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green dark:text-white mt-4 mb-5">
               Projects That Inspire
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground dark:text-gray-300 text-lg max-w-2xl mx-auto">
               A glimpse into the stunning landscapes we&apos;ve created across India for our valued clients.
             </p>
           </div>
@@ -536,33 +538,33 @@ export default function Home() {
                 key={project.title}
                 data-aos="fade-up"
                 data-aos-delay={i * 50}
-                className="group relative h-full rounded-2xl sm:rounded-3xl bg-white border border-gray-100 p-5 sm:p-7 hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
+                className="group relative h-full rounded-2xl sm:rounded-3xl bg-white dark:bg-card border border-gray-100 dark:border-white/5 p-5 sm:p-7 hover:border-fresh-green/30 dark:hover:border-fresh-green/30 hover:shadow-[0_25px_50px_rgba(31,93,59,0.08)] transition-all duration-700 cursor-pointer overflow-hidden flex flex-col"
               >
                 {/* Visual Decorative Backgrounds */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-fresh-green/5 rounded-bl-[60px] -mr-10 -mt-10 group-hover:scale-125 transition-transform duration-1000 ease-out" />
 
                 {/* Top Badge Section */}
                 <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
-                  <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10">
+                  <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20">
                     {project.category}
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige flex items-center justify-center text-deep-green group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
                     <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="relative z-10 grow">
-                  <h3 className="text-xl font-black text-deep-green mb-4 leading-tight group-hover:text-fresh-green transition-colors duration-500">
+                  <h3 className="text-xl font-black text-deep-green dark:text-white mb-4 leading-tight group-hover:text-fresh-green transition-colors duration-500">
                     {project.title}
                   </h3>
                 </div>
 
                 {/* Bottom Info Section */}
-                <div className="relative z-10 mt-auto pt-6 border-t border-gray-100">
+                <div className="relative z-10 mt-auto pt-6 border-t border-gray-100 dark:border-white/10">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-deep-green/70">
-                      <div className="w-7 h-7 rounded-full bg-fresh-green/10 flex items-center justify-center">
+                    <div className="flex items-center gap-2 text-deep-green/70 dark:text-gray-300">
+                      <div className="w-7 h-7 rounded-full bg-fresh-green/10 dark:bg-white/10 flex items-center justify-center">
                         <MapPin className="w-3.5 h-3.5 text-fresh-green" />
                       </div>
                       <span className="text-xs font-bold tracking-tight">{project.location}</span>
@@ -587,16 +589,16 @@ export default function Home() {
       <BeforeAfterSlider />
 
       {/* ─── TEAM ────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+      <section className="py-24 lg:py-32 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <div className="section-decorator-center">
               <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Our Team</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mt-4 mb-5">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green dark:text-white mt-4 mb-5">
               Meet Our Expert Team
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground dark:text-gray-300 text-lg max-w-2xl mx-auto">
               Qualified agricultural experts with a passion for greening your world.
             </p>
           </div>
@@ -604,9 +606,9 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {team.map((member) => (
               <div key={member.name} className="group text-center cursor-pointer flex flex-col items-center" data-aos="fade-up" data-aos-delay={`${team.indexOf(member) * 60}`}>
-                <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-5 transition-all duration-500 group-hover:scale-110 shadow-xl shadow-deep-green/5 ring-4 ring-white group-hover:ring-fresh-green/20">
+                <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden mb-5 transition-all duration-500 group-hover:scale-110 shadow-xl shadow-deep-green/5 ring-4 ring-white dark:ring-card group-hover:ring-fresh-green/20">
                   <Image
-                    src={member.image}
+                    src={member.image || "/images/male-avatar.png"}
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -614,7 +616,7 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-deep-green mb-0.5 group-hover:text-fresh-green transition-colors">
+                <h3 className="text-base sm:text-lg font-bold text-deep-green dark:text-white mb-0.5 group-hover:text-fresh-green transition-colors">
                   {member.name}
                 </h3>
                 <p className="text-fresh-green text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">{member.role}</p>
@@ -625,9 +627,9 @@ export default function Home() {
                 )}
                 <div className="flex items-center gap-1.5 justify-center mb-2 leading-tight">
                   <GraduationCap className="w-3 h-3 text-accent-gold shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] text-muted-foreground font-medium text-center">{member.qualification}</span>
+                  <span className="text-[10px] sm:text-[11px] text-muted-foreground dark:text-gray-300 font-medium text-center">{member.qualification}</span>
                 </div>
-                <p className="text-muted-foreground text-[10px] sm:text-[11px] leading-tight max-w-[180px] line-clamp-3">{member.bio}</p>
+                <p className="text-muted-foreground dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight max-w-[180px] line-clamp-3">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -682,18 +684,18 @@ export default function Home() {
       <FAQSection />
 
       {/* ─── CTA BANNER ──────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      <section className="py-20 lg:py-28 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
         <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 px-5 py-2 mb-8 border border-deep-green/10">
+          <div className="inline-flex items-center gap-2 rounded-full bg-deep-green/5 dark:bg-white/10 px-5 py-2 mb-8 border border-deep-green/10 dark:border-white/10">
             <Sparkles className="w-4 h-4 text-fresh-green animate-pulse" />
-            <span className="text-deep-green text-xs sm:text-sm font-semibold uppercase tracking-widest">Transform Your Space Today</span>
+            <span className="text-deep-green dark:text-accent-gold text-xs sm:text-sm font-semibold uppercase tracking-widest">Transform Your Space Today</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green dark:text-white mb-6 leading-tight">
             Let&apos;s Create Your Dream <br className="hidden sm:block" />
             <span className="text-fresh-green">Landscape</span>
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-muted-foreground dark:text-gray-300 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
             Join 30+ satisfied clients who have turned their vision into a lush reality with Green Ganga Associates.
           </p>
 
@@ -713,7 +715,7 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 aria-label="Chat with Green Ganga Associates Gardening & Landscaping experts on WhatsApp"
-                className="rounded-full border-deep-green/20 text-deep-green hover:text-deep-green hover:bg-deep-green/5 px-10 h-14 text-base font-bold transition-all duration-300 hover:border-deep-green/40 hover:scale-[1.05]"
+                className="rounded-full border-deep-green/20 dark:border-white/20 text-deep-green dark:text-white hover:text-deep-green dark:hover:text-white hover:bg-deep-green/5 dark:hover:bg-white/5 px-10 h-14 text-base font-bold transition-all duration-300 hover:border-deep-green/40 hover:scale-[1.05]"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 WhatsApp Us

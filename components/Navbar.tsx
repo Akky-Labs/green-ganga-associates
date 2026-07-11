@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, X, ChevronDown } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,7 +15,6 @@ const navLinks = [
   { href: "/cities/lucknow", label: "Lucknow Local" },
   { href: "/gallery", label: "Gallery" },
   { href: "/projects", label: "Our Clients" },
-  { href: "/case-studies", label: "Case Studies" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -36,6 +36,7 @@ export default function Navbar() {
   const isPortfolioActive = ["/case-studies", "/projects", "/gallery"].includes(pathname);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const forceSolid = pathname.startsWith("/blog/") && pathname !== "/blog";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,8 +67,8 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-out ${
-          scrolled && !mobileOpen
-            ? "bg-white/95 backdrop-blur-xl shadow-[0_2px_30px_rgba(31,93,59,0.08)] py-3"
+          (scrolled || forceSolid) && !mobileOpen
+            ? "bg-white/95 dark:bg-card/95 backdrop-blur-xl shadow-[0_2px_30px_rgba(31,93,59,0.08)] py-3 border-b border-transparent dark:border-white/5"
             : mobileOpen
             ? "bg-transparent py-4"
             : "bg-transparent py-5"
@@ -80,7 +81,7 @@ export default function Navbar() {
             className={`flex items-center group transition-all duration-300 ${mobileOpen ? "opacity-0 pointer-events-none -translate-x-4" : "opacity-100"}`}
           >
             <div className={`transition-all duration-500 rounded-xl overflow-hidden p-1 ${
-              (scrolled && !mobileOpen)
+              ((scrolled || forceSolid) && !mobileOpen)
                 ? "bg-transparent scale-95" 
                 : "bg-white/95 shadow-xl shadow-black/10 scale-100"
             }`}>
@@ -106,10 +107,10 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 ${
                     isActive
-                      ? (scrolled
+                      ? ((scrolled || forceSolid)
                         ? "text-deep-green bg-light-green"
                         : "text-white bg-white/20")
-                      : (scrolled
+                      : ((scrolled || forceSolid)
                       ? "text-foreground/70 hover:text-deep-green hover:bg-light-green/50"
                       : "text-white/80 hover:text-white hover:bg-white/10")
                   }`}
@@ -124,10 +125,10 @@ export default function Navbar() {
               <button
                 className={`flex items-center gap-1 px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 cursor-pointer ${
                   isPortfolioActive
-                    ? (scrolled
+                    ? ((scrolled || forceSolid)
                       ? "text-deep-green bg-light-green"
                       : "text-white bg-white/20")
-                    : (scrolled
+                    : ((scrolled || forceSolid)
                     ? "text-foreground/70 hover:text-deep-green hover:bg-light-green/50"
                     : "text-white/80 hover:text-white hover:bg-white/10")
                 }`}
@@ -137,9 +138,8 @@ export default function Navbar() {
               </button>
 
               {/* Hover Dropdown Panel */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-52 rounded-2xl bg-white border border-gray-100 p-2 shadow-2xl opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-52 rounded-2xl bg-white dark:bg-card border border-gray-100 dark:border-white/10 p-2 shadow-2xl opacity-0 scale-95 invisible group-hover:opacity-100 group-hover:scale-100 group-hover:visible transition-all duration-300 z-50">
                 {[
-                  { href: "/case-studies", label: "Case Studies" },
                   { href: "/projects", label: "Our Clients" },
                   { href: "/gallery", label: "Photo Gallery" }
                 ].map((item) => {
@@ -150,8 +150,8 @@ export default function Navbar() {
                       href={item.href}
                       className={`block px-4 py-2.5 text-sm font-bold rounded-xl transition-all ${
                         isItemActive
-                          ? "bg-light-green/45 text-deep-green"
-                          : "text-deep-green/80 hover:text-deep-green hover:bg-light-green/20"
+                          ? "bg-light-green/45 text-deep-green dark:bg-white/10 dark:text-white"
+                          : "text-deep-green/80 hover:text-deep-green hover:bg-light-green/20 dark:text-white/80 dark:hover:text-white dark:hover:bg-white/5"
                       }`}
                     >
                       {item.label}
@@ -170,10 +170,10 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-3.5 py-2 text-sm font-bold rounded-full whitespace-nowrap transition-all duration-300 ${
                     isActive
-                      ? (scrolled
+                      ? ((scrolled || forceSolid)
                         ? "text-deep-green bg-light-green"
                         : "text-white bg-white/20")
-                      : (scrolled
+                      : ((scrolled || forceSolid)
                       ? "text-foreground/70 hover:text-deep-green hover:bg-light-green/50"
                       : "text-white/80 hover:text-white hover:bg-white/10")
                   }`}
@@ -186,16 +186,17 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-2.5">
+            <ThemeToggle />
             <a 
               href="tel:+919999177119" 
               className={`flex items-center gap-1.5 px-2.5 py-1.5 xl:px-4 rounded-full border transition-all ${
-                scrolled
+                (scrolled || forceSolid)
                   ? "border-deep-green/30 text-deep-green bg-deep-green/5 hover:bg-deep-green/10"
                   : "border-white/30 text-white bg-white/10 hover:bg-white/20"
               }`}
             >
-               <Phone className={`w-4 h-4 ${scrolled ? "text-deep-green" : "text-white"}`} />
-               <span className={`text-sm font-bold ${scrolled ? "text-deep-green" : "text-white"}`}>9999177119</span>
+               <Phone className={`w-4 h-4 ${(scrolled || forceSolid) ? "text-deep-green" : "text-white"}`} />
+               <span className={`text-sm font-bold ${(scrolled || forceSolid) ? "text-deep-green" : "text-white"}`}>9999177119</span>
             </a>
             <Link href="/contact">
               <Button
@@ -213,7 +214,7 @@ export default function Navbar() {
             className={`lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl transition-all duration-300 z-[110] ${
               mobileOpen 
                 ? "bg-white/10 rotate-90" 
-                : scrolled ? "bg-light-green shadow-sm" : "bg-white/10"
+                : (scrolled || forceSolid) ? "bg-light-green shadow-sm" : "bg-white/10"
             }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
@@ -221,9 +222,9 @@ export default function Navbar() {
               <X className="w-5 h-5 text-white" />
             ) : (
               <>
-                <span className={`block w-5 h-[2px] rounded-full transition-all ${scrolled ? "bg-deep-green" : "bg-white"}`} />
-                <span className={`block w-5 h-[2px] rounded-full transition-all ${scrolled ? "bg-deep-green" : "bg-white"}`} />
-                <span className={`block w-5 h-[2px] rounded-full transition-all ${scrolled ? "bg-deep-green" : "bg-white"}`} />
+                <span className={`block w-5 h-[2px] rounded-full transition-all ${(scrolled || forceSolid) ? "bg-deep-green" : "bg-white"}`} />
+                <span className={`block w-5 h-[2px] rounded-full transition-all ${(scrolled || forceSolid) ? "bg-deep-green" : "bg-white"}`} />
+                <span className={`block w-5 h-[2px] rounded-full transition-all ${(scrolled || forceSolid) ? "bg-deep-green" : "bg-white"}`} />
               </>
             )}
           </button>
@@ -285,7 +286,11 @@ export default function Navbar() {
               })}
             </nav>
 
-            <div className="mt-8 pt-8 border-t border-white/10 space-y-3 px-1">
+             <div className="mt-8 pt-8 border-t border-white/10 space-y-3 px-1">
+              <div className="flex items-center justify-between p-1 pb-2">
+                <span className="text-white/60 text-xs font-bold uppercase tracking-wider">Appearance</span>
+                <ThemeToggle />
+              </div>
               <a 
                 href="tel:+919999177119" 
                 className="flex items-center justify-center gap-2.5 p-3.5 rounded-2xl border border-white/20 text-white bg-white/5 hover:bg-white/10 transition-all font-bold text-sm"
