@@ -63,7 +63,7 @@ import GoogleReviews from "@/components/GoogleReviews";
 const trustFeatures = [
   {
     icon: <ClipboardList className="w-7 h-7" />,
-    title: "Professional Planning",
+    title: "Expert Planning",
     desc: "Clear schedules, resource allocation, and daily progress tracking for every project we undertake.",
   },
   {
@@ -181,7 +181,7 @@ const testimonials = [
 ];
 
 const whyChooseUs = [
-  { title: "Professional Planning", desc: "Clear schedules, resource allocation, and daily progress tracking.", icon: <ClipboardList className="w-6 h-6" /> },
+  { title: "Expert Planning", desc: "Clear schedules, resource allocation, and daily progress tracking.", icon: <ClipboardList className="w-6 h-6" /> },
   { title: "Quality Assurance", desc: "Healthy plants, durable materials, and climate-friendly selections.", icon: <CheckCircle2 className="w-6 h-6" /> },
   { title: "Safe & Compliant", desc: "Strict adherence to site safety standards and risk management.", icon: <Shield className="w-6 h-6" /> },
   { title: "Transparent Communication", desc: "Updates provided in simple, structured formats for easy understanding.", icon: <MessageCircle className="w-6 h-6" /> },
@@ -276,7 +276,7 @@ export default function Home() {
               {[
                 { num: "50+", label: "Projects" },
                 { num: "15+", label: "cities" },
-                { num: "10+", label: "Team" },
+                { num: "25+", label: "Team" },
                 { num: "4.9", label: "Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">

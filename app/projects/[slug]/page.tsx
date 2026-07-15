@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { MapPin, Calendar, CircleDollarSign, CheckCircle2, ArrowLeft, Ruler, Leaf, Phone } from "lucide-react";
+import { MapPin, Calendar, CheckCircle2, ArrowLeft, Ruler, Leaf, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
@@ -13,7 +13,6 @@ interface ProjectDetails {
   category: string;
   location: string;
   area: string;
-  cost: string;
   timeTaken: string;
   plantsUsed: string[];
   description: string;
@@ -29,7 +28,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Garden Development",
     location: "SGPGI Road, Lucknow, UP",
     area: "35,000 Sq. Ft.",
-    cost: "₹18,50,000",
     timeTaken: "60 Days",
     plantsUsed: ["Selection No. 1 Grass", "Golden Bottle Brush", "Ficus Panda", "Areca Palms", "Dracaena Mahatma"],
     description: "Full-scale ecological greening and boundary landscape architecture for the premier medical facility in Lucknow. The client required a clean, dust-repellant, and positive healing garden setup suitable for recovering patients.",
@@ -43,7 +41,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Garden Development",
     location: "Jankipuram Extension, Lucknow",
     area: "1.2 Lakh Sq. Ft.",
-    cost: "₹45,00,000",
     timeTaken: "90 Days",
     plantsUsed: ["Bermuda Grass", "Foxtail Palms", "Royal Palms", "Nerium Oleander", "Bougainvillea Spectabilis"],
     description: "Extensive green belt planning and campus turfing for the prestigious technical university campus. Aimed to construct a multi-tiered shade canopy to lower urban temperatures around lecture halls.",
@@ -57,7 +54,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Farmhouse & Resorts",
     location: "Raebareli Road, Lalganj",
     area: "40,000 Sq. Ft.",
-    cost: "₹22,00,000",
     timeTaken: "45 Days",
     plantsUsed: ["Mexican Grass", "Cycas Revoluta", "Golden Cypress", "Wodyetia Bifurcata", "Adenium Obesum"],
     description: "Conversion of a dry agricultural lot into a luxury marriage resort and private farmhouse landscape, complete with manicured lawn borders and aesthetic entrance flowerbeds.",
@@ -71,7 +67,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Farmhouse & Resorts",
     location: "Sector 5B, Vrindavan Yojna, Lucknow",
     area: "15,000 Sq. Ft.",
-    cost: "₹9,50,000",
     timeTaken: "30 Days",
     plantsUsed: ["Selection No. 1 Turf", "Pandanus", "Ravenala Madagascariensis (Traveler's Palm)", "Plumeria Rubra"],
     description: "Modern minimalist residential farmhouse garden design with private sit-out zones, Vastu Shastra plant placements, and warm indirect spike LED uplighting.",
@@ -85,7 +80,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Hotels",
     location: "RBL Road, Mohanlalganj, Lucknow",
     area: "20,000 Sq. Ft.",
-    cost: "₹14,00,000",
     timeTaken: "35 Days",
     plantsUsed: ["Korean Grass Slabs", "Dwarf Areca Palms", "Hibiscus Rosa-sinensis", "Monstera Deliciosa"],
     description: "Luxury hotel entrance landscape and poolside greening to build a premium tropical retreat appearance for incoming tourists and wedding guests.",
@@ -99,7 +93,6 @@ const projectsData: Record<string, ProjectDetails> = {
     category: "Consultancy & Services",
     location: "Sultanpur Road, Lucknow, UP",
     area: "4,500 Acres (Consultancy)",
-    cost: "Ongoing Consultation",
     timeTaken: "6 Years Service",
     plantsUsed: ["Acclimatized Native Palms", "Cassia Fistula", "Jacaranda Mimosifolia", "Conocarpus Erectus"],
     description: "Managed landscaping planning, avenue tree planting guides, nursery operations, and park preservation guidelines for the massive 4,500-acre smart township project.",
@@ -107,6 +100,58 @@ const projectsData: Record<string, ProjectDetails> = {
     result: "Built a centralized propagation nursery on-site, formulated climate-specific plantation maps, and guided 100+ field laborers for optimal execution.",
     beforeImage: "/client/GS infra.jpeg",
     afterImage: "/client/ansal-api.jpeg"
+  },
+  "subh-vilas-hotel": {
+    title: "Shubh Villas Hotel & Resort",
+    category: "Hotels",
+    location: "Naini, Prayagraj",
+    area: "6,00,000 Sq. Ft.",
+    timeTaken: "30 Days",
+    plantsUsed: ["Selection No. 1 Grass", "Areca Palms", "Golden Duranta", "Red Hibiscus", "Star Jasmine"],
+    description: "Elegant garden and marriage lawn landscaping for the luxury hotel suites. Designed to withstand heavy foot traffic while providing a premium, lush backdrop for wedding events.",
+    challenge: "Soil compaction from ongoing hotel construction and high traffic requirements for large events.",
+    result: "Prepared a premium sand-soil substrate mixture for excellent drainage, laid durable Selection No. 1 grass turf, and lined borders with beautiful flowering evergreens.",
+    beforeImage: "/gallery/subh-vilas-before.jpeg",
+    afterImage: "/gallery/subh-vilas-after.jpeg"
+  },
+  "nandi-farmhouse": {
+    title: "Prayagraj Luxury Farm House",
+    category: "Farmhouse & Resorts",
+    location: "Prayagraj, UP",
+    area: "5,000+ Sq. Ft.",
+    timeTaken: "25 Days",
+    plantsUsed: ["Mexican Grass Slabs", "Cycas Palms", "Adenium Obesum", "Golden Cypress", "Ravenala"],
+    description: "High-profile farmhouse landscape design utilizing native flora and modern amenities. Built to create a peaceful personal retreat with rich green layouts.",
+    challenge: "Poor topsoil nutrition and lack of natural shade for delicate plants.",
+    result: "Enriched the soil with organic compost, strategically planted mature trees for shade canopy, and installed automatic drip lines.",
+    beforeImage: "/gallery/prayagraj-farmhouse-before.jpeg",
+    afterImage: "/gallery/prayagraj-farmhouse-after.jpeg"
+  },
+  "farmhouse-cum-resort": {
+    title: "Farm House Cum Resort",
+    category: "Farmhouse & Resorts",
+    location: "Satrik Road, Barabanki",
+    area: "8,00,000 Sq. Ft.",
+    timeTaken: "35 Days",
+    plantsUsed: ["Bermuda Grass", "Neem Trees", "Gulmohar", "Areca Palms", "Bougainvillea"],
+    description: "Luxury farmhouse cum resort development featuring native landscapes, rustic pathways, and lush ornamental borders suitable for the Barabanki climate.",
+    challenge: "Heavy weed infestation across a large area and sandy soil texture.",
+    result: "Conducted complete weed clearance, added nutrient-rich organic topsoil, and laid Bermuda turf alongside climate-acclimatized native trees.",
+    beforeImage: "/gallery/farmhouse-cum-resort-before.jpeg",
+    afterImage: "/gallery/farmhouse-cum-resort-after.jpeg"
+  },
+  "gyan-dairy-school": {
+    title: "Gyan Dairy & Gyan Heritage School",
+    category: "Others",
+    location: "Sultanpur Road & Lucknow",
+    area: "7,00,000 Sq. Ft.",
+    timeTaken: "40 Days",
+    plantsUsed: ["Korean Grass", "Ficus Panda", "Royal Palms", "Golden Bottle Brush", "Xanadu"],
+    description: "Greenery development for industrial dairy unit alongside institutional landscape planning for the school campus. Designed for visual appeal and environmental safety.",
+    challenge: "Balancing industrial zone emissions with a safe, kid-friendly school environment.",
+    result: "Planted boundary hedges with high oxygen-producing species and created soft, open turf play zones on the school grounds.",
+    beforeImage: "/gallery/gyan-diary-before.jpeg",
+    afterImage: "/gallery/gyan-diary-after.jpeg"
   }
 };
 
@@ -190,7 +235,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {/* ─── CASE STUDY SPECIFICATIONS ─── */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div className="flex items-start gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-deep-green/5 flex items-center justify-center text-deep-green shrink-0">
                 <MapPin className="w-5 h-5 text-fresh-green" />
@@ -208,16 +253,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               <div>
                 <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Area Size</span>
                 <p className="text-sm font-bold text-deep-green mt-0.5">{project.area}</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-deep-green/5 flex items-center justify-center text-deep-green shrink-0">
-                <CircleDollarSign className="w-5 h-5 text-fresh-green" />
-              </div>
-              <div>
-                <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider">Cost Setup</span>
-                <p className="text-sm font-bold text-deep-green mt-0.5">{project.cost}</p>
               </div>
             </div>
 

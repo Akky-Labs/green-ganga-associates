@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: <ClipboardList className="w-7 h-7" />,
-    title: "Professional Planning",
+    title: "Expert Planning",
     desc: "Clear schedules, resource allocation, and daily progress tracking for every project.",
   },
   {
@@ -129,11 +129,11 @@ const trustReasons = [
 export default function AboutPage() {
   return (
     <>
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", item: "https://greengangaassociates.com" },
           { name: "About", item: "https://greengangaassociates.com/about" }
-        ]} 
+        ]}
       />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">

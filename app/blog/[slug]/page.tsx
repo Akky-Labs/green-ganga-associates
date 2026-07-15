@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Calendar, User, Clock, Leaf, ArrowLeft, Phone, Sparkles, CheckCircle2 } from "lucide-react";
+import { Calendar, Clock, Leaf, ArrowLeft, Phone, Sparkles, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
@@ -95,81 +95,13 @@ const blogPostsData: Record<string, BlogPost> = {
       <p>Aphids and spider mites multiply rapidly in dry heat. Avoid chemical pesticides that kill beneficial earthworms. Instead, spray a mixture of **Neem Oil (5ml) and liquid dish soap (2ml) in 1 Liter of warm water** every fortnight after sunset.</p>
     `
   },
-  "landscaping-cost-lucknow": {
-    title: "Landscaping & Gardening Setup Cost Guide in Lucknow (2026)",
-    desc: "A realistic budget breakdown for lawn turfing, vertical walls, drip systems, and stone pathway layouts in UP.",
-    date: "June 18, 2026",
-    author: "Green Ganga Research Team",
-    readTime: "8 min read",
-    image: "/client/ds-group.jpeg",
-    category: "Pricing Guide",
-    highlights: [
-      "Cost per square foot for premium turf grass laying",
-      "Vertical garden setup expenses per square foot",
-      "Hidden costs like soil replacement and labor charges"
-    ],
-    contentHtml: `
-      <h2>Understanding Landscaping Costs in UP</h2>
-      <p>Planning a garden renovation or designing a new villa landscape requires a realistic budget framework. Landscaping costs vary depending on soil quality, hardscaping materials, plant maturity, and automated features.</p>
-
-      <h2>1. Lawn Development & Turfing Costs</h2>
-      <p>Laying a lush green turf involves leveling, weed clearance, adding organic manure, laying grass slabs, and rolling. The rates in Lucknow typically range as follows:</p>
-      <ul>
-        <li><strong>Selection No. 1 Grass:</strong> ₹25 to ₹40 per sq. ft. (Best for home lawns, soft texture).</li>
-        <li><strong>Mexican Grass:</strong> ₹35 to ₹55 per sq. ft. (Requires high sunlight, dense turf).</li>
-        <li><strong>Bermuda Grass:</strong> ₹30 to ₹45 per sq. ft. (Heavy foot traffic, low maintenance).</li>
-      </ul>
-
-      <h2>2. Vertical Garden Wall Pricing</h2>
-      <p>Vertical walls require wall framing, geotextile felt pockets, irrigation drippers, drain trays, and specialized indoor/outdoor foliage plants:</p>
-      <ul>
-        <li><strong>Standard Wall Setup:</strong> ₹650 to ₹950 per sq. ft.</li>
-        <li><strong>Smart Auto-Timer System Setup:</strong> ₹950 to ₹1400 per sq. ft. (Includes battery controllers and pressure pumps).</li>
-      </ul>
-
-      <h2>3. Terrace Garden & Waterproofing Costs</h2>
-      <p>Terrace gardens require protective structural lining to prevent roof dampness:</p>
-      <ul>
-        <li><strong>Drainage Cell & Geotextile Membrane Layer:</strong> ₹45 to ₹75 per sq. ft.</li>
-        <li><strong>Lightweight Coco-peat Soil Mix:</strong> ₹15 to ₹25 per kg.</li>
-      </ul>
-
-      <h2>4. Dynamic Cost Estimation Table</h2>
-      <table className="min-w-full border-collapse border border-gray-200 text-sm my-6">
-        <thead>
-          <tr className="bg-deep-green text-white">
-            <th className="border border-gray-200 p-3 text-left">Service Component</th>
-            <th className="border border-gray-200 p-3 text-left">Approximate Rate Range</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border border-gray-200 p-3">Lawn Turf Installation</td>
-            <td className="border border-gray-200 p-3">₹25 - ₹55 per sq. ft.</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="border border-gray-200 p-3">Drip Irrigation Network</td>
-            <td className="border border-gray-200 p-3">₹15 - ₹30 per sq. ft.</td>
-          </tr>
-          <tr>
-            <td className="border border-gray-200 p-3">Vertical Green Wall</td>
-            <td className="border border-gray-200 p-3">₹700 - ₹1,200 per sq. ft.</td>
-          </tr>
-          <tr className="bg-gray-50">
-            <td className="border border-gray-200 p-3">Hardscape Pathway / Stone Layout</td>
-            <td className="border border-gray-200 p-3">₹120 - ₹280 per sq. ft.</td>
-          </tr>
-        </tbody>
-      </table>
-    `
-  },
   "terrace-garden-ideas": {
     title: "Stunning Terrace Garden Ideas for Urban Homes in UP",
     desc: "How to set up lightweight rooftop gardens, container organic vegetables, and waterproof balcony structures in high-rises.",
     date: "June 10, 2026",
     author: "Mrs. Seema Sharma (Landscape Designer)",
     readTime: "5 min read",
-    image: "/client/farmhouse-cum-resort.jpeg",
+    image: "/gallery/blog-roof-top.jpeg",
     category: "Rooftop Gardens",
     highlights: [
       "Balancing structural weight limits on concrete roofs",
@@ -201,7 +133,7 @@ const blogPostsData: Record<string, BlogPost> = {
     date: "June 02, 2026",
     author: "Aditya Sharma (Horticulture Lead)",
     readTime: "7 min read",
-    image: "/client/grand-hotel-resort.jpeg",
+    image: "/gallery/blog-vertical-garden.jpeg",
     category: "Vertical Gardens",
     highlights: [
       "Waterproofing walls before vertical panel setup",
@@ -326,10 +258,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b border-gray-100 dark:border-white/10 mb-12">
-            <span className="author-meta-box flex items-center gap-2 font-semibold px-3 py-1 rounded-lg border border-gray-100 dark:border-white/10 bg-soft-beige/40 dark:bg-card text-gray-700 dark:text-gray-300">
-              <User className="w-4 h-4 text-fresh-green" />
-              By {post.author}
-            </span>
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4 text-fresh-green" />
               {post.date}

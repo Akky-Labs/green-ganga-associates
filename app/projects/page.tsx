@@ -49,20 +49,22 @@ const projects = [
     slug: "guru-kripa-utsav",
   },
   {
-    image: "/client/farmhouse-cum-resort.jpeg",
+    image: "/gallery/farmhouse-cum-resort-after.jpeg",
     title: "Farm House Cum Resort",
     category: "Farmhouse & Resorts",
     location: "Satrik Road, Barabanki",
     desc: "Luxury farmhouse cum resort development with native landscape and modern amenities.",
     area: "Resort Complex",
+    slug: "farmhouse-cum-resort",
   },
   {
-    image: "/client/nandi-farmhuse.jpeg",
-    title: "Farm House",
+    image: "/gallery/prayagraj-farmhouse-after.jpeg",
+    title: "Prayagraj Luxury Farm House",
     category: "Farmhouse & Resorts",
     location: "Prayagraj, UP",
     desc: "High-profile farmhouse landscape design with native flora and modern amenities.",
     area: "Private Estate",
+    slug: "nandi-farmhouse",
   },
   {
     image: "/client/garden-development-mr-dines.jpeg",
@@ -93,12 +95,13 @@ const projects = [
     slug: "grand-hotel-resort",
   },
   {
-    image: "/client/subh-vilas-hotel.jpeg",
+    image: "/gallery/subh-vilas-after.jpeg",
     title: "Shubh Villas Hotel & Resort",
     category: "Hotels",
     location: "Naini, Prayagraj",
     desc: "Elegant garden and pool-side landscaping for the luxury resort suites.",
     area: "Resort Grounds",
+    slug: "subh-vilas-hotel",
   },
 
   // Consultancy
@@ -155,12 +158,13 @@ const projects = [
     area: "Residential Society",
   },
   {
-    image: "/indian-institutional.png",
+    image: "/gallery/gyan-diary-after.jpeg",
     title: "Gyan Dairy & Gyan Heritage School",
     category: "Others",
-    location: "Aashiyana, Lucknow",
+    location: "Sultanpur Road & Lucknow",
     desc: "Greenery development for industrial dairy unit and school campus.",
     area: "Campus Garden",
+    slug: "gyan-dairy-school",
   },
   {
     image: "/indian-resort.png",

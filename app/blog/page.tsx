@@ -2,13 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { Clock, User, Calendar, ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { Clock, Calendar, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Gardening Guide & Landscaping Blogs Lucknow | Green Ganga",
-  description: "Read professional gardening tips, vertical garden setup guides, terrace garden layout ideas, and landscaping cost guides in Lucknow, Noida & UP.",
+  description: "Read professional gardening tips, vertical garden setup guides, and terrace garden layout ideas in Lucknow, Noida & UP.",
   alternates: {
     canonical: "/blog"
   }
@@ -36,23 +36,13 @@ const blogPosts = [
     category: "Maintenance"
   },
   {
-    slug: "landscaping-cost-lucknow",
-    title: "Landscaping & Gardening Setup Cost Guide in Lucknow (2026)",
-    desc: "A realistic budget breakdown for lawn turfing, vertical walls, drip systems, and stone pathway layouts in UP.",
-    date: "June 18, 2026",
-    author: "Green Ganga Research Team",
-    readTime: "8 min read",
-    image: "/client/ds-group.jpeg",
-    category: "Pricing Guide"
-  },
-  {
     slug: "terrace-garden-ideas",
     title: "Stunning Terrace Garden Ideas for Urban Homes in UP",
     desc: "How to set up lightweight rooftop gardens, container organic vegetables, and waterproof balcony structures in high-rises.",
     date: "June 10, 2026",
     author: "Mrs. Seema Sharma (Landscape Designer)",
     readTime: "5 min read",
-    image: "/client/farmhouse-cum-resort.jpeg",
+    image: "/gallery/blog-roof-top.jpeg",
     category: "Rooftop Gardens"
   },
   {
@@ -62,7 +52,7 @@ const blogPosts = [
     date: "June 02, 2026",
     author: "Aditya Sharma (Horticulture Lead)",
     readTime: "7 min read",
-    image: "/client/grand-hotel-resort.jpeg",
+    image: "/gallery/blog-vertical-garden.jpeg",
     category: "Vertical Gardens"
   }
 ];
@@ -101,7 +91,7 @@ export default function BlogIndexPage() {
               Our Gardening & Landscaping Blog
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              Read professional guides, Vastu plant consultancy tips, and breakdown costs written by our B.Sc. and Ph.D. Agriculture experts.
+              Read professional guides and Vastu plant consultancy tips written by our B.Sc. and Ph.D. Agriculture experts.
             </p>
           </div>
         </div>
@@ -153,11 +143,7 @@ export default function BlogIndexPage() {
                     {post.desc}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between w-full">
-                    <span className="text-xs font-semibold text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-fresh-green" />
-                      By {post.author.split(" ")[0]} {post.author.split(" ")[1]}
-                    </span>
+                  <div className="mt-auto pt-4 border-t border-gray-100 dark:border-white/10 flex justify-end w-full">
                     <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-xs font-bold text-deep-green dark:text-white group-hover:text-fresh-green transition-colors">
                       Read Full <ArrowRight className="w-3.5 h-3.5" />
                     </Link>

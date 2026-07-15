@@ -73,7 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogSlugs = [
     "best-plants-lucknow",
     "garden-maintenance-tips",
-    "landscaping-cost-lucknow",
     "terrace-garden-ideas",
     "vertical-garden-guide"
   ];
@@ -84,7 +83,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "guru-kripa-utsav",
     "vrindavan-yojana-farmhouse",
     "grand-hotel-resort",
-    "ansal-api-township"
+    "ansal-api-township",
+    "subh-vilas-hotel",
+    "nandi-farmhouse",
+    "farmhouse-cum-resort",
+    "gyan-dairy-school"
   ];
 
   // Append services

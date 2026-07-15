@@ -72,6 +72,50 @@ const caseStudies = [
     description: "Laying out and maintaining green belts, parkways, avenue tree plantations, and providing master horticultural consultancy for Lko's largest hitech township.",
     plants: ["Neem Trees", "Gulmohar", "Amaltas (Golden Shower)", "Lawn Turf"],
     image: "/client/ansal-api.jpeg"
+  },
+  {
+    title: "Shubh Villas Hotel & Resort",
+    slug: "subh-vilas-hotel",
+    location: "Naini, Prayagraj",
+    category: "Commercial & Event Lawn",
+    duration: "30 Days",
+    area: "6,00,000 Sq. Ft.",
+    description: "Elegant garden and marriage lawn development featuring manicured grass borders and premium resort landscaping for luxury events.",
+    plants: ["Selection No. 1 Grass", "Areca Palms", "Golden Duranta", "Red Hibiscus"],
+    image: "/gallery/subh-vilas-after.jpeg"
+  },
+  {
+    title: "Prayagraj Luxury Farm House",
+    slug: "nandi-farmhouse",
+    location: "Prayagraj, UP",
+    category: "Residential Farmhouse",
+    duration: "25 Days",
+    area: "5,000+ Sq. Ft.",
+    description: "High-profile private farmhouse landscape design utilizing acclimatized native flora, rustic stepping stones, and open turf layouts.",
+    plants: ["Mexican Grass Slabs", "Cycas Palms", "Adenium Obesum", "Golden Cypress"],
+    image: "/gallery/prayagraj-farmhouse-after.jpeg"
+  },
+  {
+    title: "Farm House Cum Resort",
+    slug: "farmhouse-cum-resort",
+    location: "Satrik Road, Barabanki",
+    category: "Commercial Resort",
+    duration: "35 Days",
+    area: "8,00,000 Sq. Ft.",
+    description: "Luxury weekend getaway landscape development with native plantations, wide open lawns, and automatic micro-irrigation systems.",
+    plants: ["Bermuda Grass", "Neem Trees", "Gulmohar", "Areca Palms"],
+    image: "/gallery/farmhouse-cum-resort-after.jpeg"
+  },
+  {
+    title: "Gyan Dairy & Gyan Heritage School",
+    slug: "gyan-dairy-school",
+    location: "Sultanpur Road & Lucknow",
+    category: "Industrial & School Campus",
+    duration: "40 Days",
+    area: "7,000+ Sq. Ft.",
+    description: "Eco-friendly industrial greening for Gyan Dairy unit alongside child-safe turf play zones and boundary hedges for school grounds.",
+    plants: ["Korean Grass", "Ficus Panda", "Royal Palms", "Golden Bottle Brush"],
+    image: "/gallery/gyan-diary-after.jpeg"
   }
 ];
 
