@@ -180,8 +180,8 @@ export default function Footer() {
               <Link href="/cities/kanpur" className="hover:text-fresh-green transition-colors">Kanpur</Link>
               <Link href="/cities/prayagraj" className="hover:text-fresh-green transition-colors">Prayagraj</Link>
               <Link href="/cities/varanasi" className="hover:text-fresh-green transition-colors">Varanasi</Link>
-              <Link href="/cities/prayagraj" className="hover:text-fresh-green transition-colors">Jhansi</Link>
-              <Link href="/cities/varanasi" className="hover:text-fresh-green transition-colors">Fatehpur</Link>
+              <Link href="/cities/jhansi" className="hover:text-fresh-green transition-colors">Jhansi</Link>
+              <Link href="/cities/fatehpur" className="hover:text-fresh-green transition-colors">Fatehpur</Link>
             </div>
 
           </div>

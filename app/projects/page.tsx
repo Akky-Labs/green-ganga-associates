@@ -12,24 +12,6 @@ const categories = ["All", "Garden Development", "Farmhouse & Resorts", "Hotels"
 const projects = [
   // Garden Development & Maintenance
   {
-    image: "/client/GS infra.jpeg",
-    title: "GS infra - Client UPRNN PGI Hospital",
-    category: "Garden Development",
-    location: "Lucknow, UP",
-    desc: "Comprehensive garden development and maintenance services for UPRNN at PGI Hospital campus.",
-    area: "Campus Wide",
-    slug: "pgi-hospital",
-  },
-  {
-    image: "/client/abdul-kalam.png",
-    title: "UPRNN - Abdul Kalam UPAKTU University",
-    category: "Garden Development",
-    location: "New Campus, Lucknow",
-    desc: "Professional landscaping and green belt development for the new university campus.",
-    area: "Campus Wide",
-    slug: "abdul-kalam-university",
-  },
-  {
     image: "/project-industrial.png",
     title: "Durable Polymers Unit",
     category: "Garden Development",
@@ -40,12 +22,12 @@ const projects = [
 
   // Marriage Home & Farm Houses
   {
-    image: "/client/guru-kripa-utsav.jpeg",
+    image: "/gallery/guru-kirpa.jpeg",
     title: "GuruKirpa Utsav",
     category: "Farmhouse & Resorts",
     location: "Raebareli Road, Lalganj",
     desc: "Elegant marriage home cum farmhouse with lush gardens and event spaces.",
-    area: "Marriage Resort",
+    area: "5,000+ Sq. Ft.",
     slug: "guru-kripa-utsav",
   },
   {
@@ -74,26 +56,8 @@ const projects = [
     desc: "Exclusive garden development project for Rajya Sabha Member and former Deputy CM.",
     area: "Estate Garden",
   },
-  {
-    image: "/client/farmhouse-vrindavan-yojna.jpeg",
-    title: "Farm House Vrindavan Yojna",
-    category: "Farmhouse & Resorts",
-    location: "Sec-B Road, Lucknow",
-    desc: "Contemporary farmhouse landscape design with minimalist planting and open lawns.",
-    area: "Farm House",
-    slug: "vrindavan-yojana-farmhouse",
-  },
 
   // Hotels
-  {
-    image: "/client/grand-hotel-resort.jpeg",
-    title: "The Grand Hotel & Resort",
-    category: "Hotels",
-    location: "RBL Road, Mohanlalganj, Lko",
-    desc: "Complete landscape design and development for the premium hotel and resort property.",
-    area: "Hotel Grounds",
-    slug: "grand-hotel-resort",
-  },
   {
     image: "/gallery/subh-vilas-after.jpeg",
     title: "Shubh Villas Hotel & Resort",
@@ -128,15 +92,6 @@ const projects = [
     location: "Noida, UP",
     desc: "Extensive service period of 7 years managing landscapes for Jaypee institutions.",
     area: "7 Years Experience",
-  },
-  {
-    image: "/client/ansal-api.jpeg",
-    title: "Ansal API Hitech Township",
-    category: "Consultancy & Services",
-    location: "Lucknow, UP",
-    desc: "Managed landscaping for the 4,500-acre Hitech Township developmental project.",
-    area: "4,500 Acres",
-    slug: "ansal-api-township",
   },
 
   {

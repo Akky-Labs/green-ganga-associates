@@ -8,103 +8,15 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const caseStudies = [
   {
-    title: "UPRNN - PGI Hospital Garden Development",
-    slug: "pgi-hospital",
-    location: "Lucknow, UP",
-    category: "Institutional",
-    duration: "6 Months",
-    area: "Campus Wide",
-    description: "Full-scale landscape design, soil replenishment, and year-round green belt maintenance for Lucknow's premiere medical institute campus under UPRNN.",
-    plants: ["Royal Palms", "Korean Grass", "Golden Duranta", "Bougainvillea"],
-    image: "/client/GS infra.jpeg"
-  },
-  {
-    title: "UPRNN - Abdul Kalam Technical University",
-    slug: "abdul-kalam-university",
-    location: "Jankipuram, Lucknow",
-    category: "Educational",
-    duration: "8 Months",
-    area: "University Grounds",
-    description: "Premium green belt development and open turf installations matching institutional environmental standards at the brand new AKTU university campus.",
-    plants: ["Fox Tail Palms", "Selection Grass", "Nerium Oleander", "Ficus Benjamina"],
-    image: "/client/abdul-kalam.png"
-  },
-  {
-    title: "Guru Kirpa Utsav Marriage Lawn",
-    slug: "guru-kripa-utsav",
-    location: "Raebareli Road, Lalganj",
-    category: "Commercial Resort",
-    duration: "4 Months",
-    area: "Event Lawns & Gardens",
-    description: "Premium wedding garden landscaping, decorative waterfall structures, and ambient landscape uplighting for a luxury wedding event resort.",
-    plants: ["Areca Palms", "Bermuda Grass", "Plumeria Alba", "Star Jasmine"],
-    image: "/client/guru-kripa-utsav.jpeg"
-  },
-  {
-    title: "Vrindavan Yojana Luxury Farmhouse",
-    slug: "vrindavan-yojana-farmhouse",
-    location: "Sector 5B, Vrindavan Yojna, Lko",
-    category: "Residential Estate",
-    duration: "3 Months",
-    area: "Private Estate Garden",
-    description: "Contemporary farmhouse landscape design, large step-stone pathways, native fruit orchards, and a custom sheet waterfall with warm LED uplighting.",
-    plants: ["Cycas Palms", "Selection No. 1 Grass", "Agave Americana", "Dracaena"],
-    image: "/client/farmhouse-vrindavan-yojna.jpeg"
-  },
-  {
-    title: "The Grand Hotel & Resort",
-    slug: "grand-hotel-resort",
-    location: "Mohanlalganj, Lucknow",
-    category: "Hospitality",
-    duration: "5 Months",
-    area: "Hotel Grounds & Pool",
-    description: "High-end resort theme landscaping, pool-side palm layouts, and zero-maintenance ornamental borders for a luxury hospitality property.",
-    plants: ["Traveler Palms", "Mexican Carpet Grass", "Exotic Hibiscus", "Duranta Gold"],
-    image: "/client/grand-hotel-resort.jpeg"
-  },
-  {
-    title: "Ansal API Hitech Township",
-    slug: "ansal-api-township",
-    location: "Sultanpur Road, Lucknow",
-    category: "Township / Urban Planning",
-    duration: "7+ Years (Ongoing)",
-    area: "4,500 Acres Development",
-    description: "Laying out and maintaining green belts, parkways, avenue tree plantations, and providing master horticultural consultancy for Lko's largest hitech township.",
-    plants: ["Neem Trees", "Gulmohar", "Amaltas (Golden Shower)", "Lawn Turf"],
-    image: "/client/ansal-api.jpeg"
-  },
-  {
     title: "Shubh Villas Hotel & Resort",
     slug: "subh-vilas-hotel",
     location: "Naini, Prayagraj",
     category: "Commercial & Event Lawn",
     duration: "30 Days",
-    area: "6,00,000 Sq. Ft.",
+    area: "6,0,000 Sq. Ft.",
     description: "Elegant garden and marriage lawn development featuring manicured grass borders and premium resort landscaping for luxury events.",
     plants: ["Selection No. 1 Grass", "Areca Palms", "Golden Duranta", "Red Hibiscus"],
     image: "/gallery/subh-vilas-after.jpeg"
-  },
-  {
-    title: "Prayagraj Luxury Farm House",
-    slug: "nandi-farmhouse",
-    location: "Prayagraj, UP",
-    category: "Residential Farmhouse",
-    duration: "25 Days",
-    area: "5,000+ Sq. Ft.",
-    description: "High-profile private farmhouse landscape design utilizing acclimatized native flora, rustic stepping stones, and open turf layouts.",
-    plants: ["Mexican Grass Slabs", "Cycas Palms", "Adenium Obesum", "Golden Cypress"],
-    image: "/gallery/prayagraj-farmhouse-after.jpeg"
-  },
-  {
-    title: "Farm House Cum Resort",
-    slug: "farmhouse-cum-resort",
-    location: "Satrik Road, Barabanki",
-    category: "Commercial Resort",
-    duration: "35 Days",
-    area: "8,00,000 Sq. Ft.",
-    description: "Luxury weekend getaway landscape development with native plantations, wide open lawns, and automatic micro-irrigation systems.",
-    plants: ["Bermuda Grass", "Neem Trees", "Gulmohar", "Areca Palms"],
-    image: "/gallery/farmhouse-cum-resort-after.jpeg"
   },
   {
     title: "Gyan Dairy & Gyan Heritage School",
@@ -112,10 +24,43 @@ const caseStudies = [
     location: "Sultanpur Road & Lucknow",
     category: "Industrial & School Campus",
     duration: "40 Days",
-    area: "7,000+ Sq. Ft.",
+    area: "7,00,000 Sq. Ft.",
     description: "Eco-friendly industrial greening for Gyan Dairy unit alongside child-safe turf play zones and boundary hedges for school grounds.",
     plants: ["Korean Grass", "Ficus Panda", "Royal Palms", "Golden Bottle Brush"],
     image: "/gallery/gyan-diary-after.jpeg"
+  },
+  {
+    title: "Guru Kirpa Utsav Marriage Lawn",
+    slug: "guru-kripa-utsav",
+    location: "Raebareli Road, Lalganj",
+    category: "Commercial Resort",
+    duration: "25 Days",
+    area: "5,000+ Sq. Ft.",
+    description: "Premium wedding garden landscaping, decorative waterfall structures, and ambient landscape uplighting for a luxury wedding event resort.",
+    plants: ["Areca Palms", "Bermuda Grass", "Plumeria Alba", "Star Jasmine"],
+    image: "/gallery/guru-kirpa.jpeg"
+  },
+  {
+    title: "Farm House Cum Resort",
+    slug: "farmhouse-cum-resort",
+    location: "Satrik Road, Barabanki",
+    category: "Commercial Resort",
+    duration: "35 Days",
+    area: "8,0,000 Sq. Ft.",
+    description: "Luxury weekend getaway landscape development with native plantations, wide open lawns, and automatic micro-irrigation systems.",
+    plants: ["Bermuda Grass", "Neem Trees", "Gulmohar", "Areca Palms"],
+    image: "/gallery/farmhouse-cum-resort-after.jpeg"
+  },
+  {
+    title: "Prayagraj Luxury Farm House",
+    slug: "nandi-farmhouse",
+    location: "Prayagraj, UP",
+    category: "Residential Farmhouse",
+    duration: "25 Days",
+    area: "5,00,000 Sq. Ft.",
+    description: "High-profile private farmhouse landscape design utilizing acclimatized native flora, rustic stepping stones, and open turf layouts.",
+    plants: ["Mexican Grass Slabs", "Cycas Palms", "Adenium Obesum", "Golden Cypress"],
+    image: "/gallery/prayagraj-farmhouse-after.jpeg"
   }
 ];
 

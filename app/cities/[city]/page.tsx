@@ -114,6 +114,42 @@ const citiesDetails: Record<string, {
     testimonials: [
       { name: "Ramanathan Iyer", role: "Hotel Manager, Cantt", text: "We contracted Green Ganga to landscape our hotel courtyard. Guests constantly praise the beautiful plants and relaxing water fountain.", rating: 5 }
     ]
+  },
+  "jhansi": {
+    name: "Jhansi",
+    state: "Uttar Pradesh",
+    lat: 25.4484,
+    lng: 78.5685,
+    postalCode: "284001",
+    street: "Civil Lines, Jhansi",
+    localities: [
+      { slug: "civil-lines", name: "Civil Lines" },
+      { slug: "sipri-bazaar", name: "Sipri Bazaar" },
+      { slug: "sardar-bazaar", name: "Sardar Bazaar" },
+      { slug: "jhansi-fort", name: "Jhansi Fort Area" }
+    ],
+    description: "Jhansi is a historic city in the Bundelkhand region, known for its rich heritage and growing residential estates. Green Ganga Associates provides top-tier landscaping, garden design, and lawn installation services in Jhansi. We specialize in developing premium farmhouse landscapes, hotel gardens, and residential lawns that are resilient to Jhansi's warm climate, using smart irrigation to optimize water usage.",
+    testimonials: [
+      { name: "Vijay Bundela", role: "Farmhouse Owner, Jhansi", text: "Exceptional landscaping work at our farmhouse. The team selected very healthy climate-resilient plants and designed a beautiful stone pathway.", rating: 5 }
+    ]
+  },
+  "fatehpur": {
+    name: "Fatehpur",
+    state: "Uttar Pradesh",
+    lat: 25.9264,
+    lng: 80.8123,
+    postalCode: "212601",
+    street: "Civil Lines, Fatehpur",
+    localities: [
+      { slug: "civil-lines", name: "Civil Lines" },
+      { slug: "radha-nagar", name: "Radha Nagar" },
+      { slug: "abunagar", name: "Abunagar" },
+      { slug: "deviganj", name: "Deviganj" }
+    ],
+    description: "Fatehpur is a historic municipality in Uttar Pradesh with expanding urban residential areas. Green Ganga Associates brings professional landscaping, lawn turfing, and terrace gardening services to Fatehpur. We design elegant private estate gardens, school campuses, and commercial landscapes using premium native flora, decorative pathways, and custom water features designed to flourish in Fatehpur's local environment.",
+    testimonials: [
+      { name: "Ramesh Tripathi", role: "Residential Client, Radha Nagar", text: "Green Ganga converted our backyard into a lush green haven. Their regular maintenance team has kept the garden looking perfect.", rating: 5 }
+    ]
   }
 };
 

@@ -23,89 +23,24 @@ interface ProjectDetails {
 }
 
 const projectsData: Record<string, ProjectDetails> = {
-  "pgi-hospital": {
-    title: "GS infra - Client UPRNN PGI Hospital",
-    category: "Garden Development",
-    location: "SGPGI Road, Lucknow, UP",
-    area: "35,000 Sq. Ft.",
-    timeTaken: "60 Days",
-    plantsUsed: ["Selection No. 1 Grass", "Golden Bottle Brush", "Ficus Panda", "Areca Palms", "Dracaena Mahatma"],
-    description: "Full-scale ecological greening and boundary landscape architecture for the premier medical facility in Lucknow. The client required a clean, dust-repellant, and positive healing garden setup suitable for recovering patients.",
-    challenge: "Heavy construction dust on site, clayey topsoil with poor water absorption, and low root ventilation.",
-    result: "Installed specialized root aeration systems, added 100 metric tons of organic compost, laid fresh Selection No. 1 turf grass, and built pathway borders with high oxygen-producing evergreens.",
-    beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/ds-group.jpeg"
-  },
-  "abdul-kalam-university": {
-    title: "UPRNN - Abdul Kalam UPAKTU University",
-    category: "Garden Development",
-    location: "Jankipuram Extension, Lucknow",
-    area: "1.2 Lakh Sq. Ft.",
-    timeTaken: "90 Days",
-    plantsUsed: ["Bermuda Grass", "Foxtail Palms", "Royal Palms", "Nerium Oleander", "Bougainvillea Spectabilis"],
-    description: "Extensive green belt planning and campus turfing for the prestigious technical university campus. Aimed to construct a multi-tiered shade canopy to lower urban temperatures around lecture halls.",
-    challenge: "Massive open grounds exposed to direct hot summer sun waves (Loo), requiring heat-resistant foliage and high-volume sprinkler layout.",
-    result: "Planted 250 mature palms, installed pop-up watering systems, laid Bermuda turf slabs, and created decorative multi-tiered shrub hedges matching university paths.",
-    beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/farmhouse-vrindavan-yojna.jpeg"
-  },
   "guru-kripa-utsav": {
     title: "GuruKirpa Utsav Resort & Farmhouse",
     category: "Farmhouse & Resorts",
     location: "Raebareli Road, Lalganj",
-    area: "40,000 Sq. Ft.",
-    timeTaken: "45 Days",
+    area: "5,000+ Sq. Ft.",
+    timeTaken: "25 Days",
     plantsUsed: ["Mexican Grass", "Cycas Revoluta", "Golden Cypress", "Wodyetia Bifurcata", "Adenium Obesum"],
     description: "Conversion of a dry agricultural lot into a luxury marriage resort and private farmhouse landscape, complete with manicured lawn borders and aesthetic entrance flowerbeds.",
     challenge: "Slightly saline groundwater and low nutrients in topsoil layer.",
     result: "Applied customized gypsum soil treatments, established organic sand-based subgrades, and laid imported drought-resilient Mexican grass turf.",
     beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/guru-kripa-utsav.jpeg"
-  },
-  "vrindavan-yojana-farmhouse": {
-    title: "Farm House Vrindavan Yojna",
-    category: "Farmhouse & Resorts",
-    location: "Sector 5B, Vrindavan Yojna, Lucknow",
-    area: "15,000 Sq. Ft.",
-    timeTaken: "30 Days",
-    plantsUsed: ["Selection No. 1 Turf", "Pandanus", "Ravenala Madagascariensis (Traveler's Palm)", "Plumeria Rubra"],
-    description: "Modern minimalist residential farmhouse garden design with private sit-out zones, Vastu Shastra plant placements, and warm indirect spike LED uplighting.",
-    challenge: "Limited natural light near high brick compound walls and compact layout boundary constraints.",
-    result: "Selected shade-loving foliage plants for borders, integrated natural stone step-stones, and set up automatic drip lines.",
-    beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/farmhouse-vrindavan-yojna.jpeg"
-  },
-  "grand-hotel-resort": {
-    title: "The Grand Hotel & Resort",
-    category: "Hotels",
-    location: "RBL Road, Mohanlalganj, Lucknow",
-    area: "20,000 Sq. Ft.",
-    timeTaken: "35 Days",
-    plantsUsed: ["Korean Grass Slabs", "Dwarf Areca Palms", "Hibiscus Rosa-sinensis", "Monstera Deliciosa"],
-    description: "Luxury hotel entrance landscape and poolside greening to build a premium tropical retreat appearance for incoming tourists and wedding guests.",
-    challenge: "High pedestrian foot traffic requiring wear-resistant turf types and strict waterproofing limits near swimming lines.",
-    result: "Laid durable Korean grass slabs, setup smart drainage layers, and placed mature ornamental palms in masonry planters.",
-    beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/grand-hotel-resort.jpeg"
-  },
-  "ansal-api-township": {
-    title: "Ansal API Hitech Township",
-    category: "Consultancy & Services",
-    location: "Sultanpur Road, Lucknow, UP",
-    area: "4,500 Acres (Consultancy)",
-    timeTaken: "6 Years Service",
-    plantsUsed: ["Acclimatized Native Palms", "Cassia Fistula", "Jacaranda Mimosifolia", "Conocarpus Erectus"],
-    description: "Managed landscaping planning, avenue tree planting guides, nursery operations, and park preservation guidelines for the massive 4,500-acre smart township project.",
-    challenge: "Maintaining landscaping uniformity across dozens of neighborhood parks and wide highway green belts.",
-    result: "Built a centralized propagation nursery on-site, formulated climate-specific plantation maps, and guided 100+ field laborers for optimal execution.",
-    beforeImage: "/client/GS infra.jpeg",
-    afterImage: "/client/ansal-api.jpeg"
+    afterImage: "/gallery/guru-kirpa.jpeg"
   },
   "subh-vilas-hotel": {
     title: "Shubh Villas Hotel & Resort",
     category: "Hotels",
     location: "Naini, Prayagraj",
-    area: "6,00,000 Sq. Ft.",
+    area: "6,0,000 Sq. Ft.",
     timeTaken: "30 Days",
     plantsUsed: ["Selection No. 1 Grass", "Areca Palms", "Golden Duranta", "Red Hibiscus", "Star Jasmine"],
     description: "Elegant garden and marriage lawn landscaping for the luxury hotel suites. Designed to withstand heavy foot traffic while providing a premium, lush backdrop for wedding events.",
@@ -118,7 +53,7 @@ const projectsData: Record<string, ProjectDetails> = {
     title: "Prayagraj Luxury Farm House",
     category: "Farmhouse & Resorts",
     location: "Prayagraj, UP",
-    area: "5,000+ Sq. Ft.",
+    area: "5,00,000 Sq. Ft.",
     timeTaken: "25 Days",
     plantsUsed: ["Mexican Grass Slabs", "Cycas Palms", "Adenium Obesum", "Golden Cypress", "Ravenala"],
     description: "High-profile farmhouse landscape design utilizing native flora and modern amenities. Built to create a peaceful personal retreat with rich green layouts.",
@@ -131,7 +66,7 @@ const projectsData: Record<string, ProjectDetails> = {
     title: "Farm House Cum Resort",
     category: "Farmhouse & Resorts",
     location: "Satrik Road, Barabanki",
-    area: "8,00,000 Sq. Ft.",
+    area: "8,0,000 Sq. Ft.",
     timeTaken: "35 Days",
     plantsUsed: ["Bermuda Grass", "Neem Trees", "Gulmohar", "Areca Palms", "Bougainvillea"],
     description: "Luxury farmhouse cum resort development featuring native landscapes, rustic pathways, and lush ornamental borders suitable for the Barabanki climate.",
@@ -144,7 +79,7 @@ const projectsData: Record<string, ProjectDetails> = {
     title: "Gyan Dairy & Gyan Heritage School",
     category: "Others",
     location: "Sultanpur Road & Lucknow",
-    area: "7,00,000 Sq. Ft.",
+    area: "7,0,000 Sq. Ft.",
     timeTaken: "40 Days",
     plantsUsed: ["Korean Grass", "Ficus Panda", "Royal Palms", "Golden Bottle Brush", "Xanadu"],
     description: "Greenery development for industrial dairy unit alongside institutional landscape planning for the school campus. Designed for visual appeal and environmental safety.",
@@ -166,7 +101,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
-  const project = projectsData[resolvedParams.slug] || projectsData["pgi-hospital"];
+  const project = projectsData[resolvedParams.slug] || projectsData["guru-kripa-utsav"];
   const title = `${project.title} Landscaping Project Lucknow | Green Ganga`;
   const description = `Read case study on ${project.title} in ${project.location}. View our professional garden planning, site parameters & results in UP.`;
   return {

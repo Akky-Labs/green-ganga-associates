@@ -7,7 +7,7 @@ import { Leaf, MapPin, CheckCircle2, Phone, Sparkles, ArrowLeft } from "lucide-r
 import { Button } from "@/components/ui/button";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-const citiesList = ["lucknow", "kanpur", "noida", "prayagraj", "varanasi"];
+const citiesList = ["lucknow", "kanpur", "noida", "prayagraj", "varanasi", "jhansi", "fatehpur"];
 
 const lucknowLocalities: Record<string, string> = {
   "gomti-nagar": "Gomti Nagar",

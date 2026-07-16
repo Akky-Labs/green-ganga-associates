@@ -63,7 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "plant-supply", "irrigation", "artificial-grass", "water-features", "garden-lighting"
   ];
 
-  const cities = ["lucknow", "kanpur", "noida", "prayagraj", "varanasi"];
+  const cities = ["lucknow", "kanpur", "noida", "prayagraj", "varanasi", "jhansi", "fatehpur"];
   
   const lucknowLocalities = [
     "gomti-nagar", "indira-nagar", "aliganj", "hazratganj", 
@@ -78,12 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectSlugs = [
-    "pgi-hospital",
-    "abdul-kalam-university",
     "guru-kripa-utsav",
-    "vrindavan-yojana-farmhouse",
-    "grand-hotel-resort",
-    "ansal-api-township",
     "subh-vilas-hotel",
     "nandi-farmhouse",
     "farmhouse-cum-resort",

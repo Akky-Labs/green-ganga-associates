@@ -68,17 +68,17 @@ const trustFeatures = [
   },
   {
     icon: <Leaf className="w-7 h-7" />,
-    title: "Quality Plants",
+    title: "Premium Plant Quality",
     desc: "Selected for local climate, durability, and visual appeal — only the healthiest plants make the cut.",
   },
   {
     icon: <Shield className="w-7 h-7" />,
-    title: "Safety & Compliance",
+    title: "Safety & Regulatory Compliance",
     desc: "Strict adherence to site safety standards and risk management on all projects.",
   },
   {
     icon: <Sparkles className="w-7 h-7" />,
-    title: "Sustainability",
+    title: "Sustainable Landscaping Eco Solution",
     desc: "Eco-friendly methods that protect the environment and reduce long-term costs for lasting results.",
   },
 ];
@@ -96,12 +96,11 @@ const services = [
 ];
 
 const projects = [
-  { image: "/client/GS infra.jpeg", title: "GS infra - PGI Hospital", category: "Garden Development", location: "Lucknow" },
-  { image: "/client/guru-kripa-utsav.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
+  { image: "/gallery/guru-kirpa.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
   { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: "Farmhouse & Resorts", location: "Prayagraj" },
-  { image: "/client/ansal-api.jpeg", title: "Ansal API Hitech Township", category: "Consultancy & Services", location: "Lucknow" },
-  { image: "/client/abdul-kalam.png", title: "UPRNN Abdul Kalam University", category: "Garden Development", location: "Lucknow" },
-  { image: "/client/grand-hotel-resort.jpeg", title: "The Grand Hotel & Resort", category: "Hotels", location: "Lucknow" },
+  { image: "/gallery/subh-vilas-after.jpeg", title: "Shubh Villas Hotel & Resort", category: "Hotels", location: "Prayagraj" },
+  { image: "/gallery/farmhouse-cum-resort-after.jpeg", title: "Farm House Cum Resort", category: "Farmhouse & Resorts", location: "Barabanki" },
+  { image: "/gallery/gyan-diary-after.jpeg", title: "Gyan Dairy & Gyan Heritage School", category: "Garden Development", location: "Lucknow" },
 ];
 
 const team = [
@@ -245,7 +244,7 @@ export default function Home() {
             </h1>
 
             <p className="text-sm sm:text-base lg:text-lg text-gray-200/95 leading-relaxed mb-8 max-w-xl">
-              We design and maintain custom luxury gardens, vertical walls, and automated irrigation systems across Uttar Pradesh with certified horticulture experts.
+              Luxury Landscaping & horticulture experts. Designing Premium farmhouses, Villas, Resorts, & commercial Landscape with Certified horticulture experts.
             </p>
 
             <div className="flex flex-wrap gap-4">
