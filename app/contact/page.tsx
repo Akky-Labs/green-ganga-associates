@@ -20,6 +20,8 @@ import {
   GraduationCap,
   Users,
   Instagram,
+  Facebook,
+  Youtube,
 } from "lucide-react";
 
 const contactInfo = [
@@ -50,6 +52,18 @@ const contactInfo = [
     title: "Instagram",
     lines: ["@green_ganga_associates"],
     href: "https://www.instagram.com/green_ganga_associates",
+  },
+  {
+    icon: <Facebook className="w-5 h-5" />,
+    title: "Facebook",
+    lines: ["Green Ganga Associates"],
+    href: "https://www.facebook.com/share/189Q8grrjY/?mibextid=wwXIfr",
+  },
+  {
+    icon: <Youtube className="w-5 h-5" />,
+    title: "YouTube",
+    lines: ["@greengangaassociates"],
+    href: "https://youtube.com/@greengangaassociates?si=HAQsb45Ml8rhfNuD",
   },
 ];
 

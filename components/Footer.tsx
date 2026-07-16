@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 
 const services = [
   { href: "/services/landscaping", label: "Landscaping & Design" },
@@ -159,6 +159,32 @@ export default function Footer() {
                     className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300"
                   >
                     Instagram
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0">
+                    <Facebook className="w-4 h-4 text-fresh-green" />
+                  </div>
+                  <a
+                    href="https://www.facebook.com/share/189Q8grrjY/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-fresh-green/10 flex items-center justify-center shrink-0">
+                    <Youtube className="w-4 h-4 text-fresh-green" />
+                  </div>
+                  <a
+                    href="https://youtube.com/@greengangaassociates?si=HAQsb45Ml8rhfNuD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/50 hover:text-fresh-green text-sm transition-colors duration-300"
+                  >
+                    YouTube
                   </a>
                 </li>
               </ul>

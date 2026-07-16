@@ -49,9 +49,9 @@ export default function GoogleLocalBusinessSchema() {
       "closes": "18:00"
     },
     "sameAs": [
-      "https://www.facebook.com/greenganga",
+      "https://www.facebook.com/share/189Q8grrjY/?mibextid=wwXIfr",
       "https://www.instagram.com/green_ganga_associates",
-      "https://www.linkedin.com/company/greenganga"
+      "https://youtube.com/@greengangaassociates?si=HAQsb45Ml8rhfNuD"
     ],
     "areaServed": [
       {
