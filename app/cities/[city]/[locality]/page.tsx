@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: "Landscaping Services",
       description: "Professional gardening and landscaping services by Green Ganga Associates.",
       alternates: {
-        canonical: `https://greengangaassociates.com/cities/${resolvedParams.city}`
+        canonical: `https://www.greengangaassociates.com/cities/${resolvedParams.city}`
       }
     };
   }
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}`
+      canonical: `https://www.greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}`
     },
     openGraph: {
       title,
@@ -112,12 +112,12 @@ export default async function LocalityPage({ params }: PageProps) {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LandscapingService",
-    "@id": `https://greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}#business`,
+    "@id": `https://www.greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}#business`,
     "name": `Green Ganga Associates Landscaping - ${localityName}, ${cityName}`,
     "description": `Professional garden design, landscape maintenance, vertical walls, and turf grass laying in ${localityName}, ${cityName} by Green Ganga Associates.`,
-    "url": `https://greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}`,
-    "logo": "https://greengangaassociates.com/favicon.png",
-    "image": "https://greengangaassociates.com/hero.png",
+    "url": `https://www.greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}`,
+    "logo": "https://www.greengangaassociates.com/favicon.png",
+    "image": "https://www.greengangaassociates.com/hero.png",
     "telephone": "+91-9999177119",
     "address": {
       "@type": "PostalAddress",
@@ -137,10 +137,10 @@ export default async function LocalityPage({ params }: PageProps) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Cities", item: "https://greengangaassociates.com/cities" },
-          { name: cityName, item: `https://greengangaassociates.com/cities/${resolvedParams.city}` },
-          { name: localityName, item: `https://greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}` }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Cities", item: "https://www.greengangaassociates.com/cities" },
+          { name: cityName, item: `https://www.greengangaassociates.com/cities/${resolvedParams.city}` },
+          { name: localityName, item: `https://www.greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}` }
         ]}
       />
       <script

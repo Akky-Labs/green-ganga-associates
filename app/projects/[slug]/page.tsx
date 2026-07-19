@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://greengangaassociates.com/projects/${resolvedParams.slug}`
+      canonical: `https://www.greengangaassociates.com/projects/${resolvedParams.slug}`
     }
   };
 }
@@ -125,9 +125,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Projects", item: "https://greengangaassociates.com/projects" },
-          { name: project.title, item: `https://greengangaassociates.com/projects/${resolvedParams.slug}` }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Projects", item: "https://www.greengangaassociates.com/projects" },
+          { name: project.title, item: `https://www.greengangaassociates.com/projects/${resolvedParams.slug}` }
         ]}
       />
 

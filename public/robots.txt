@@ -3,4 +3,4 @@ Allow: /
 Disallow: /_next/
 Disallow: /api/
 
-Sitemap: https://greengangaassociates.com/sitemap.xml
+Sitemap: https://www.greengangaassociates.com/sitemap.xml

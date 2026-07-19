@@ -62,8 +62,8 @@ export default function BlogIndexPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Blog", item: "https://greengangaassociates.com/blog" }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Blog", item: "https://www.greengangaassociates.com/blog" }
         ]}
       />
 

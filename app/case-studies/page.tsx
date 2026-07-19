@@ -69,8 +69,8 @@ export default function CaseStudiesPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Case Studies", item: "https://greengangaassociates.com/case-studies" }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Case Studies", item: "https://www.greengangaassociates.com/case-studies" }
         ]}
       />
 

@@ -16,7 +16,7 @@ const outfit = Outfit({
   display: 'swap',
 });
 
-const baseUrl = 'https://greengangaassociates.com'
+const baseUrl = 'https://www.greengangaassociates.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

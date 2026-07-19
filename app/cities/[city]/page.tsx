@@ -171,7 +171,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://greengangaassociates.com/cities/${resolvedParams.city}`
+      canonical: `https://www.greengangaassociates.com/cities/${resolvedParams.city}`
     },
     openGraph: {
       title,
@@ -193,12 +193,12 @@ export default async function CityPage({ params }: PageProps) {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LandscapingService",
-    "@id": `https://greengangaassociates.com/cities/${resolvedParams.city}#business`,
+    "@id": `https://www.greengangaassociates.com/cities/${resolvedParams.city}#business`,
     "name": `Green Ganga Associates - Landscaping & Gardening ${city.name}`,
     "description": `Green Ganga Associates is the premier landscaping, lawn development, and gardening service provider in ${city.name}, Uttar Pradesh.`,
-    "url": `https://greengangaassociates.com/cities/${resolvedParams.city}`,
-    "logo": "https://greengangaassociates.com/favicon.png",
-    "image": "https://greengangaassociates.com/hero.png",
+    "url": `https://www.greengangaassociates.com/cities/${resolvedParams.city}`,
+    "logo": "https://www.greengangaassociates.com/favicon.png",
+    "image": "https://www.greengangaassociates.com/hero.png",
     "telephone": "+91-9999177119",
     "address": {
       "@type": "PostalAddress",
@@ -223,9 +223,9 @@ export default async function CityPage({ params }: PageProps) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Cities", item: "https://greengangaassociates.com/cities" },
-          { name: city.name, item: `https://greengangaassociates.com/cities/${resolvedParams.city}` }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Cities", item: "https://www.greengangaassociates.com/cities" },
+          { name: city.name, item: `https://www.greengangaassociates.com/cities/${resolvedParams.city}` }
         ]}
       />
       <script

@@ -244,7 +244,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://greengangaassociates.com/services/${resolvedParams.slug}`
+      canonical: `https://www.greengangaassociates.com/services/${resolvedParams.slug}`
     },
     openGraph: {
       title,
@@ -266,15 +266,15 @@ export default async function ServicePage({ params }: PageProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://greengangaassociates.com/services/${resolvedParams.slug}#service`,
+    "@id": `https://www.greengangaassociates.com/services/${resolvedParams.slug}#service`,
     "name": service.title,
     "serviceType": service.title,
     "provider": {
       "@type": "LocalBusiness",
       "name": "Green Ganga Associates",
-      "image": "https://greengangaassociates.com/hero.png",
+      "image": "https://www.greengangaassociates.com/hero.png",
       "telephone": "+91-9999177119",
-      "url": "https://greengangaassociates.com",
+      "url": "https://www.greengangaassociates.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Vrindavan Yojana, Sector 5B",
@@ -310,9 +310,9 @@ export default async function ServicePage({ params }: PageProps) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Services", item: "https://greengangaassociates.com/services" },
-          { name: service.title, item: `https://greengangaassociates.com/services/${resolvedParams.slug}` }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Services", item: "https://www.greengangaassociates.com/services" },
+          { name: service.title, item: `https://www.greengangaassociates.com/services/${resolvedParams.slug}` }
         ]}
       />
       <script

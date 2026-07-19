@@ -130,8 +130,8 @@ export default function ServicesPage() {
     <>
       <BreadcrumbSchema 
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Services", item: "https://greengangaassociates.com/services" }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Services", item: "https://www.greengangaassociates.com/services" }
         ]} 
       />
       {/* ─── HERO ─────────────────────────────────────────── */}

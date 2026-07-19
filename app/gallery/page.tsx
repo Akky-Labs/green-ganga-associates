@@ -97,8 +97,8 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-soft-beige dark:bg-background transition-colors duration-300">
       <BreadcrumbSchema 
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Gallery", item: "https://greengangaassociates.com/gallery" }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Gallery", item: "https://www.greengangaassociates.com/gallery" }
         ]} 
       />
       {/* ─── HEADER ─── */}

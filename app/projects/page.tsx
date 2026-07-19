@@ -148,8 +148,8 @@ export default function ProjectsPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Projects", item: "https://greengangaassociates.com/projects" }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Projects", item: "https://www.greengangaassociates.com/projects" }
         ]}
       />
       {/* ─── HERO ─────────────────────────────────────────── */}

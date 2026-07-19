@@ -178,7 +178,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: {
-      canonical: `https://greengangaassociates.com/blog/${resolvedParams.slug}`
+      canonical: `https://www.greengangaassociates.com/blog/${resolvedParams.slug}`
     },
     openGraph: {
       title,
@@ -200,10 +200,10 @@ export default async function BlogPostPage({ params }: PageProps) {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `https://greengangaassociates.com/blog/${resolvedParams.slug}#article`,
+    "@id": `https://www.greengangaassociates.com/blog/${resolvedParams.slug}#article`,
     "headline": post.title,
     "description": post.desc,
-    "image": `https://greengangaassociates.com${post.image}`,
+    "image": `https://www.greengangaassociates.com${post.image}`,
     "datePublished": "2026-06-01",
     "author": {
       "@type": "Person",
@@ -214,7 +214,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       "name": "Green Ganga Associates",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://greengangaassociates.com/favicon.png"
+        "url": "https://www.greengangaassociates.com/favicon.png"
       }
     }
   };
@@ -223,10 +223,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Home", item: "https://greengangaassociates.com" },
-          { name: "Blog", item: "https://greengangaassociates.com/blog" },
-          { name: post.category, item: `https://greengangaassociates.com/blog#${post.category.toLowerCase()}` },
-          { name: post.title, item: `https://greengangaassociates.com/blog/${resolvedParams.slug}` }
+          { name: "Home", item: "https://www.greengangaassociates.com" },
+          { name: "Blog", item: "https://www.greengangaassociates.com/blog" },
+          { name: post.category, item: `https://www.greengangaassociates.com/blog#${post.category.toLowerCase()}` },
+          { name: post.title, item: `https://www.greengangaassociates.com/blog/${resolvedParams.slug}` }
         ]}
       />
       <script
