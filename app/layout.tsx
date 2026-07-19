@@ -10,6 +10,8 @@ import GoogleLocalBusinessSchema from "@/components/GoogleLocalBusinessSchema";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { ThemeProvider } from "@/components/ThemeProvider";
 
+import FacebookPixel from "@/components/FacebookPixel";
+
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -120,6 +122,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <FacebookPixel />
       </head>
       <body className="min-h-full flex flex-col font-outfit" suppressHydrationWarning>
         <ThemeProvider>
