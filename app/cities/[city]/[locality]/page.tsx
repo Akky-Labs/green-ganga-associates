@@ -17,7 +17,9 @@ const lucknowLocalities: Record<string, string> = {
   "jankipuram": "Jankipuram",
   "alambagh": "Alambagh",
   "ashiyana": "Ashiyana",
-  "vrindavan-yojana": "Vrindavan Yojana"
+  "vrindavan-yojana": "Vrindavan Yojana",
+  "banthra": "Banthra",
+  "ansal-golf-city": "Ansal Golf City (Sushant Golf City)"
 };
 
 // Mapped coordinate references for Local Schema
@@ -29,7 +31,9 @@ const geoRefs: Record<string, { lat: number; lng: number }> = {
   "jankipuram": { lat: 26.9205, lng: 80.9575 },
   "alambagh": { lat: 26.8042, lng: 80.9069 },
   "ashiyana": { lat: 26.7865, lng: 80.9254 },
-  "vrindavan-yojana": { lat: 26.7865, lng: 80.9632 }
+  "vrindavan-yojana": { lat: 26.7865, lng: 80.9632 },
+  "banthra": { lat: 26.7027, lng: 80.8290 },
+  "ansal-golf-city": { lat: 26.7782, lng: 81.0116 }
 };
 
 // Generates static params for locality routes to satisfy Next.js static HTML export

@@ -23,6 +23,19 @@ interface ProjectDetails {
 }
 
 const projectsData: Record<string, ProjectDetails> = {
+  "aravali-enclave": {
+    title: "Aravali Enclave Green Corridor",
+    category: "Divider Development",
+    location: "Aravali Enclave, Lucknow",
+    area: "Ongoing Project",
+    timeTaken: "Ongoing",
+    plantsUsed: ["Ornamental Palms", "Flowering Shrubs", "Seasonal Color Plants", "Evergreen Border Species"],
+    description: "Premium divider and avenue landscaping for Aravali Enclave Society, designed to create a lush green boulevard, improve the township’s visual appeal, and provide a clean, welcoming environment for residents and visitors.",
+    challenge: "Soil compaction from ongoing residential development, uneven divider levels, limited irrigation access, and the need for low-maintenance ornamental planting suitable for Lucknow’s climate conditions.",
+    result: "Prepared the divider bed with soil conditioning and drainage improvement, installed ornamental palms, flowering shrubs, seasonal color plants, and evergreen border species, resulting in a visually striking green corridor with improved aesthetics and long-term sustainability.",
+    beforeImage: "/gallery/aravali-enclave-bfore.jpeg",
+    afterImage: "/gallery/aravali-enclave-after.jpeg"
+  },
   "guru-kripa-utsav": {
     title: "GuruKirpa Utsav Resort & Farmhouse",
     category: "Farmhouse & Resorts",

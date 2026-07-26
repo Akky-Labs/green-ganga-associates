@@ -7,9 +7,20 @@ import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, Leaf, Filter } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-const categories = ["All", "Garden Development", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
+const categories = ["All", "Garden Development", "Divider Development", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
 
 const projects = [
+  // Divider Development
+  {
+    image: "/gallery/aravali-enclave-after.jpeg",
+    title: "Aravali Enclave Green Corridor",
+    category: "Divider Development",
+    location: "Aravali Enclave, Lucknow",
+    desc: "Divider landscaping, ornamental plantation, flowering avenue development, and green corridor enhancement for the residential township.",
+    area: "Ongoing Project",
+    slug: "aravali-enclave",
+  },
+
   // Garden Development & Maintenance
   {
     image: "/project-industrial.png",

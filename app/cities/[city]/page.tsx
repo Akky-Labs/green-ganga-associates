@@ -33,7 +33,9 @@ const citiesDetails: Record<string, {
       { slug: "jankipuram", name: "Jankipuram" },
       { slug: "alambagh", name: "Alambagh" },
       { slug: "ashiyana", name: "Ashiyana" },
-      { slug: "vrindavan-yojana", name: "Vrindavan Yojana" }
+      { slug: "vrindavan-yojana", name: "Vrindavan Yojana" },
+      { slug: "banthra", name: "Banthra" },
+      { slug: "ansal-golf-city", name: "Ansal Golf City (Sushant Golf City)" }
     ],
     description: " Lucknow is the heart of Uttar Pradesh, known for its royal gardens and green heritage. Green Ganga Associates is proud to serve Lucknow with state-of-the-art landscaping, premium lawn installation, automatic drip irrigation, and luxury terrace gardens. From historic Hazratganj bungalows to newly developed Gomti Nagar villas and Vrindavan Yojna townships, we design outdoor spaces that elevate property value and provide a serene green getaway.",
     testimonials: [

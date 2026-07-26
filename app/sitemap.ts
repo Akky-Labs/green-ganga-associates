@@ -67,7 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const lucknowLocalities = [
     "gomti-nagar", "indira-nagar", "aliganj", "hazratganj", 
-    "jankipuram", "alambagh", "ashiyana", "vrindavan-yojana"
+    "jankipuram", "alambagh", "ashiyana", "vrindavan-yojana",
+    "banthra", "ansal-golf-city"
   ];
 
   const blogSlugs = [
@@ -78,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectSlugs = [
+    "aravali-enclave",
     "guru-kripa-utsav",
     "subh-vilas-hotel",
     "nandi-farmhouse",

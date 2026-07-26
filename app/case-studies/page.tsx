@@ -8,6 +8,17 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const caseStudies = [
   {
+    title: "Aravali Enclave Green Corridor",
+    slug: "aravali-enclave",
+    location: "Aravali Enclave, Lucknow",
+    category: "Divider Development",
+    duration: "Ongoing",
+    area: "Ongoing Project",
+    description: "Premium divider and avenue landscaping for Aravali Enclave Society, designed to create a lush green boulevard, improve visual appeal, and provide a clean environment.",
+    plants: ["Ornamental Palms", "Flowering Shrubs", "Seasonal Colors", "Evergreen Borders"],
+    image: "/gallery/aravali-enclave-after.jpeg"
+  },
+  {
     title: "Shubh Villas Hotel & Resort",
     slug: "subh-vilas-hotel",
     location: "Naini, Prayagraj",

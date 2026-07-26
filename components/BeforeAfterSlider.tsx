@@ -11,6 +11,7 @@ interface BeforeAfterSliderProps {
   afterLabel?: string;
   title?: string;
   subtitle?: string;
+  staticImage?: string;
 }
 
 export default function BeforeAfterSlider({
@@ -19,7 +20,8 @@ export default function BeforeAfterSlider({
   beforeLabel = "Before (Raw Site)",
   afterLabel = "After (Green Ganga Landscaping)",
   title = "Transforming Spaces Into Paradises",
-  subtitle = "Drag the slider to see our real-world transformation from bare ground to a lush green landscape."
+  subtitle = "Drag the slider to see our real-world transformation from bare ground to a lush green landscape.",
+  staticImage
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -98,65 +100,81 @@ export default function BeforeAfterSlider({
           </p>
         </div>
 
-        {/* Slider Window */}
-        <div
-          ref={containerRef}
-          className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize border-4 border-white shadow-deep-green/10"
-          onMouseDown={() => setIsDragging(true)}
-          onTouchStart={() => setIsDragging(true)}
-        >
-          {/* AFTER IMAGE (Background - Full Width) */}
-          <div className="absolute inset-0 w-full h-full">
+        {staticImage ? (
+          /* Static Image Window */
+          <div className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white shadow-deep-green/10 group hover:shadow-3xl transition-shadow duration-500">
             <Image
-              src={afterImage}
-              alt={afterLabel}
+              src={staticImage}
+              alt={title || "Before After Transformation"}
               fill
               priority
-              className="object-cover"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.015]"
               sizes="(max-width: 1024px) 100vw, 1024px"
             />
-            {/* Label After */}
-            <span className="absolute bottom-4 right-4 bg-deep-green/80 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md z-20">
-              {afterLabel}
-            </span>
+            {/* Elegant overlay to match the style */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
-
-          {/* BEFORE IMAGE (Overlay - Variable Width) */}
+        ) : (
+          /* Slider Window */
           <div
-            className="absolute inset-y-0 left-0 overflow-hidden z-10"
-            style={{ width: `${sliderPosition}%` }}
+            ref={containerRef}
+            className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl select-none cursor-ew-resize border-4 border-white shadow-deep-green/10"
+            onMouseDown={() => setIsDragging(true)}
+            onTouchStart={() => setIsDragging(true)}
           >
-            {/* Inner div has fixed width of container to prevent image squishing */}
-            <div 
-              className="absolute inset-y-0 left-0 h-full"
-              style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
-            >
+            {/* AFTER IMAGE (Background - Full Width) */}
+            <div className="absolute inset-0 w-full h-full">
               <Image
-                src={beforeImage}
-                alt={beforeLabel}
+                src={afterImage}
+                alt={afterLabel}
                 fill
                 priority
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
+              {/* Label After */}
+              <span className="absolute bottom-4 right-4 bg-deep-green/80 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md z-20">
+                {afterLabel}
+              </span>
             </div>
-            {/* Label Before */}
-            <span className="absolute bottom-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md z-20 whitespace-nowrap">
-              {beforeLabel}
-            </span>
-          </div>
 
-          {/* DRAGGABLE BAR LINE */}
-          <div
-            className="absolute inset-y-0 z-30 w-1 bg-white cursor-ew-resize"
-            style={{ left: `${sliderPosition}%` }}
-          >
-            {/* Circle Handle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center border-4 border-fresh-green text-deep-green hover:scale-110 active:scale-95 transition-transform duration-200">
-              <MoveHorizontal className="w-5 h-5 animate-pulse" />
+            {/* BEFORE IMAGE (Overlay - Variable Width) */}
+            <div
+              className="absolute inset-y-0 left-0 overflow-hidden z-10"
+              style={{ width: `${sliderPosition}%` }}
+            >
+              {/* Inner div has fixed width of container to prevent image squishing */}
+              <div 
+                className="absolute inset-y-0 left-0 h-full"
+                style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
+              >
+                <Image
+                  src={beforeImage}
+                  alt={beforeLabel}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
+              </div>
+              {/* Label Before */}
+              <span className="absolute bottom-4 left-4 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md z-20 whitespace-nowrap">
+                {beforeLabel}
+              </span>
+            </div>
+
+            {/* DRAGGABLE BAR LINE */}
+            <div
+              className="absolute inset-y-0 z-30 w-1 bg-white cursor-ew-resize"
+              style={{ left: `${sliderPosition}%` }}
+            >
+              {/* Circle Handle */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-2xl flex items-center justify-center border-4 border-fresh-green text-deep-green hover:scale-110 active:scale-95 transition-transform duration-200">
+                <MoveHorizontal className="w-5 h-5 animate-pulse" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

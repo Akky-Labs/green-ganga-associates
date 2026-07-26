@@ -96,6 +96,7 @@ const services = [
 ];
 
 const projects = [
+  { image: "/gallery/aravali-enclave-after.jpeg", title: "Aravali Enclave Green Corridor", category: "Divider Development", location: "Aravali Enclave, Lucknow" },
   { image: "/gallery/guru-kirpa.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
   { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: "Farmhouse & Resorts", location: "Prayagraj" },
   { image: "/gallery/subh-vilas-after.jpeg", title: "Shubh Villas Hotel & Resort", category: "Hotels", location: "Prayagraj" },
@@ -585,7 +586,10 @@ export default function Home() {
         </div>
       </section>
 
-      <BeforeAfterSlider />
+      <BeforeAfterSlider 
+        staticImage="/gallery/before-after.jpeg"
+        subtitle="See our real-world transformation from bare ground to a lush green landscape."
+      />
 
       {/* ─── TEAM ────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
@@ -677,7 +681,7 @@ export default function Home() {
 
       <GoogleReviews />
 
-      <YouTubeSection />
+      {/* <YouTubeSection /> */}
 
       {/* ─── FAQ SECTION ─────────────────────────────────── */}
       <FAQSection />
