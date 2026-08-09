@@ -10,7 +10,7 @@ export default function GoogleLocalBusinessSchema() {
     "url": "https://www.greengangaassociates.com",
     "logo": "https://www.greengangaassociates.com/favicon.png",
     "image": "https://www.greengangaassociates.com/hero.png",
-    "telephone": "+91-9999177119",
+    "telephone": "+91-9129177119",
     "hasMap": "https://www.google.com/maps/place/GREEN+GANGA+ASSOCIATES/@21.0680074,82.7525294,5z/data=!3m1!4b1!4m6!3m5!1s0x295298ceaf5f0b1:0xb0319c9793397e68!8m2!3d21.0680074!4d82.7525294!16s%2Fg%2F11z4016ymb",
     "knowsAbout": [
       "Landscaping",
@@ -24,7 +24,7 @@ export default function GoogleLocalBusinessSchema() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9999177119",
+      "telephone": "+91-9129177119",
       "contactType": "customer service",
       "areaServed": "IN",
       "availableLanguage": ["en", "hi"]

@@ -122,7 +122,7 @@ export default async function LocalityPage({ params }: PageProps) {
     "url": `https://www.greengangaassociates.com/cities/${resolvedParams.city}/${resolvedParams.locality}`,
     "logo": "https://www.greengangaassociates.com/favicon.png",
     "image": "https://www.greengangaassociates.com/hero.png",
-    "telephone": "+91-9999177119",
+    "telephone": "+91-9129177119",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": `${localityName} area`,
@@ -174,7 +174,7 @@ export default async function LocalityPage({ params }: PageProps) {
             >
               <ArrowLeft className="w-4 h-4" /> Back to {cityName}
             </Link>
-            
+
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-fresh-green" />
               <span className="text-fresh-green text-sm font-semibold uppercase tracking-wider">
@@ -213,7 +213,7 @@ export default async function LocalityPage({ params }: PageProps) {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href={`https://wa.me/919999177119?text=Hi, I am looking for gardening services in ${localityName}, ${cityName}`}
+                  href={`https://wa.me/919129177119?text=Hi, I am looking for gardening services in ${localityName}, ${cityName}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -221,9 +221,9 @@ export default async function LocalityPage({ params }: PageProps) {
                     Book Site Consultation
                   </Button>
                 </a>
-                <a href="tel:+919999177119">
+                <a href="tel:+919129177119">
                   <Button variant="outline" className="rounded-full border-deep-green/20 text-deep-green hover:bg-deep-green/5 px-8 h-12 font-bold">
-                    Call 9999177119
+                    Call 9129177119
                   </Button>
                 </a>
               </div>

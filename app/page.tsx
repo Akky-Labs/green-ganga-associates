@@ -586,10 +586,7 @@ export default function Home() {
         </div>
       </section>
 
-      <BeforeAfterSlider 
-        staticImage="/gallery/before-after.jpeg"
-        subtitle="See our real-world transformation from bare ground to a lush green landscape."
-      />
+      <BeforeAfterSlider />
 
       {/* ─── TEAM ────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-white dark:bg-background relative overflow-hidden transition-colors duration-300">
@@ -713,7 +710,7 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <a href="https://wa.me/919999177119" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/919129177119" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
                 variant="outline"

@@ -69,7 +69,7 @@ const blogPostsData: Record<string, BlogPost> = {
     title: "10 Essential Garden Maintenance Tips for Uttar Pradesh Summers",
     desc: "Expert tips on watering cycles, soil enrichment, aeration, and organic pest control to keep your garden lush during hot dry months.",
     date: "June 25, 2026",
-    author: "Aditya Sharma (Horticulture Lead)",
+    author: "Aditya Sharma (Horticulture Lead) ",
     readTime: "5 min read",
     image: "/client/GS infra.jpeg",
     category: "Maintenance",
@@ -155,7 +155,130 @@ const blogPostsData: Record<string, BlogPost> = {
       </ul>
 
       <h2>3. Smart Drip Irrigation Timer Config</h2>
-      <p>Vertical walls have limited soil volume and dry out quickly. We install a digital watering timer connected to a micro-drip tube network. We typically configure the timer to run for **1 to 2 minutes, twice a day** (morning and evening), depending on seasonal heat.</p>
+      <p>Vertical walls have limited soil volume and dry out quickly. We install a digital watering timer connected to a micro-drip tube network. We typically configure the timer to run for **1 to 2 minutes, twice a day** (morning and evening), depending on seasonal heat. For detailed installation guidance, check our <a href="/services/vertical-garden" class="text-fresh-green underline font-bold">Vertical Garden Services</a> and <a href="/cities/noida" class="text-fresh-green underline font-bold">Noida Landscape Solutions</a>.</p>
+    `
+  },
+  "terrace-garden-cost-lucknow": {
+    title: "Cost of Setting Up a Terrace Garden in Lucknow: 2026 Price & Layout Guide",
+    desc: "Detailed pricing breakdown for setting up rooftop gardens in Lucknow, covering lightweight soil mixes, waterproofing, drip irrigation, and plant selections.",
+    date: "August 05, 2026",
+    author: "Mrs. Seema Sharma (Landscape Designer)",
+    readTime: "6 min read",
+    image: "/project-terrace.png",
+    category: "Rooftop Gardens",
+    highlights: [
+      "Itemized cost breakdown per sq ft for terrace garden setup in Lucknow",
+      "Structural waterproofing & drainage cell installation costs",
+      "Selecting low-maintenance plants suitable for Gomti Nagar, Indira Nagar & Aliganj roofs"
+    ],
+    contentHtml: `
+      <h2>Terrace Garden Cost Breakdown in Lucknow (2026)</h2>
+      <p>Setting up a rooftop garden in Lucknow transforms unused concrete space into a cooler, greener sanctuary. The overall cost depends on whether you opt for a simple container garden or a luxury built-in terrace landscape with synthetic grass, pergolas, and automated drip irrigation systems.</p>
+
+      <h2>1. Basic Cost Elements per Square Foot</h2>
+      <p>In Lucknow residential areas like <strong>Gomti Nagar, Hazratganj, and Vrindavan Yojana</strong>, typical terrace garden development costs range from <strong>₹150 to ₹450 per sq. ft.</strong> based on specifications:</p>
+      <ul>
+        <li><strong>Polyurethane Base Waterproofing:</strong> ₹35 – ₹60 per sq. ft.</li>
+        <li><strong>Drainage Mat & Geotextile Layer:</strong> ₹40 – ₹70 per sq. ft.</li>
+        <li><strong>Lightweight Soil Mixture (Coco-peat + Vermicompost):</strong> ₹30 – ₹50 per sq. ft.</li>
+        <li><strong>Automatic Drip Irrigation Setup:</strong> ₹8,000 – ₹18,000 (flat project rate depending on zone count).</li>
+      </ul>
+
+      <h2>2. Plant Selection for Lucknow Rooftops</h2>
+      <p>Rooftops receive intense direct sun during May-June (up to 45°C). We recommend hardy species like Bougainvillea, Plumeria, Adenium, Ficus microcarpa, and Dwarf Palms. Learn more about plant compatibility in our guide on <a href="/blog/best-plants-lucknow" class="text-fresh-green underline font-bold">Best Plants for Lucknow Climate</a>.</p>
+
+      <h2>3. Water Leakage Prevention & Safety</h2>
+      <p>Never lay regular field soil directly on your roof slab. We install heavy-duty plastic drainage cells with filter membrane fabrics. Explore our dedicated <a href="/services/terrace-garden" class="text-fresh-green underline font-bold">Terrace Garden Design Services in Lucknow</a> or contact our team for a free on-site estimate at <a href="/contact" class="text-fresh-green underline font-bold">Green Ganga Contact Page</a>.</p>
+    `
+  },
+  "low-maintenance-balcony-plants-noida": {
+    title: "Best Low-Maintenance Plants for Noida High-Rise Balconies",
+    desc: "Top wind-tolerant and resilient plant species ideal for high-rise apartment balconies in Noida Sectors 62, 137, and 150.",
+    date: "August 02, 2026",
+    author: "Aditya Sharma (Horticulture Lead)",
+    readTime: "5 min read",
+    image: "/project-residential.png",
+    category: "Plant Selection",
+    highlights: [
+      "Choosing wind-resistant plants for 15th+ floor apartment balconies",
+      "Low-maintenance indoor & outdoor foliage for Noida apartments",
+      "Automatic balcony watering setup for busy working professionals"
+    ],
+    contentHtml: `
+      <h2>High-Rise Gardening in Noida's Modern Apartments</h2>
+      <p>Apartments in high-rise societies across <strong>Noida Sector 62, Sector 137, and Greater Noida West</strong> face unique microclimatic challenges: strong high-altitude wind gusts, fast moisture evaporation, and variable sunlight exposure depending on balcony orientation.</p>
+
+      <h2>1. Top Wind & Heat Resistant Balcony Plants</h2>
+      <ul>
+        <li><strong>Snake Plant (Sansevieria):</strong> Virtually indestructible. Tolerates direct sun, deep shade, and infrequent watering.</li>
+        <li><strong>Jade Plant (Crassula ovata):</strong> Thick succulent leaves that store moisture, making it ideal for sunny south-facing balconies.</li>
+        <li><strong>Areca Palm & Song of India:</strong> Excellent air-purifying foliage that flexes naturally with high winds without breaking stems.</li>
+        <li><strong>ZZ Plant (Zamioculcas):</strong> Perfect for shaded or North-facing high-rise balconies.</li>
+      </ul>
+
+      <h2>2. Space-Saving Balcony Layouts & Vertical Green Walls</h2>
+      <p>To maximize seating area in compact balconies, install vertical wall pots or railing planters. Learn more about wall garden installation in our <a href="/blog/vertical-garden-guide" class="text-fresh-green underline font-bold">Vertical Garden Installation Guide</a> and explore our specialized <a href="/cities/noida" class="text-fresh-green underline font-bold">Noida Landscaping Services</a>.</p>
+
+      <h2>3. Automated Drip Lines for Working Professionals</h2>
+      <p>Noida IT professionals often travel for work. Installing a compact battery-operated automatic tap timer keeps your balcony greenery thriving effortlessly. Visit our <a href="/services/irrigation" class="text-fresh-green underline font-bold">Smart Drip Irrigation Page</a> for full details.</p>
+    `
+  },
+  "lawn-watering-guide-uttar-pradesh": {
+    title: "How Often Should You Water Your Lawn in Uttar Pradesh? (Summer vs Winter)",
+    desc: "Complete seasonal lawn irrigation schedule, soil absorption advice, and smart sprinkler tips for Lucknow, Kanpur, and UP climates.",
+    date: "July 28, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "6 min read",
+    image: "/project-commercial.png",
+    category: "Maintenance",
+    highlights: [
+      "Summer vs Winter lawn watering frequency in UP",
+      "Preventing fungal lawn diseases caused by over-watering in monsoons",
+      "Saving 40% water with automatic popup sprinklers"
+    ],
+    contentHtml: `
+      <h2>Mastering Turf Irrigation in North India</h2>
+      <p>A thick green lawn enhances villa landscapes and commercial resorts across <strong>Lucknow, Kanpur, Prayagraj, and Varanasi</strong>. However, over-watering or under-watering is the #1 reason for yellowing grass patches and weed infestation.</p>
+
+      <h2>1. Seasonal Watering Schedule</h2>
+      <ul>
+        <li><strong>Summer (April – June):</strong> Water deeply 4 to 5 times a week early in the morning before 7:30 AM. Deep watering encourages roots to grow downwards into cooler soil layers.</li>
+        <li><strong>Monsoon (July – September):</strong> Water only when rain skips for more than 4 days. Ensure drainage channels are clear to avoid root rot.</li>
+        <li><strong>Winter (November – February):</strong> Reduce watering to once every 4 to 6 days. Dew collection provides natural moisture.</li>
+      </ul>
+
+      <h2>2. Selection of Drought-Tolerant Turf Grass</h2>
+      <p>Bermuda Selection-1 (Doob grass) and Mexican Carpet Grass are best suited for UP heat. Explore our <a href="/services/lawn-maintenance" class="text-fresh-green underline font-bold">Professional Lawn Maintenance Services</a> for turf restoration.</p>
+
+      <h2>3. Popup Sprinkler Systems</h2>
+      <p>Hand hose watering leads to uneven water distribution. Automated underground popup sprinklers save up to 40% water. Discover our solutions on <a href="/services/irrigation" class="text-fresh-green underline font-bold">Smart Irrigation Systems</a> or consult our experts in <a href="/cities/kanpur" class="text-fresh-green underline font-bold">Kanpur Landscaping Page</a>.</p>
+    `
+  },
+  "resort-landscape-ideas-north-india": {
+    title: "Top 10 Resort & Farmhouse Landscape Ideas in North India",
+    desc: "Inspiring outdoor design trends for commercial resorts, farmhouses, and event venues in Lucknow, Prayagraj, and Varanasi.",
+    date: "July 20, 2026",
+    author: "Mrs. Seema Sharma (Landscape Designer)",
+    readTime: "8 min read",
+    image: "/indian-resort.png",
+    category: "Commercial Landscaping",
+    highlights: [
+      "Combining tropical palms with classical Indian fountains",
+      "Designing outdoor wedding event lawns with heavy foot-traffic turf",
+      "Illuminating resort gardens with warm ambient LED landscape lighting"
+    ],
+    contentHtml: `
+      <h2>Creating Unforgettable Destination Spaces</h2>
+      <p>Luxury farmhouses and commercial event resorts in <strong>Lucknow, Prayagraj, Noida, and Ayodhya</strong> rely on immersive green landscapes to create unforgettable guest experiences and wedding venues.</p>
+
+      <h2>1. Grand Royal Entrance Avenues</h2>
+      <p>Line long entry driveways with tall Royal Palms (Roystonea regia) or Foxtail Palms interplanted with glowing warm outdoor spotlights to create an immediate regal ambiance upon entry.</p>
+
+      <h2>2. Heavy Foot-Traffic Wedding Lawns</h2>
+      <p>Wedding lawns require reinforced turf root zones mixed with coarse sand to prevent mud creation during large gatherings. Pair this with decorative gazebo features and natural stone pathways. View real project examples on our <a href="/projects" class="text-fresh-green underline font-bold">Projects Gallery Page</a>.</p>
+
+      <h2>3. Architectural Water Fountains & Ambient Lighting</h2>
+      <p>Tiered marble fountains and koi ponds act as natural cooling zones while adding gentle running water sounds. For commercial inquiries, visit our <a href="/services/commercial-landscaping" class="text-fresh-green underline font-bold">Commercial & Resort Landscaping Services</a> or see our work in <a href="/cities/prayagraj" class="text-fresh-green underline font-bold">Prayagraj Landscaping Solutions</a>.</p>
     `
   }
 };
@@ -334,7 +457,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 <div className="space-y-2.5 pt-4">
                   <a
-                    href={`https://wa.me/919999177119?text=Hi, I read your article on ${post.title}. I want to consult for my garden.`}
+                    href={`https://wa.me/919129177119?text=Hi, I read your article on ${post.title}. I want to consult for my garden.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full"
@@ -343,9 +466,9 @@ export default async function BlogPostPage({ params }: PageProps) {
                       Consult on WhatsApp
                     </Button>
                   </a>
-                  <a href="tel:+919999177119" className="block w-full">
+                  <a href="tel:+919129177119" className="block w-full">
                     <Button variant="outline" className="w-full rounded-full border-deep-green/20 dark:border-white/20 text-deep-green dark:text-white hover:bg-deep-green/5 dark:hover:bg-white/5 h-11 text-xs font-bold">
-                      <Phone className="w-3.5 h-3.5 mr-2 text-fresh-green" /> Call 9999177119
+                      <Phone className="w-3.5 h-3.5 mr-2 text-fresh-green" /> Call 9129177119
                     </Button>
                   </a>
                 </div>

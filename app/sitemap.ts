@@ -75,7 +75,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "best-plants-lucknow",
     "garden-maintenance-tips",
     "terrace-garden-ideas",
-    "vertical-garden-guide"
+    "vertical-garden-guide",
+    "terrace-garden-cost-lucknow",
+    "low-maintenance-balcony-plants-noida",
+    "lawn-watering-guide-uttar-pradesh",
+    "resort-landscape-ideas-north-india"
   ];
 
   const projectSlugs = [

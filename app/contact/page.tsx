@@ -39,8 +39,8 @@ const contactInfo = [
   {
     icon: <Phone className="w-5 h-5" />,
     title: "Phone / WhatsApp",
-    lines: ["9999177119"],
-    href: "tel:+919999177119",
+    lines: ["9129177119"],
+    href: "tel:+919129177119",
   },
   {
     icon: <Leaf className="w-5 h-5" />,
@@ -103,7 +103,7 @@ export default function ContactPage() {
       `*Service:* ${formData.service || "General Inquiry"}%0A%0A` +
       `*Message:*%0A${formData.message}`;
 
-    const whatsappUrl = `https://wa.me/919999177119?text=${message}`;
+    const whatsappUrl = `https://wa.me/919129177119?text=${message}`;
 
     // Open WhatsApp
     window.open(whatsappUrl, "_blank");
@@ -115,11 +115,11 @@ export default function ContactPage() {
 
   return (
     <>
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: "Home", item: "https://greengangaassociates.com" },
           { name: "Contact", item: "https://greengangaassociates.com/contact" }
-        ]} 
+        ]}
       />
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
@@ -293,8 +293,8 @@ export default function ContactPage() {
                       {info.lines.map((line) => (
                         <p key={line} className="text-muted-foreground text-sm">
                           {info.href ? (
-                            <a 
-                              href={info.href} 
+                            <a
+                              href={info.href}
                               target={info.href.startsWith('http') ? "_blank" : undefined}
                               rel={info.href.startsWith('http') ? "noopener noreferrer" : undefined}
                               className="hover:text-deep-green transition-colors duration-300"

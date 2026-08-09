@@ -273,7 +273,7 @@ export default async function ServicePage({ params }: PageProps) {
       "@type": "LocalBusiness",
       "name": "Green Ganga Associates",
       "image": "https://www.greengangaassociates.com/hero.png",
-      "telephone": "+91-9999177119",
+      "telephone": "+91-9129177119",
       "url": "https://www.greengangaassociates.com",
       "address": {
         "@type": "PostalAddress",
@@ -386,7 +386,7 @@ export default async function ServicePage({ params }: PageProps) {
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </Link>
-                <a href="tel:+919999177119">
+                <a href="tel:+919129177119">
                   <Button variant="outline" className="rounded-full border-deep-green/20 text-deep-green hover:bg-deep-green/5 px-8 h-12 font-semibold">
                     <Phone className="w-4 h-4 mr-2" />
                     Call Experts

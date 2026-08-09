@@ -201,7 +201,7 @@ export default async function CityPage({ params }: PageProps) {
     "url": `https://www.greengangaassociates.com/cities/${resolvedParams.city}`,
     "logo": "https://www.greengangaassociates.com/favicon.png",
     "image": "https://www.greengangaassociates.com/hero.png",
-    "telephone": "+91-9999177119",
+    "telephone": "+91-9129177119",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": city.street,
@@ -298,8 +298,8 @@ export default async function CityPage({ params }: PageProps) {
                     Get Free Quote
                   </Button>
                 </Link>
-                <a href="tel:+919999177119" className="flex items-center gap-2 text-deep-green font-bold text-sm">
-                  <Phone className="w-4 h-4 text-fresh-green" /> 9999177119
+                <a href="tel:+919129177119" className="flex items-center gap-2 text-deep-green font-bold text-sm">
+                  <Phone className="w-4 h-4 text-fresh-green" /> 9129177119
                 </a>
               </div>
             </div>

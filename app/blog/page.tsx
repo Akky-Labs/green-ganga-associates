@@ -46,14 +46,44 @@ const blogPosts = [
     category: "Rooftop Gardens"
   },
   {
-    slug: "vertical-garden-guide",
-    title: "Ultimate Guide to Vertical Garden Installation & Maintenance",
-    desc: "Step-by-step breakdown of panel frames, automatic drip timers, and best low-light foliage plants for green walls.",
-    date: "June 02, 2026",
+    slug: "terrace-garden-cost-lucknow",
+    title: "Cost of Setting Up a Terrace Garden in Lucknow: 2026 Price & Layout Guide",
+    desc: "Detailed pricing breakdown for setting up rooftop gardens in Lucknow, covering lightweight soil mixes, waterproofing, drip irrigation, and plant selections.",
+    date: "August 05, 2026",
+    author: "Mrs. Seema Sharma (Landscape Designer)",
+    readTime: "6 min read",
+    image: "/project-terrace.png",
+    category: "Rooftop Gardens"
+  },
+  {
+    slug: "low-maintenance-balcony-plants-noida",
+    title: "Best Low-Maintenance Plants for Noida High-Rise Balconies",
+    desc: "Top wind-tolerant and resilient plant species ideal for high-rise apartment balconies in Noida Sectors 62, 137, and 150.",
+    date: "August 02, 2026",
     author: "Aditya Sharma (Horticulture Lead)",
-    readTime: "7 min read",
-    image: "/gallery/blog-vertical-garden.jpeg",
-    category: "Vertical Gardens"
+    readTime: "5 min read",
+    image: "/project-residential.png",
+    category: "Plant Selection"
+  },
+  {
+    slug: "lawn-watering-guide-uttar-pradesh",
+    title: "How Often Should You Water Your Lawn in Uttar Pradesh? (Summer vs Winter)",
+    desc: "Complete seasonal lawn irrigation schedule, soil absorption advice, and smart sprinkler tips for Lucknow, Kanpur, and UP climates.",
+    date: "July 28, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "6 min read",
+    image: "/project-commercial.png",
+    category: "Maintenance"
+  },
+  {
+    slug: "resort-landscape-ideas-north-india",
+    title: "Top 10 Resort & Farmhouse Landscape Ideas in North India",
+    desc: "Inspiring outdoor design trends for commercial resorts, farmhouses, and event venues in Lucknow, Prayagraj, and Varanasi.",
+    date: "July 20, 2026",
+    author: "Mrs. Seema Sharma (Landscape Designer)",
+    readTime: "8 min read",
+    image: "/indian-resort.png",
+    category: "Commercial Landscaping"
   }
 ];
 

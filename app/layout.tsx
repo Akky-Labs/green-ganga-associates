@@ -38,7 +38,12 @@ export const metadata: Metadata = {
     "professional gardening services India", "terrace garden designer Lucknow", 
     "vertical garden installation North India", "best rose garden makers India", 
     "landscape architect Varanasi", "Green Ganga Associates Lucknow", "landscaping in Barabanki", 
-    "gardening services Ayodhya", "cafe garden design India", "restaurant landscaping Lucknow"
+    "gardening services Ayodhya", "cafe garden design India", "restaurant landscaping Lucknow",
+    "terrace garden design cost Lucknow", "low maintenance balcony plants Noida",
+    "lawn watering schedule UP summer winter", "resort landscape ideas North India",
+    "vertical garden installation cost Noida", "landscape architects in Lucknow",
+    "drip irrigation installation Lucknow", "farmhouse garden design Prayagraj",
+    "commercial landscape developers Uttar Pradesh", "organic lawn maintenance Lucknow"
   ],
   authors: [{ name: "Green Ganga Associates" }],
   creator: "Green Ganga Associates",

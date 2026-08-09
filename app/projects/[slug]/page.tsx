@@ -229,7 +229,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            
+
             {/* Description & Challenges */}
             <div className="lg:col-span-2 space-y-10">
               <div>
@@ -258,7 +258,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <Leaf className="w-5 h-5 text-fresh-green animate-pulse" />
                   <h3 className="text-lg font-bold text-deep-green">Plants & Slabs Used</h3>
                 </div>
-                
+
                 <p className="text-xs text-muted-foreground">
                   Our agriculture team carefully selected and laid these acclimatized botanical species:
                 </p>
@@ -274,7 +274,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
                 <div className="pt-6 border-t border-gray-200">
                   <a
-                    href={`https://wa.me/919999177119?text=Hi, I am looking for landscaping like ${project.title}.`}
+                    href={`https://wa.me/919129177119?text=Hi, I am looking for landscaping like ${project.title}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full"

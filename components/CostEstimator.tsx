@@ -63,7 +63,7 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
   const handleWhatsAppShare = () => {
     const serviceName = servicePrices[selectedService]?.name || selectedService;
     const formattedPrice = totalCost.toLocaleString("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 });
-    
+
     const addonsNames = selectedAddons
       .map((id) => addOnsList.find((a) => a.id === id)?.name)
       .filter(Boolean)
@@ -76,7 +76,7 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
       `*Estimated Cost:* ${formattedPrice}%0A%0A` +
       `Please contact me to arrange a site visit and formal quote.`;
 
-    const whatsappUrl = `https://wa.me/919999177119?text=${text}`;
+    const whatsappUrl = `https://wa.me/919129177119?text=${text}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -112,11 +112,10 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
                   <button
                     key={key}
                     onClick={() => setSelectedService(key)}
-                    className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 ${
-                      selectedService === key
+                    className={`flex items-center justify-between p-4 rounded-xl text-left border transition-all duration-300 ${selectedService === key
                         ? "border-deep-green dark:border-fresh-green bg-deep-green dark:bg-fresh-green text-white shadow-lg"
                         : "border-gray-200 dark:border-white/10 bg-white dark:bg-background text-foreground dark:text-white hover:border-deep-green/30 dark:hover:border-fresh-green/30"
-                    }`}
+                      }`}
                   >
                     <div>
                       <div className="text-sm font-bold leading-tight">{value.name}</div>
@@ -166,18 +165,16 @@ export default function CostEstimator({ defaultService = "landscaping", classNam
                   <button
                     key={addon.id}
                     onClick={() => toggleAddon(addon.id)}
-                    className={`w-full flex items-center justify-between p-4 rounded-xl border text-left transition-all duration-300 ${
-                      selectedAddons.includes(addon.id)
+                    className={`w-full flex items-center justify-between p-4 rounded-xl border text-left transition-all duration-300 ${selectedAddons.includes(addon.id)
                         ? "border-fresh-green bg-fresh-green/5 dark:bg-fresh-green/10 text-deep-green dark:text-white"
                         : "border-gray-200 dark:border-white/10 bg-white dark:bg-background text-muted-foreground dark:text-gray-300 hover:border-deep-green/20 dark:hover:border-fresh-green/30"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-                        selectedAddons.includes(addon.id)
+                      <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${selectedAddons.includes(addon.id)
                           ? "bg-deep-green dark:bg-fresh-green border-deep-green dark:border-fresh-green text-white"
                           : "border-gray-300 dark:border-white/20"
-                      }`}>
+                        }`}>
                         {selectedAddons.includes(addon.id) && <span className="text-[10px]">✓</span>}
                       </div>
                       <span className="text-sm font-bold text-gray-800 dark:text-white/90">{addon.name}</span>
