@@ -79,7 +79,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "terrace-garden-cost-lucknow",
     "low-maintenance-balcony-plants-noida",
     "lawn-watering-guide-uttar-pradesh",
-    "resort-landscape-ideas-north-india"
+    "resort-landscape-ideas-north-india",
+    "best-lawn-grass-lucknow-climate",
+    "organic-pest-control-gardens-up"
   ];
 
   const projectSlugs = [

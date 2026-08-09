@@ -84,6 +84,26 @@ const blogPosts = [
     readTime: "8 min read",
     image: "/indian-resort.png",
     category: "Commercial Landscaping"
+  },
+  {
+    slug: "best-lawn-grass-lucknow-climate",
+    title: "Which Lawn Grass Type is Best for Lucknow Climate? (Mexican Carpet vs Bermuda)",
+    desc: "Detailed botanical evaluation of turf grass varieties for Lucknow gardens. Compare Selection-1 Doob grass vs Mexican Carpet vs Nilgiri grass.",
+    date: "August 09, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "6 min read",
+    image: "/hero.png",
+    category: "Lawn Care"
+  },
+  {
+    slug: "organic-pest-control-gardens-up",
+    title: "5 Effective Organic Pest Control Methods for Home Gardens in UP",
+    desc: "Learn natural neem oil sprays, bio-fungicides, and soil solarization methods to protect your plants from termites, mealybugs, and aphids.",
+    date: "August 08, 2026",
+    author: "Aditya Sharma (Horticulture Lead)",
+    readTime: "5 min read",
+    image: "/indian-farmhouse.png",
+    category: "Plant Health"
   }
 ];
 

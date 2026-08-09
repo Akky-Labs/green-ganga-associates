@@ -280,10 +280,64 @@ const blogPostsData: Record<string, BlogPost> = {
       <h2>3. Architectural Water Fountains & Ambient Lighting</h2>
       <p>Tiered marble fountains and koi ponds act as natural cooling zones while adding gentle running water sounds. For commercial inquiries, visit our <a href="/services/commercial-landscaping" class="text-fresh-green underline font-bold">Commercial & Resort Landscaping Services</a> or see our work in <a href="/cities/prayagraj" class="text-fresh-green underline font-bold">Prayagraj Landscaping Solutions</a>.</p>
     `
+  },
+  "best-lawn-grass-lucknow-climate": {
+    title: "Which Lawn Grass Type is Best for Lucknow Climate? (Mexican Carpet vs Bermuda)",
+    desc: "Detailed botanical evaluation of turf grass varieties for Lucknow gardens. Compare Selection-1 Doob grass vs Mexican Carpet vs Nilgiri grass.",
+    date: "August 09, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "6 min read",
+    image: "/hero.png",
+    category: "Lawn Care",
+    highlights: [
+      "Comparison of Selection-1 Bermuda Doob grass vs Mexican Carpet Grass",
+      "Which grass species survives 45°C summer heat in Lucknow without turning yellow",
+      "Best grass choices for shaded tree canopy areas vs full sunlight lawns"
+    ],
+    contentHtml: `
+      <h2>Selecting the Right Lawn Turf Grass in Lucknow</h2>
+      <p>A pristine green lawn is the centerpiece of residential villas and resort grounds across <strong>Lucknow, Kanpur, and Barabanki</strong>. However, choosing the wrong grass variety leads to high water bills, weed invasion, and brown patchy lawns during extreme 45°C UP summers.</p>
+
+      <h2>1. Selection-1 Bermuda Grass (Doob Grass) — Best for Full Sun</h2>
+      <p>Selection-1 Bermuda is the #1 recommended turf grass for North Indian outdoor lawns. It has deep root systems that penetrate up to 12 inches, making it extremely heat-tolerant and resilient against heavy foot traffic. Explore our <a href="/services/lawn-maintenance" class="text-fresh-green underline font-bold">Lawn Maintenance Services</a> for professional lawn laying.</p>
+
+      <h2>2. Mexican Carpet Grass — Best for Aesthetic Shade Lawns</h2>
+      <p>Mexican Carpet grass features wide, lush green leaves that form a soft velvety carpet. It thrives in partial shade under tree canopies where Bermuda grass thins out. Learn more about plant and turf selection in our guide on <a href="/blog/best-plants-lucknow" class="text-fresh-green underline font-bold">Best Plants for Lucknow Climate</a>.</p>
+
+      <h2>3. Irrigation & Aeration Requirements</h2>
+      <p>Pair your grass installation with underground popup sprinklers to ensure even coverage. Check out our <a href="/services/irrigation" class="text-fresh-green underline font-bold">Smart Sprinkler Systems</a> or contact our team via <a href="/contact" class="text-fresh-green underline font-bold">Green Ganga Contact Page</a>.</p>
+    `
+  },
+  "organic-pest-control-gardens-up": {
+    title: "5 Effective Organic Pest Control Methods for Home Gardens in UP",
+    desc: "Learn natural neem oil sprays, bio-fungicides, and soil solarization methods to protect your plants from termites, mealybugs, and aphids.",
+    date: "August 08, 2026",
+    author: "Aditya Sharma (Horticulture Lead)",
+    readTime: "5 min read",
+    image: "/indian-farmhouse.png",
+    category: "Plant Health",
+    highlights: [
+      "Homemade eco-friendly Neem Oil & soap emulsion spray recipe",
+      "Controlling whiteflies and mealybugs naturally during monsoon humidity",
+      "Protecting wooden plant roots from sub-surface termites"
+    ],
+    contentHtml: `
+      <h2>Protecting Home Gardens in Uttar Pradesh Naturally</h2>
+      <p>Chemical pesticides harm earthworms and pollute local soil profiles in <strong>Lucknow, Noida, and Prayagraj</strong>. Adopting organic plant protection methods maintains healthy soil microbial life while keeping common UP garden pests at bay.</p>
+
+      <h2>1. Concentrated Neem Oil & Organic Soap Emulsion</h2>
+      <p>Neem oil acts as a natural antifeedant and insect growth regulator. Mix <strong>5ml cold-pressed Neem Oil with 2ml organic liquid soap in 1 Liter warm water</strong>. Spray thoroughly under leaves every 10 days after sunset.</p>
+
+      <h2>2. Bio-Fungicide Trichoderma Viride for Root Rot</h2>
+      <p>During UP monsoons, high soil humidity causes fungal root rot. Drench soil with Trichoderma viride bio-fungicide to naturally suppress harmful soil pathogens. Learn more seasonal maintenance in our <a href="/blog/garden-maintenance-tips" class="text-fresh-green underline font-bold">Garden Maintenance Guide</a>.</p>
+
+      <h2>3. Organic Soil Solarization for Termites</h2>
+      <p>Before planting new beds in Gomti Nagar or Aliganj, cover moist topsoil with clear plastic sheets during June heat for 2 weeks. Solar heat kills termite larvae and weed seeds naturally. Consult our plant doctors at <a href="/cities/lucknow" class="text-fresh-green underline font-bold">Green Ganga Lucknow Office</a>.</p>
+    `
   }
 };
 
-// Generates static paths for all 5 blog posts to satisfy static export
+// Generates static paths for all blog posts to satisfy static export
 export async function generateStaticParams() {
   return Object.keys(blogPostsData).map((slug) => ({ slug }));
 }
@@ -319,15 +373,20 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  // Article JSON-LD Structured Schema
+  // Article JSON-LD Structured Schema with Freshness Signal
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id": `https://www.greengangaassociates.com/blog/${resolvedParams.slug}#article`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.greengangaassociates.com/blog/${resolvedParams.slug}`
+    },
     "headline": post.title,
     "description": post.desc,
     "image": `https://www.greengangaassociates.com${post.image}`,
-    "datePublished": "2026-06-01",
+    "datePublished": post.date,
+    "dateModified": "2026-08-09",
     "author": {
       "@type": "Person",
       "name": post.author
