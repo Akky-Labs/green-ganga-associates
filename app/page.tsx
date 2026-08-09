@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Top Landscaping & Garden Design in Lucknow | Green Ganga",
-  description: "Transform your space with Green Ganga Associates, the #1 landscape contractor in Lucknow & UP. Get beautiful garden design & setups. Claim your Free site visit!",
+  title: "Top Landscaping Service & Company in Lucknow | Green Ganga",
+  description: "Green Ganga Associates is the top landscaping service & garden design company in Lucknow & UP. Expert villa gardens, terrace landscaping & vertical green walls. Claim your free site visit!",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Top Landscaping & Garden Design in Lucknow | Green Ganga Associates",
-    description: "Transform your space with Green Ganga Associates, the #1 landscape contractor in Lucknow & UP. Get beautiful garden design & setups. Claim your Free site visit!",
+    title: "Top Landscaping Service & Company in Lucknow | Green Ganga Associates",
+    description: "Green Ganga Associates is the top landscaping service & garden design company in Lucknow & UP. Expert villa gardens, terrace landscaping & vertical green walls. Claim your free site visit!",
   }
 };
 

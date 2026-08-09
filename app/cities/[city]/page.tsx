@@ -167,7 +167,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const city = citiesDetails[resolvedParams.city] || citiesDetails["lucknow"];
-  const title = `Top-Rated Landscaping & Gardening in ${city.name} | Green Ganga`;
+  const title = `Top Landscaping Service & Gardening in ${city.name} | Green Ganga`;
   const description = `#1 landscape contractor & gardening services in ${city.name}, UP. Custom garden design, terrace landscaping & vertical walls. Request site audit!`;
   return {
     title,
