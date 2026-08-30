@@ -33,7 +33,7 @@ const citiesDetails: Record<string, {
       { slug: "jankipuram", name: "Jankipuram" },
       { slug: "alambagh", name: "Alambagh" },
       { slug: "ashiyana", name: "Ashiyana" },
-      { slug: "vrindavan-yojana", name: "Vrindavan Yojana" },
+      { slug: "sultanpur-road", name: "Sultanpur Road" },
       { slug: "banthra", name: "Banthra" },
       { slug: "ansal-golf-city", name: "Ansal Golf City (Sushant Golf City)" }
     ],
