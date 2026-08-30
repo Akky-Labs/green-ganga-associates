@@ -17,7 +17,7 @@ const lucknowLocalities: Record<string, string> = {
   "jankipuram": "Jankipuram",
   "alambagh": "Alambagh",
   "ashiyana": "Ashiyana",
-  "vrindavan-yojana": "Vrindavan Yojana",
+  "sultanpur-road": "Sultanpur Road",
   "banthra": "Banthra",
   "ansal-golf-city": "Ansal Golf City (Sushant Golf City)"
 };
