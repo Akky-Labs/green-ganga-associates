@@ -336,7 +336,7 @@ export default function Home() {
                   <Sparkles className="w-4 h-4 text-accent-gold animate-pulse" />
                   Pan-India Milestone
                 </div>
-                
+
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
                   Now Working in <span className="text-fresh-green">8+ More States</span> Across India
                 </h2>
@@ -362,7 +362,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-4">
                   <Link href="/contact">
                     <Button className="rounded-full bg-fresh-green hover:bg-emerald-600 text-white font-bold px-6 h-12 shadow-lg shadow-fresh-green/30 transition-all hover:scale-105">
-                      Book Free Consultation
+                      Book  Consultation
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
