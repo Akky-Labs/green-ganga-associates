@@ -8,6 +8,17 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const caseStudies = [
   {
+    title: "Hero Realty & Infra Premium Township",
+    slug: "hero-realty-township",
+    location: "Sarojininagar, Lucknow",
+    category: "Residential Infrastructure & Township",
+    duration: "45 Days",
+    area: "19,000+ Plants",
+    description: "Large-scale residential infrastructure and township greenery with 19,000+ architectural plants, exotic statement trees, and Zoysia lawn.",
+    plants: ["Olive Trees (Olea europaea)", "Plumeria Alba", "Crape Myrtle", "Zoysia Turf", "Clerodendrum Inerme"],
+    image: ""
+  },
+  {
     title: "Aravali Enclave Green Corridor",
     slug: "aravali-enclave",
     location: "Aravali Enclave, Lucknow",
@@ -130,14 +141,24 @@ export default function CaseStudiesPage() {
                 className="group flex flex-col lg:flex-row items-stretch bg-white dark:bg-card border border-gray-100 dark:border-white/5 overflow-hidden shadow-xs hover:shadow-xl hover:border-fresh-green/20 dark:hover:border-fresh-green/30 transition-all duration-500"
               >
                 {/* Image Section */}
-                <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] overflow-hidden bg-gray-150">
-                  <Image
-                    src={cs.image}
-                    alt={cs.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    sizes="(max-w-1024px) 100vw, 50vw"
-                  />
+                <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] overflow-hidden bg-linear-to-br from-dark-green via-deep-green to-[#0c2417]">
+                  {cs.image ? (
+                    <Image
+                      src={cs.image}
+                      alt={cs.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-w-1024px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                      <div className="w-20 h-20 rounded-3xl bg-white/10 flex items-center justify-center mb-4 text-white shadow-lg backdrop-blur-md border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                        <Leaf className="w-10 h-10 text-fresh-green" />
+                      </div>
+                      <span className="text-white/90 font-bold text-base tracking-wider uppercase">{cs.category}</span>
+                      <span className="text-accent-gold text-xs font-semibold mt-1">Green Ganga Verified Project</span>
+                    </div>
+                  )}
                   <div className="absolute top-6 left-6 z-10 px-4 py-1.5 rounded-full bg-deep-green text-white text-xs font-bold uppercase tracking-wider shadow-md">
                     {cs.category}
                   </div>

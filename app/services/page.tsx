@@ -25,11 +25,16 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Professional Gardening & Landscaping Services in Lucknow",
-  description: "Explore top landscaping services in Lucknow & UP by Green Ganga. Garden design, terrace setups, vertical walls & smart irrigation. Book site audit!",
+  title: "Landscaping & Gardening Services in Lucknow & India | Green Ganga",
+  description: "Explore turnkey landscaping services: luxury garden design, vertical green walls, terrace gardens, smart drip irrigation, farmhouse landscaping & commercial horticulture across Lucknow, UP, Delhi NCR & 8+ states. Book your site inspection!",
   alternates: {
     canonical: "/services",
   },
+  openGraph: {
+    title: "Landscaping & Gardening Services in Lucknow & India | Green Ganga Associates",
+    description: "Explore turnkey landscaping services: luxury garden design, vertical green walls, terrace gardens, smart drip irrigation, farmhouse landscaping & commercial horticulture across Lucknow, UP, Delhi NCR & 8+ states. Book your site inspection!",
+    images: ["/images/pan-india-expansion-banner.jpg"]
+  }
 };
 
 const services = [

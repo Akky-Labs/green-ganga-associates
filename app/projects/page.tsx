@@ -10,6 +10,17 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 const categories = ["All", "Garden Development", "Divider Development", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
 
 const projects = [
+  // Garden Development & Township
+  {
+    image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
+    title: "Hero Realty & Infra Premium Township",
+    category: "Garden Development",
+    location: "Sarojininagar, Lucknow",
+    desc: "Large-scale residential infrastructure and township greenery with 19,000+ architectural plants, exotic statement trees, and Zoysia lawn.",
+    area: "19,000+ Plants",
+    slug: "hero-realty-township",
+  },
+
   // Divider Development
   {
     image: "/gallery/aravali-enclave-after.jpeg",
@@ -21,7 +32,7 @@ const projects = [
     slug: "aravali-enclave",
   },
 
-  // Garden Development & Maintenance
+  // Industrial & Maintenance
   {
     image: "/project-industrial.png",
     title: "Durable Polymers Unit",

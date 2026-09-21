@@ -18,11 +18,33 @@ interface ProjectDetails {
   description: string;
   challenge: string;
   result: string;
-  beforeImage: string;
-  afterImage: string;
+  beforeImage?: string;
+  afterImage?: string;
 }
 
 const projectsData: Record<string, ProjectDetails> = {
+  "hero-realty-township": {
+    title: "Hero Realty & Infra Premium Township",
+    category: "Garden Development",
+    location: "Sarojininagar, Lucknow, Uttar Pradesh",
+    area: "19,000+ Plants & Township Estate",
+    timeTaken: "45 Days",
+    plantsUsed: [
+      "Olea europaea (Olive Trees)",
+      "Plumeria alba (White Frangipani)",
+      "Lagerstroemia indica (Crape Myrtle)",
+      "Plumbago capensis",
+      "Golden Duranta",
+      "Liriope muscari",
+      "Wedelia trilobata",
+      "Clerodendrum inerme",
+      "Ficus Long Island",
+      "Zoysia japonica Carpet Lawn"
+    ],
+    description: "Large-scale residential infrastructure and township greenery development for Hero Realty & Infra Private Limited. Our B.Sc. and Ph.D. Agriculture experts selected a scientific mix of over 19,000 architectural plants, dense hedges, exotic statement trees, and elite turf to create an immediate luxury aesthetic while ensuring long-term climate survival.",
+    challenge: "Executing massive-scale township greening on an active residential infrastructure construction site with compacted subsoil, heavy construction dust, and variable soil permeability while ensuring an exceptional survival rate across thousands of botanical varieties under extreme Lucknow weather.",
+    result: "Our specialized teams managed the entire process from start to finish—including deep site clearing, mechanical subsoil aeration, organic manure blending, precision leveling, and immediate root-to-soil pressing. We installed specimen-grade Olive Trees, White Frangipani, and Crape Myrtle as plaza anchors, running ornamental borders of Plumbago and Wedelia along walkways, dense Clerodendrum and Ficus dust barriers, and luxury Zoysia japonica turf lawns, guaranteeing an excellent 95%+ survival rate across the estate.",
+  },
   "aravali-enclave": {
     title: "Aravali Enclave Green Corridor",
     category: "Divider Development",
@@ -122,7 +144,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     alternates: {
       canonical: `https://www.greengangaassociates.com/projects/${resolvedParams.slug}`
-    }
+    },
+    ...(project.afterImage ? {
+      openGraph: {
+        title,
+        description,
+        images: [{ url: project.afterImage }]
+      }
+    } : {
+      openGraph: {
+        title,
+        description
+      }
+    })
   };
 }
 
@@ -145,19 +179,27 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       />
 
       {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
-        <div className="absolute inset-0">
-          <Image
-            src={project.afterImage}
-            alt={project.title}
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20" />
-        </div>
+      <section className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl bg-linear-to-br from-dark-green via-deep-green to-[#0c2417]">
+        {project.afterImage ? (
+          <div className="absolute inset-0">
+            <Image
+              src={project.afterImage}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-black/20" />
+          </div>
+        ) : (
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-fresh-green/15 blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent-gold/10 blur-3xl" />
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+        )}
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl">
             <Link
@@ -218,12 +260,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       </section>
 
       {/* ─── BEFORE/AFTER VISUAL COMPARISON ─── */}
-      <BeforeAfterSlider
-        beforeImage={project.beforeImage}
-        afterImage={project.afterImage}
-        title="Visual Transformation"
-        subtitle="Slide the divider back and forth to compare the original raw soil/cleared grounds with the completed lush green landscaping."
-      />
+      {project.beforeImage && project.afterImage ? (
+        <BeforeAfterSlider
+          beforeImage={project.beforeImage}
+          afterImage={project.afterImage}
+          title="Visual Transformation"
+          subtitle="Slide the divider back and forth to compare the original raw soil/cleared grounds with the completed lush green landscaping."
+        />
+      ) : null}
 
       {/* ─── CASE STUDY WRITE-UP ─── */}
       <section className="py-20 bg-white">

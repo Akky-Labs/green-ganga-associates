@@ -72,6 +72,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    "green-ganga-project-delivery-guarantee",
+    "expert-botanical-plant-selection",
     "best-plants-lucknow",
     "garden-maintenance-tips",
     "terrace-garden-ideas",
@@ -85,6 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const projectSlugs = [
+    "hero-realty-township",
     "aravali-enclave",
     "guru-kripa-utsav",
     "subh-vilas-hotel",

@@ -225,77 +225,86 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Full Screen Mobile Menu Overlay */}
+      {/* Clean, Light & Smooth Fullscreen Mobile Menu (Reference Style) */}
       <div
-        className={`fixed inset-0 z-[90] lg:hidden transition-all duration-300 ease-in-out ${mobileOpen ? "visible opacity-100" : "invisible opacity-0"
-          }`}
+        className={`fixed inset-0 z-[120] lg:hidden bg-white dark:bg-[#0c1a12] transition-all duration-300 ease-in-out flex flex-col ${
+          mobileOpen
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-2"
+        }`}
       >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-dark-green/60 backdrop-blur-xl"
-          onClick={() => setMobileOpen(false)}
-        />
-
-        {/* Slide-in Panel */}
-        <div
-          className={`absolute right-0 top-0 h-full w-[70%] sm:w-[50%] max-w-[260px] bg-gradient-to-b from-deep-green to-dark-green shadow-[-20px_0_60px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out flex flex-col ${mobileOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-        >
-          {/* Header Spacer for fixed header height */}
-          <div className="h-20" />
-
-          <div
-            className="flex flex-col flex-1 px-5 pb-8 overflow-y-auto"
-            style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}
+        {/* Top Bar with Logo & Close 'X' Button */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-white/10 shrink-0 bg-white dark:bg-[#0c1a12]">
+          <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Green Ganga Associates Logo"
+              width={160}
+              height={50}
+              className="h-10 w-auto object-contain"
+              priority
+            />
+          </Link>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/15 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+            aria-label="Close menu"
           >
-            {/* Inline CSS to hide scrollbar for webkit */}
-            <style jsx>{`
-              div::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-            <nav className="flex flex-col gap-1.5">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`group flex items-center justify-between px-5 py-3.5 text-lg font-bold rounded-2xl transition-all duration-300 ${isActive
-                        ? "text-white bg-white/15"
-                        : "text-white/50 hover:text-white hover:bg-white/5"
-                      }`}
-                  >
-                    <span>{link.label}</span>
-                    {isActive && (
-                      <div className="w-2 h-2 rounded-full bg-accent-gold shadow-[0_0_10px_rgba(201,162,39,0.5)]" />
-                    )}
-                  </Link>
-                );
-              })}
-            </nav>
+        {/* Scrollable Navigation Body */}
+        <div className="flex-1 overflow-y-auto px-6 py-5 flex flex-col justify-between">
+          <nav className="space-y-1.5">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+                    isActive
+                      ? "bg-emerald-50 dark:bg-emerald-950/40 text-deep-green dark:text-fresh-green font-semibold border border-emerald-200/80 dark:border-emerald-800/40 shadow-xs"
+                      : "text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5"
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  {isActive && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-fresh-green" />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
 
-            <div className="mt-8 pt-8 border-t border-white/10 space-y-3 px-1">
-              <div className="flex items-center justify-between p-1 pb-2">
-                <span className="text-white/60 text-xs font-bold uppercase tracking-wider">Appearance</span>
-                <ThemeToggle />
-              </div>
-              <a
-                href="tel:+919129177119"
-                className="flex items-center justify-center gap-2.5 p-3.5 rounded-2xl border border-white/20 text-white bg-white/5 hover:bg-white/10 transition-all font-bold text-sm"
-              >
-                <Phone className="w-3.5 h-3.5 text-fresh-green" />
-                <span>9129177119</span>
-              </a>
-
-              <Link href="/contact" className="block" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full rounded-2xl bg-accent-gold hover:bg-accent-gold/90 text-deep-green font-bold h-12 text-sm shadow-lg shadow-accent-gold/10">
-                  Get Free Quote
-                </Button>
-              </Link>
+          {/* Bottom Actions Section */}
+          <div className="pt-6 mt-4 border-t border-gray-100 dark:border-white/10 space-y-3">
+            <div className="flex items-center justify-between px-2 py-1">
+              <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                Theme Mode
+              </span>
+              <ThemeToggle />
             </div>
+
+            <a
+              href="tel:+919129177119"
+              className="flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 dark:border-white/15 text-deep-green dark:text-white hover:bg-gray-50 dark:hover:bg-white/5 font-semibold text-sm transition-colors"
+            >
+              <Phone className="w-4 h-4 text-fresh-green" />
+              <span>Call: 9129177119</span>
+            </a>
+
+            <Link
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="block"
+            >
+              <Button className="w-full h-12 rounded-xl bg-gradient-to-r from-deep-green to-fresh-green hover:from-dark-green hover:to-deep-green text-white font-bold text-base shadow-md transition-transform active:scale-[0.98]">
+                Get in touch
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

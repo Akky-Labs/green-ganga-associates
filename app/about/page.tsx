@@ -25,11 +25,16 @@ import type { Metadata } from "next";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Top Landscape Architects in Lucknow & UP | About Green Ganga",
-  description: "Meet Green Ganga Associates, the top-rated garden planners & landscape architects in Lucknow, Noida & UP. 25+ years creating gorgeous green spaces.",
+  title: "Landscape Architects & Horticulture Experts in Lucknow & India | About Green Ganga",
+  description: "Meet Green Ganga Associates — India's premier garden designers & landscape architects led by Ph.D. horticulturists & agri experts. 25+ years expertise creating sustainable green spaces across Lucknow & 8+ states nationwide.",
   alternates: {
     canonical: "/about",
   },
+  openGraph: {
+    title: "Landscape Architects & Horticulture Experts in Lucknow & India | About Green Ganga",
+    description: "Meet Green Ganga Associates — India's premier garden designers & landscape architects led by Ph.D. horticulturists & agri experts. 25+ years expertise creating sustainable green spaces across Lucknow & 8+ states nationwide.",
+    images: ["/images/pan-india-expansion-banner.jpg"]
+  }
 };
 
 const values = [
@@ -259,6 +264,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* consultancy & experience section mapped */}
               {[
+                { title: "Hero Realty & Infra Pvt Ltd", duration: "Township Project", location: "Sarojininagar, Lucknow" },
                 { title: "Paras merchant pvt ltd sister con. of DS group", duration: "6 Years", location: "Noida" },
                 { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
                 { title: "Ansal API", duration: "5 Years", site: "4,500 Acre Hitech Township" },

@@ -16,6 +16,26 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: "green-ganga-project-delivery-guarantee",
+    title: "The Green Ganga Project Delivery Guarantee: 100% Plant Survival & Timely Handover",
+    desc: "Discover our industry-leading 5-stage project delivery framework, 90-day plant mortality replacement guarantee, and agronomic stabilization protocols.",
+    date: "August 18, 2026",
+    author: "Er. R.K. Verma & Aditya Sharma",
+    readTime: "6 min read",
+    image: "/gallery/design-development.jpeg",
+    category: "Project Guarantee"
+  },
+  {
+    slug: "expert-botanical-plant-selection",
+    title: "Expert Botanical Plant Selection: Choosing the Right Trees, Shrubs & Turf for UP Landscapes",
+    desc: "A scientific guide to 4-tier canopy architecture, Gangetic alluvial soil compatibility, heat tolerance, and indigenous flora for villas and resorts.",
+    date: "August 14, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "7 min read",
+    image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
+    category: "Botanical Science"
+  },
+  {
     slug: "best-plants-lucknow",
     title: "Best Plants for Lucknow Climate: A Complete Botanical Selection Guide",
     desc: "Discover which trees, flowering shrubs, and grass types survive best in Lucknow's extreme summer heat and cold winters.",

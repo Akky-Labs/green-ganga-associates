@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Top Landscaping Service & Company in Lucknow | Green Ganga",
-  description: "Green Ganga Associates is the top landscaping service & garden design company in Lucknow & UP. Expert villa gardens, terrace landscaping & vertical green walls. Claim your free site visit!",
+  title: "Best Landscaping Company & Garden Design Services in Lucknow & Pan-India | Green Ganga",
+  description: "Hire Green Ganga Associates for luxury villa garden landscaping, terrace gardens, vertical green walls, drip irrigation & commercial horticulture across Lucknow, UP, Delhi NCR, and 8+ states in India. Call 9129177119 for a free site audit.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Top Landscaping Service & Company in Lucknow | Green Ganga Associates",
-    description: "Green Ganga Associates is the top landscaping service & garden design company in Lucknow & UP. Expert villa gardens, terrace landscaping & vertical green walls. Claim your free site visit!",
+    title: "Best Landscaping & Gardening Services in Lucknow & Pan-India | Green Ganga Associates",
+    description: "Hire Green Ganga Associates for luxury villa garden landscaping, terrace gardens, vertical green walls, drip irrigation & commercial horticulture across Lucknow, UP, Delhi NCR, and 8+ states in India. Call 9129177119 for a free site audit.",
+    images: [
+      {
+        url: "/images/pan-india-expansion-banner.jpg",
+        width: 1200,
+        height: 675,
+        alt: "Green Ganga Associates - Now Working in 8+ States Across India",
+      }
+    ]
   }
 };
 
@@ -96,12 +104,12 @@ const services = [
 ];
 
 const projects = [
+  { image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg", title: "Hero Realty & Infra Premium Township", category: "Garden Development", location: "Sarojininagar, Lucknow" },
   { image: "/gallery/aravali-enclave-after.jpeg", title: "Aravali Enclave Green Corridor", category: "Divider Development", location: "Aravali Enclave, Lucknow" },
   { image: "/gallery/guru-kirpa.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
   { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: "Farmhouse & Resorts", location: "Prayagraj" },
   { image: "/gallery/subh-vilas-after.jpeg", title: "Shubh Villas Hotel & Resort", category: "Hotels", location: "Prayagraj" },
   { image: "/gallery/farmhouse-cum-resort-after.jpeg", title: "Farm House Cum Resort", category: "Farmhouse & Resorts", location: "Barabanki" },
-  { image: "/gallery/gyan-diary-after.jpeg", title: "Gyan Dairy & Gyan Heritage School", category: "Garden Development", location: "Lucknow" },
 ];
 
 const team = [
@@ -197,7 +205,7 @@ export default function Home() {
   return (
     <>
       <h2 className="sr-only">
-        Green Ganga Associates - Professional Gardening and Landscaping services in Lucknow, Noida, Prayagraj, and across Uttar Pradesh (UP). Specializing in Garden Design, Vertical Gardens, Terrace Gardening, and Farmhouse Landscape development. Ranked as the best gardening in Lucknow, best landscaping in Lucknow, green ganda landscaping, green ganaga gardening, green ganga flowering, best gardening in UP, and best landscaping in UP.
+        Green Ganga Associates - India&apos;s Premier Landscaping & Gardening Service Company. Best gardening services in Lucknow, landscape architects in Noida, terrace garden designers in Prayagraj, vertical green wall installation in Delhi NCR, farmhouse landscaping in Uttar Pradesh, and commercial horticulture contractors across 8+ states in India including Rajasthan, Gujarat, Maharashtra, Goa, Karnataka, Tamil Nadu, Bihar, Jharkhand, and Odisha.
       </h2>
       {/* ─── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden rounded-b-[3rem] lg:rounded-b-[5rem] shadow-2xl">
@@ -245,14 +253,14 @@ export default function Home() {
             </h1>
 
             <p className="text-sm sm:text-base lg:text-lg text-gray-200/95 leading-relaxed mb-8 max-w-xl">
-              Luxury Landscaping & horticulture experts. Designing Premium farmhouses, Villas, Resorts, & commercial Landscape with Certified horticulture experts.
+              Luxury Landscaping & horticulture experts. Designing Premium farmhouses, Villas, Resorts, & commercial Landscape with Certified horticulture experts across Lucknow & 8+ States in India.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <Link href="/services">
                 <Button
                   size="lg"
-                  aria-label="Explore Green Ganga Associates Gardening and Landscaping Services in UP"
+                  aria-label="Explore Green Ganga Associates Gardening and Landscaping Services in UP and India"
                   className="rounded-full bg-linear-to-r from-fresh-green to-deep-green hover:from-deep-green hover:to-dark-green text-white hover:text-white px-8 h-14 text-base font-semibold shadow-2xl shadow-deep-green/30 transition-all duration-500 hover:shadow-deep-green/50 hover:scale-[1.05]"
                 >
                   Our Services
@@ -275,13 +283,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-8 mt-8 pt-3">
               {[
                 { num: "50+", label: "Projects" },
-                { num: "15+", label: "cities" },
-                { num: "25+", label: "Team" },
-                { num: "4.9", label: "Rating" },
+                { num: "8+ States", label: "Pan India" },
+                { num: "25+", label: "Agri Experts" },
+                { num: "4.9 ★", label: "Google Rating" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className="text-2xl sm:text-3xl font-extrabold text-white">{stat.num}</div>
-                  <div className="text-[11px] sm:text-xs text-white/50 uppercase tracking-wider mt-1">{stat.label}</div>
+                  <div className="text-[11px] sm:text-xs text-white/70 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -309,6 +317,81 @@ export default function Home() {
                 <p className="text-muted-foreground dark:text-gray-400 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── POSITION 1: PAN-INDIA EXPANSION SHOWCASE BANNER ─── */}
+      <section className="py-12 lg:py-16 bg-linear-to-b from-white via-soft-beige/50 to-soft-beige dark:from-background dark:via-card/40 dark:to-background relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative rounded-3xl lg:rounded-[2.5rem] bg-linear-to-br from-dark-green via-deep-green to-[#0f2918] p-6 sm:p-8 lg:p-12 shadow-2xl overflow-hidden border border-fresh-green/25" data-aos="fade-up">
+            {/* Background glowing effects */}
+            <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-fresh-green/20 blur-3xl pointer-events-none" />
+            <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-accent-gold/15 blur-3xl pointer-events-none" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+              {/* Text & State Highlights */}
+              <div className="lg:col-span-5 text-white">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-fresh-green/20 border border-fresh-green/30 text-fresh-green text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+                  <Sparkles className="w-4 h-4 text-accent-gold animate-pulse" />
+                  Pan-India Milestone
+                </div>
+                
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
+                  Now Working in <span className="text-fresh-green">8+ More States</span> Across India
+                </h2>
+
+                <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6">
+                  From one city to many — your trust is taking us further! Green Ganga Associates now delivers expert landscape planning, luxury garden design, vertical walls, and smart irrigation across India.
+                </p>
+
+                {/* State Badges */}
+                <div className="mb-6">
+                  <span className="text-xs uppercase font-bold text-accent-gold tracking-widest block mb-2.5">
+                    Operational States Across India:
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {["Delhi NCR", "Uttar Pradesh", "Rajasthan", "Gujarat", "Maharashtra", "Goa", "Karnataka", "Tamil Nadu", "Bihar", "Jharkhand", "Odisha"].map((st) => (
+                      <span key={st} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-semibold backdrop-blur-sm transition-colors">
+                        📍 {st}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link href="/contact">
+                    <Button className="rounded-full bg-fresh-green hover:bg-emerald-600 text-white font-bold px-6 h-12 shadow-lg shadow-fresh-green/30 transition-all hover:scale-105">
+                      Book Free Consultation
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <a href="tel:+919129177119" className="flex items-center gap-2 text-white/90 hover:text-fresh-green text-sm font-semibold transition-colors py-2">
+                    <Phone className="w-4 h-4 text-accent-gold" />
+                    +91 9129177119
+                  </a>
+                </div>
+              </div>
+
+              {/* Banner Image Display */}
+              <div className="lg:col-span-7">
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl shadow-black/40 group">
+                  <Image
+                    src="/images/pan-india-expansion-banner.jpg"
+                    alt="Green Ganga Associates - Now Working in 8+ More States Across India Banner"
+                    width={1200}
+                    height={750}
+                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.02]"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <span className="text-white text-xs sm:text-sm font-semibold drop-shadow-md">
+                      Landscape Design • Plantation • Irrigation • Maintenance • Industrial • Sustainable Solutions
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -636,49 +719,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS ────────────────────────────────── */}
-      {/* <section className="py-24 lg:py-32 bg-soft-beige relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-deep-green/3 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <div className="section-decorator-center">
-              <span className="text-sm font-semibold text-fresh-green uppercase tracking-widest">Testimonials</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-deep-green mt-4 mb-5">
-              What Our Clients Say
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div key={t.name} className="premium-card p-8 rounded-3xl bg-white border border-gray-100" data-aos="fade-up" data-aos-delay={`${testimonials.indexOf(t) * 80}`}>
-                <div className="flex gap-1 mb-5">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent-gold fill-accent-gold" />
-                  ))}
-                </div>
-                <p className="text-muted-foreground leading-relaxed mb-6 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 pt-5 border-t border-gray-100">
-                  <div className="w-11 h-11 rounded-full bg-linear-to-br from-deep-green to-fresh-green flex items-center justify-center text-white font-semibold text-sm">
-                    {t.name.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-deep-green">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       <GoogleReviews />
-
-      {/* <YouTubeSection /> */}
 
       {/* ─── FAQ SECTION ─────────────────────────────────── */}
       <FAQSection />
