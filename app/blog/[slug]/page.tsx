@@ -23,7 +23,7 @@ const blogPostsData: Record<string, BlogPost> = {
   "green-ganga-project-delivery-guarantee": {
     title: "The Green Ganga Project Delivery Guarantee: 100% Plant Survival & Timely Handover",
     desc: "Discover our industry-leading 5-stage project delivery framework, 90-day plant mortality replacement guarantee, and agronomic stabilization protocols.",
-    date: "August 18, 2026",
+    date: "September 24, 2026",
     author: "Er. R.K. Verma & Aditya Sharma",
     readTime: "6 min read",
     image: "/gallery/design-development.jpeg",
@@ -82,7 +82,7 @@ const blogPostsData: Record<string, BlogPost> = {
   "expert-botanical-plant-selection": {
     title: "Expert Botanical Plant Selection: Choosing the Right Trees, Shrubs & Turf for UP Landscapes",
     desc: "A scientific guide to 4-tier canopy architecture, Gangetic alluvial soil compatibility, heat tolerance, and indigenous flora for villas and resorts.",
-    date: "August 14, 2026",
+    date: "September 24, 2026",
     author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
     readTime: "7 min read",
     image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
@@ -517,7 +517,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     "description": post.desc,
     "image": `https://www.greengangaassociates.com${post.image}`,
     "datePublished": post.date,
-    "dateModified": "2026-08-09",
+    "dateModified": post.date,
     "author": {
       "@type": "Person",
       "name": post.author
