@@ -41,6 +41,7 @@ import {
   ArrowRight,
   Phone,
   Shield,
+  ShieldCheck,
   Clock,
   Gem,
   BarChart3,
@@ -92,9 +93,9 @@ const trustFeatures = [
 ];
 
 const services = [
+  { title: "Insecticide & Plant Protection", icon: <ShieldCheck className="w-8 h-8" />, desc: "Specialized anti-termite soil drenching, stem-borer prevention, and 3-year guaranteed plant protection for trees, lawns, and estates." },
   { title: "Design & Development", icon: <Palette className="w-8 h-8" />, desc: "Customized landscape layouts for homes, hotels, parks, cafe farmhouses, offices, and institutions." },
   { title: "Maintenance & Care", icon: <Wrench className="w-8 h-8" />, desc: "Regular watering, pruning, seasonal planting, pest control, and plant health monitoring." },
-  { title: "Water Management", icon: <Droplets className="w-8 h-8" />, desc: "Smart irrigation systems — sprinklers, drip irrigation, and eco-friendly water solutions." },
   { title: "Vertical & Terrace Gardens", icon: <TreePine className="w-8 h-8" />, desc: "Modern vertical garden designs and terrace garden development for urban environments." },
   { title: "Consultancy & Services", icon: <ClipboardList className="w-8 h-8" />, desc: "Expert advice on plant selection, layout planning, sustainability, and project reports." },
   { title: "Industrial & Govt. Projects", icon: <Factory className="w-8 h-8" />, desc: "Large-scale landscaping for factories, public parks, and institutional campuses." },
@@ -104,11 +105,12 @@ const services = [
 ];
 
 const projects = [
-  { image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg", title: "Hero Realty & Infra Premium Township", category: "Garden Development", location: "Sarojininagar, Lucknow" },
-  { image: "/gallery/aravali-enclave-after.jpeg", title: "Aravali Enclave Green Corridor", category: "Divider Development", location: "Aravali Enclave, Lucknow" },
+  { image: "/client/farmhouse-vrindavan-yojna.jpeg", title: "Farmhouse Development", category: ["Farmhouse & Resorts", "Insecticide"], location: "Nawabganj, Lucknow-Kanpur Road", isOngoing: true },
+  { image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg", title: "Hero Realty & Infra Premium Township", category: ["Garden Development", "Insecticide"], location: "Sarojininagar, Lucknow", isOngoing: true },
+  { image: "/gallery/aravali-enclave-after.jpeg", title: "Aravali Enclave Green Corridor", category: "Insecticide", location: "Aravali Enclave, Lucknow" },
   { image: "/gallery/guru-kirpa.jpeg", title: "GuruKirpa Utsav Resort", category: "Farmhouse & Resorts", location: "Lalganj" },
-  { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: "Farmhouse & Resorts", location: "Prayagraj" },
-  { image: "/gallery/subh-vilas-after.jpeg", title: "Shubh Villas Hotel & Resort", category: "Hotels", location: "Prayagraj" },
+  { image: "/client/nandi-farmhuse.jpeg", title: "Farm House", category: ["Farmhouse & Resorts", "Insecticide"], location: "Prayagraj" },
+  { image: "/gallery/subh-vilas-after.jpeg", title: "Shubh Villas Hotel & Resort", category: ["Hotels", "Insecticide"], location: "Prayagraj" },
   { image: "/gallery/farmhouse-cum-resort-after.jpeg", title: "Farm House Cum Resort", category: "Farmhouse & Resorts", location: "Barabanki" },
 ];
 
@@ -628,10 +630,26 @@ export default function Home() {
 
                 {/* Top Badge Section */}
                 <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
-                  <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20">
-                    {project.category}
+                  <div className="flex flex-wrap items-center gap-2">
+                    {(Array.isArray(project.category) ? project.category : [project.category]).map((cat) => (
+                      <div
+                        key={cat}
+                        className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20"
+                      >
+                        {cat}
+                      </div>
+                    ))}
+                    {"isOngoing" in project && project.isOngoing && (
+                      <div className="px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-amber-500/15 dark:bg-amber-400/20 text-amber-700 dark:text-amber-300 text-[8px] sm:text-[9px] font-bold uppercase tracking-widest border border-amber-500/30 flex items-center gap-1.5 shadow-xs">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500"></span>
+                        </span>
+                        <span>Ongoing</span>
+                      </div>
+                    )}
                   </div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm shrink-0">
                     <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
                   </div>
                 </div>

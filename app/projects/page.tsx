@@ -7,28 +7,51 @@ import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight, Leaf, Filter } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
-const categories = ["All", "Garden Development", "Divider Development", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
+interface Project {
+  image: string;
+  title: string;
+  category: string | string[];
+  location: string;
+  desc: string;
+  area: string;
+  slug?: string;
+  isOngoing?: boolean;
+}
 
-const projects = [
+const categories = ["All", "Garden Development", "Insecticide", "Farmhouse & Resorts", "Hotels", "Consultancy & Services", "Others"];
+
+const projects: Project[] = [
+  // Marriage Home & Farm Houses (1st Position)
+  {
+    image: "/client/farmhouse-vrindavan-yojna.jpeg",
+    title: "Farmhouse Development",
+    category: ["Farmhouse & Resorts", "Insecticide"],
+    location: "Nawabganj, Lucknow-Kanpur Road",
+    desc: "Luxury 1+ acre private farmhouse landscape development featuring indigenous tree canopy, manicured event lawns, and smart drip irrigation.",
+    area: "Ongoing Project • 1 Acre+",
+    isOngoing: true,
+  },
+
   // Garden Development & Township
   {
     image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
     title: "Hero Realty & Infra Premium Township",
-    category: "Garden Development",
+    category: ["Garden Development", "Insecticide"],
     location: "Sarojininagar, Lucknow",
     desc: "Large-scale residential infrastructure and township greenery with 19,000+ architectural plants, exotic statement trees, and Zoysia lawn.",
-    area: "19,000+ Plants",
+    area: "Ongoing Project • 19,000+ Plants",
+    isOngoing: true,
     slug: "hero-realty-township",
   },
 
-  // Divider Development
+  // Insecticide
   {
     image: "/gallery/aravali-enclave-after.jpeg",
     title: "Aravali Enclave Green Corridor",
-    category: "Divider Development",
+    category: "Insecticide",
     location: "Aravali Enclave, Lucknow",
     desc: "Divider landscaping, ornamental plantation, flowering avenue development, and green corridor enhancement for the residential township.",
-    area: "Ongoing Project",
+    area: "Township Green Corridor",
     slug: "aravali-enclave",
   },
 
@@ -64,7 +87,7 @@ const projects = [
   {
     image: "/gallery/prayagraj-farmhouse-after.jpeg",
     title: "Prayagraj Luxury Farm House",
-    category: "Farmhouse & Resorts",
+    category: ["Farmhouse & Resorts", "Insecticide"],
     location: "Prayagraj, UP",
     desc: "High-profile farmhouse landscape design with native flora and modern amenities.",
     area: "Private Estate",
@@ -83,7 +106,7 @@ const projects = [
   {
     image: "/gallery/subh-vilas-after.jpeg",
     title: "Shubh Villas Hotel & Resort",
-    category: "Hotels",
+    category: ["Hotels", "Insecticide"],
     location: "Naini, Prayagraj",
     desc: "Elegant garden and pool-side landscaping for the luxury resort suites.",
     area: "Resort Grounds",
@@ -137,7 +160,7 @@ const projects = [
   {
     image: "/gallery/gyan-diary-after.jpeg",
     title: "Gyan Dairy & Gyan Heritage School",
-    category: "Others",
+    category: ["Others", "Insecticide"],
     location: "Sultanpur Road & Lucknow",
     desc: "Greenery development for industrial dairy unit and school campus.",
     area: "Campus Garden",
@@ -154,7 +177,7 @@ const projects = [
   {
     image: "/project-terrace.png",
     title: "Penthouse at Jopling Road",
-    category: "Others",
+    category: ["Others", "Insecticide"],
     location: "Lucknow, UP",
     desc: "Exclusive terrace garden and landscape design for a premium penthouse unit.",
     area: "Penthouse Terrace",
@@ -164,7 +187,14 @@ const projects = [
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
+  const filtered =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) =>
+          Array.isArray(p.category)
+            ? p.category.includes(activeFilter)
+            : p.category === activeFilter
+        );
 
   return (
     <>
@@ -240,10 +270,26 @@ export default function ProjectsPage() {
 
                   {/* Top Badge Section */}
                   <div className="relative z-10 flex justify-between items-center mb-5 sm:mb-6">
-                    <div className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20">
-                      {project.category}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {(Array.isArray(project.category) ? project.category : [project.category]).map((cat) => (
+                        <div
+                          key={cat}
+                          className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-fresh-green/10 dark:bg-fresh-green/20 text-fresh-green dark:text-fresh-green text-[8px] sm:text-[9px] font-bold uppercase tracking-widest sm:tracking-widest border border-fresh-green/10 dark:border-fresh-green/20"
+                        >
+                          {cat}
+                        </div>
+                      ))}
+                      {"isOngoing" in project && project.isOngoing && (
+                        <div className="px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-amber-500/15 dark:bg-amber-400/20 text-amber-700 dark:text-amber-300 text-[8px] sm:text-[9px] font-bold uppercase tracking-widest border border-amber-500/30 flex items-center gap-1.5 shadow-xs">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber-500"></span>
+                          </span>
+                          <span>Ongoing</span>
+                        </div>
+                      )}
                     </div>
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-soft-beige dark:bg-white/10 flex items-center justify-center text-deep-green dark:text-white group-hover:bg-deep-green group-hover:text-white group-hover:rotate-360 transition-all duration-700 ease-in-out shadow-sm shrink-0">
                       <Leaf className="w-4 h-4 sm:w-5 sm:h-5 text-fresh-green group-hover:text-white transition-colors" />
                     </div>
                   </div>
@@ -271,8 +317,8 @@ export default function ProjectsPage() {
 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-fresh-green" />
-                          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-fresh-green/80">
+                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${"isOngoing" in project && project.isOngoing ? "bg-amber-500 animate-pulse" : "bg-fresh-green"}`} />
+                          <span className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-widest ${"isOngoing" in project && project.isOngoing ? "text-amber-700 dark:text-amber-400 font-extrabold" : "text-fresh-green/80"}`}>
                             {project.area}
                           </span>
                         </div>

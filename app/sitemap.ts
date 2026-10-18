@@ -72,6 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    "wedding-lawns-marriage-hall-development",
     "green-ganga-project-delivery-guarantee",
     "expert-botanical-plant-selection",
     "best-plants-lucknow",

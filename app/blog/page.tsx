@@ -16,6 +16,26 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: "wedding-lawns-marriage-hall-development",
+    title: "Wedding Lawns & Marriage Hall Development: Grass Selection, Layout & Drainage in UP",
+    desc: "A comprehensive agronomic guide to developing high-capacity wedding lawns, banquet gardens, and event resorts in Uttar Pradesh with heavy foot-traffic turf and smart drainage.",
+    date: "October 17, 2026",
+    author: "Er. R.K. Verma & Mrs. Seema Sharma",
+    readTime: "8 min read",
+    image: "/images/wedding-lawns-marriage-hall-development.jpg",
+    category: "Commercial & Event Lawns"
+  },
+  {
+    slug: "expert-botanical-plant-selection",
+    title: "Expert Botanical Plant Selection: Choosing the Right Trees, Shrubs & Turf for UP Landscapes",
+    desc: "A scientific guide to 4-tier canopy architecture, Gangetic alluvial soil compatibility, heat tolerance, and indigenous flora for villas and resorts.",
+    date: "October 17, 2026",
+    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
+    readTime: "7 min read",
+    image: "/images/expert-botanical-plant-selection.jpg",
+    category: "Botanical Science"
+  },
+  {
     slug: "green-ganga-project-delivery-guarantee",
     title: "The Green Ganga Project Delivery Guarantee: 100% Plant Survival & Timely Handover",
     desc: "Discover our industry-leading 5-stage project delivery framework, 90-day plant mortality replacement guarantee, and agronomic stabilization protocols.",
@@ -24,16 +44,6 @@ const blogPosts = [
     readTime: "6 min read",
     image: "/gallery/design-development.jpeg",
     category: "Project Guarantee"
-  },
-  {
-    slug: "expert-botanical-plant-selection",
-    title: "Expert Botanical Plant Selection: Choosing the Right Trees, Shrubs & Turf for UP Landscapes",
-    desc: "A scientific guide to 4-tier canopy architecture, Gangetic alluvial soil compatibility, heat tolerance, and indigenous flora for villas and resorts.",
-    date: "September 24, 2026",
-    author: "Dr. Ajay Sharma (Ph.D. Agriculture)",
-    readTime: "7 min read",
-    image: "/gallery/WhatsApp Image 2026-03-27 at 11.57.45 AM (1).jpeg",
-    category: "Botanical Science"
   },
   {
     slug: "best-plants-lucknow",

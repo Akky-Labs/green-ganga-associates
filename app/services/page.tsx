@@ -12,6 +12,7 @@ import {
   Factory,
   Flower2,
   CheckCircle2,
+  ShieldCheck,
   ArrowRight,
   MessageSquare,
   FileCheck,
@@ -38,6 +39,17 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  {
+    icon: <ShieldCheck className="w-8 h-8" />,
+    title: "Insecticide & Anti-Termite Plant Protection",
+    desc: "Scientific horticultural plant protection, deep subsoil anti-termite drenching, stem-borer eradication, and preventive fungal immunization for residential gardens, luxury farmhouses, and specimen trees.",
+    features: ["3-Year Protection Guarantee", "Anti-Termite Soil Drenching", "Stem Borer & Grub Control", "Ph.D. Agronomist Monitored"],
+    image: "/images/insecticide-treatment.jpg",
+    slug: "plant-supply",
+    startingPrice: "Includes 3-Year Protection Warranty",
+    guaranteeBadge: "3-Year Plant Protection Guarantee",
+    whyNote: "Soil termites and pests secretly destroy roots from underneath. This treatment creates a long-lasting shield to protect your trees, palms, and lawn."
+  },
   {
     icon: <Palette className="w-8 h-8" />,
     title: "Design & Development",
@@ -101,15 +113,6 @@ const services = [
     image: "/project-farmhouse.png",
     slug: "residential-landscaping",
     startingPrice: "Starting from ₹85 / sq. ft."
-  },
-  {
-    icon: <Flower2 className="w-8 h-8" />,
-    title: "Organic Farming & Fruit Gardens",
-    desc: "In organic farming system — vegetable and fruit garden plans for commercial and personal use. Sustainable, chemical-free growing solutions that bring fresh produce to your doorstep.",
-    features: ["Vegetable Gardens", "Fruit Orchards", "Chemical-Free", "Commercial Plans"],
-    image: "/hero.png",
-    slug: "plant-supply",
-    startingPrice: "Starting from ₹120 / sq. ft."
   },
   {
     icon: <Sparkles className="w-8 h-8" />,
@@ -197,6 +200,23 @@ export default function ServicesPage() {
                   </div>
 
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">{service.desc}</p>
+
+                  {/* Minimal 3-Year Guarantee & Why It's Essential Callout */}
+                  {(service as any).guaranteeBadge && (
+                    <div className="mb-6 p-4 rounded-xl bg-amber-500/5 dark:bg-amber-400/5 border border-amber-500/20 text-xs space-y-1.5">
+                      <div className="flex items-center gap-1.5 font-bold text-amber-700 dark:text-amber-400 text-xs tracking-wide">
+                        <ShieldCheck className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
+                        <span>{(service as any).guaranteeBadge}</span>
+                      </div>
+                      {(service as any).whyNote && (
+                        <p className="text-muted-foreground dark:text-gray-300 leading-relaxed text-xs">
+                          <strong className="text-foreground dark:text-white font-semibold">Why it&apos;s essential: </strong>
+                          {(service as any).whyNote}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-2 gap-3 mb-8">
                     {service.features.map((f, featureIdx) => (
                       <div key={f} className="flex items-center gap-2" data-aos="fade-up" data-aos-delay={featureIdx * 50}>

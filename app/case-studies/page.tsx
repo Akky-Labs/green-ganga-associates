@@ -12,8 +12,8 @@ const caseStudies = [
     slug: "hero-realty-township",
     location: "Sarojininagar, Lucknow",
     category: "Residential Infrastructure & Township",
-    duration: "45 Days",
-    area: "19,000+ Plants",
+    duration: "Ongoing",
+    area: "Ongoing Project • 19,000+ Plants",
     description: "Large-scale residential infrastructure and township greenery with 19,000+ architectural plants, exotic statement trees, and Zoysia lawn.",
     plants: ["Olive Trees (Olea europaea)", "Plumeria Alba", "Crape Myrtle", "Zoysia Turf", "Clerodendrum Inerme"],
     image: ""
@@ -22,9 +22,9 @@ const caseStudies = [
     title: "Aravali Enclave Green Corridor",
     slug: "aravali-enclave",
     location: "Aravali Enclave, Lucknow",
-    category: "Divider Development",
-    duration: "Ongoing",
-    area: "Ongoing Project",
+    category: "Insecticide",
+    duration: "30 Days",
+    area: "Township Green Corridor",
     description: "Premium divider and avenue landscaping for Aravali Enclave Society, designed to create a lush green boulevard, improve visual appeal, and provide a clean environment.",
     plants: ["Ornamental Palms", "Flowering Shrubs", "Seasonal Colors", "Evergreen Borders"],
     image: "/gallery/aravali-enclave-after.jpeg"

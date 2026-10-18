@@ -264,7 +264,8 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* consultancy & experience section mapped */}
               {[
-                { title: "Hero Realty & Infra Pvt Ltd", duration: "Township Project", location: "Sarojininagar, Lucknow" },
+                { title: "Farmhouse Development", duration: "Ongoing (1 Acre+)", location: "Nawabganj, Lucknow-Kanpur Road" },
+                { title: "Hero Realty & Infra Pvt Ltd", duration: "Ongoing Project", location: "Sarojininagar, Lucknow" },
                 { title: "Paras merchant pvt ltd sister con. of DS group", duration: "6 Years", location: "Noida" },
                 { title: "Jaypee Group (JIIT)", duration: "7 Years", location: "Noida" },
                 { title: "Ansal API", duration: "5 Years", site: "4,500 Acre Hitech Township" },
